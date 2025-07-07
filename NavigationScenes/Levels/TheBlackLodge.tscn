@@ -1,0 +1,235 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccjjwiuy2yla0"]
+
+[ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="1_jdo00"]
+[ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="2_8cpu5"]
+[ext_resource type="PackedScene" uid="uid://d3lccwrrs4l7s" path="res://InstanceScenes/Furniture/curtain.tscn" id="3_6php7"]
+[ext_resource type="Shader" uid="uid://cxpqvftt1msfe" path="res://Shaders/VHS.gdshader" id="4_hbf0j"]
+[ext_resource type="PackedScene" uid="uid://bgn46eypg3uw6" path="res://InstanceScenes/Furniture/tall_lamp.tscn" id="4_jc2aq"]
+[ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="4_ugbur"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owvdk"]
+albedo_texture = ExtResource("1_jdo00")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.659753
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_knq37"]
+material = SubResource("StandardMaterial3D_owvdk")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j3cva"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="Environment" id="Environment_qf6jc"]
+background_mode = 1
+ambient_light_color = Color(0.386749, 0.458135, 0.544931, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uf8cu"]
+shader = ExtResource("4_hbf0j")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[node name="TheBlackLodge" type="Node3D"]
+
+[node name="Cooper" parent="." instance=ExtResource("2_8cpu5")]
+transform = Transform3D(-0.986708, 0, 0.162499, 0, 1, 0, -0.162499, 0, -0.986708, -5.46911, 12.0512, -34.2544)
+
+[node name="Envrionment" type="Node3D" parent="."]
+transform = Transform3D(0.999974, 0, 0, 0, 0.999974, 0, 0, 0, 0.999974, 0, 0, 0)
+
+[node name="Furniture" type="Node3D" parent="Envrionment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8312, 0, 0)
+
+[node name="Curtains" type="Node3D" parent="Envrionment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53776, 0)
+
+[node name="Wall_3" type="Node3D" parent="Envrionment/Curtains"]
+transform = Transform3D(-0.00158821, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00158821, -64.8069, 0.0102385, -11.4913)
+
+[node name="Curtain2" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 87.8983, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain3" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.73163, -0.000831894, -0.000119147, 0.00152655, 2.57855, 6.05425e-05, 0.000562084, -0.00015577, 1.00282, 70.9443, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain4" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 53.3354, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain5" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 36.0576, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain6" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 18.4487, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain7" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 1.05032, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain8" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -16.5586, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain9" parent="Envrionment/Curtains/Wall_3" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -34.1374, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Wall_4" type="Node3D" parent="Envrionment/Curtains"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.4073, 0.0102385, -12.7803)
+
+[node name="Curtain2" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 87.8983, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain3" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.73163, -0.000831894, -0.000119147, 0.00152655, 2.57855, 6.05425e-05, 0.000562084, -0.00015577, 1.00282, 70.9443, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain4" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 53.3354, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain5" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 36.0576, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain6" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 18.4487, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain7" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 1.05032, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain8" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -16.5586, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain9" parent="Envrionment/Curtains/Wall_4" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -34.1374, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Wall_5" type="Node3D" parent="Envrionment/Curtains"]
+transform = Transform3D(-0.999941, 0, 0.0108732, 0, 1, 0, -0.0108732, 0, -0.999941, 21.038, 0.0102385, -55.937)
+
+[node name="Curtain2" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 87.8983, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain3" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.73163, -0.000831894, -0.000119147, 0.00152655, 2.57855, 6.05425e-05, 0.000562084, -0.00015577, 1.00282, 70.9443, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain4" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 53.3354, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain5" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 36.0576, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain6" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 18.4487, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain7" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 1.05032, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain8" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -16.5586, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain9" parent="Envrionment/Curtains/Wall_5" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -34.1374, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Wall_6" type="Node3D" parent="Envrionment/Curtains"]
+transform = Transform3D(-0.999006, 0, -0.0445783, 0.00319577, 0.997427, -0.0716177, 0.0444636, -0.0716889, -0.996435, 28.8793, 0.010269, 92.3582)
+
+[node name="Curtain2" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 87.8983, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain3" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.73163, -0.000831894, -0.000119147, 0.00152655, 2.57855, 6.05425e-05, 0.000562084, -0.00015577, 1.00282, 70.9443, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain4" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 53.3354, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain5" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 36.0576, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain6" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 18.4487, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain7" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, 1.05032, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain8" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -16.5586, 0, 1.73981)
+skeleton = NodePath("../../../..")
+
+[node name="Curtain9" parent="Envrionment/Curtains/Wall_6" instance=ExtResource("3_6php7")]
+transform = Transform3D(4.7178, -0.000829463, -0.000118799, 0.00152209, 2.57102, 6.03656e-05, 0.000560442, -0.000155315, 0.99989, -34.1374, 0, 1.27198)
+skeleton = NodePath("../../../..")
+
+[node name="Floor" type="MeshInstance3D" parent="Envrionment"]
+transform = Transform3D(82.0616, 0, 0, 0, 1.0037, 0, 0, 0, 79.6523, 2.94897, 0, 17.1533)
+mesh = SubResource("PlaneMesh_knq37")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_j3cva")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment"]
+environment = SubResource("Environment_qf6jc")
+
+[node name="AmbientLights" type="Node3D" parent="Envrionment"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Envrionment/AmbientLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98284, 18.5467, -31.2686)
+light_energy = 16.0
+omni_range = 63.561
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Envrionment/AmbientLights"]
+transform = Transform3D(0.988954, 0, 0.1484, 0, 1.00003, 0, -0.1484, 0, 0.988954, 21.3886, 44.8813, 17.3188)
+light_energy = 16.0
+omni_range = 8.105
+
+[node name="Tall_Lamp" parent="Envrionment/AmbientLights" instance=ExtResource("4_jc2aq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -42.6291, 0, 65.4668)
+
+[node name="Tall_Lamp2" parent="Envrionment/AmbientLights" instance=ExtResource("4_jc2aq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -40.1172, 0, -39.177)
+
+[node name="Tall_Lamp3" parent="Envrionment/AmbientLights" instance=ExtResource("4_jc2aq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 50.8742, 0, -39.177)
+
+[node name="Tall_Lamp4" parent="Envrionment/AmbientLights" instance=ExtResource("4_jc2aq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 50.8742, 0, 75.0881)
+
+[node name="Objects" type="Node3D" parent="Envrionment"]
+
+[node name="CoffeeMug" parent="Envrionment/Objects" instance=ExtResource("4_ugbur")]
+transform = Transform3D(4.84759, -0.140108, 1.21706, 0.223635, 4.98494, -0.316878, -1.20451, 0.361654, 4.83925, 2.74642, 13.0051, 16.403)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_uf8cu")
+offset_right = 322.0
+offset_bottom = 243.0

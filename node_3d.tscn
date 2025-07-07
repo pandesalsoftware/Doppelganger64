@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi1ykft5f1482"]
+
+[ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_t68po"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cooper" parent="." instance=ExtResource("1_t68po")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198456, 1.03456, -0.0506611)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqrtqrmcrfmtx"]
+
+[ext_resource type="Script" uid="uid://blw40nesqqwlc" path="res://InstanceScenes/Laura/laura.gd" id="1_1ns3x"]
+[ext_resource type="PackedScene" uid="uid://c1fg2hj4jb6pd" path="res://InstanceScenes/Laura/Laura.glb" id="1_3k4gj"]
+
+[node name="Laura" type="CharacterBody3D"]
+script = ExtResource("1_1ns3x")
+
+[node name="LauraSkin" parent="." instance=ExtResource("1_3k4gj")]
+unique_name_in_owner = true
+
+[node name="Skeleton3D" parent="LauraSkin/Armature" index="0"]
+bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
+bones/0/rotation = Quaternion(-0.0119155, -4.93653e-08, 0.0020048, 0.999927)
+bones/1/rotation = Quaternion(-0.0711572, 1.22808e-07, -0.784963, 0.615443)
+bones/2/rotation = Quaternion(0.0970125, 1.83239e-08, 0.792126, 0.602598)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(-0.0150833, 0.0379488, -0.0173579, 0.999015)
+bones/5/rotation = Quaternion(0.0119155, 4.92691e-08, -0.0020048, 0.999927)
+bones/6/position = Vector3(-0.23475, -2.77124, -0.539207)
+bones/6/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/7/position = Vector3(-0.997169, 0.686603, -0.380835)
+bones/7/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/position = Vector3(-0.983834, 0.693329, -0.382503)
+bones/8/rotation = Quaternion(0.926344, -0.364653, -0.0817885, -0.0471739)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.026591, -0.00180187, 0.0372981, 0.998949)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/position = Vector3(0.262798, -2.78066, -0.588968)
+bones/10/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/11/position = Vector3(1.03932, 0.730374, -0.437128)
+bones/11/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/position = Vector3(1.03932, 0.730374, -0.437128)
+bones/12/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
+bones/13/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/position = Vector3(0.0195788, -0.0289247, -0.311835)
+
+[node name="Hair" parent="LauraSkin/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.614155, -1.01281e-07, 4.84288e-08, 9.22009e-08, 0.702505, -1.86265e-08, -4.47035e-08, 2.23517e-08, 0.614155, -0.00715612, 2.36162, -0.291803)
+
+[node name="Icosphere" parent="LauraSkin/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.094434, -9.66907e-11, 1.90994e-11, -6.80274e-11, -0.094434, 0, -1.81899e-11, 0, -0.094434, 0.013734, 0.985821, 0.040512)
+
+[node name="AnimationPlayer" parent="LauraSkin" index="1"]
+autoplay = "Meanwhile"
+
+[editable path="LauraSkin"]

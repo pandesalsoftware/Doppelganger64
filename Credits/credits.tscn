@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bt6a20y2bllvk"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="SFX" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 144.0
+offset_right = 44.0
+offset_bottom = 167.0
+text = "SFX :"
+
+[node name="Chris" type="Label" parent="SFX"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 366.0
+offset_bottom = 47.0
+text = "Chris - Music/SFX - @cmdrpandesoft.bsky.social"
+
+[node name="janica_uys241180" type="Label" parent="SFX"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 352.0
+offset_bottom = 71.0
+text = "Curtains - janica_uys241180 - freesound.org"
+
+[node name="AItF4" type="Label" parent="SFX"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 352.0
+offset_bottom = 95.0
+text = "TV Switch - AItF4 - freesound.org"
+
+[node name="AItF5" type="Label" parent="SFX"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 352.0
+offset_bottom = 119.0
+text = "TV Glitch - humanhasbeenneutralized - freesound.org"

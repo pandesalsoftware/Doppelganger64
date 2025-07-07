@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bag0kn4gdolmo"
+path="res://.godot/imported/doppelganger.mp3-b99cd3292b94820102d05b84347d5e9e.mp3str"
+
+[deps]
+
+source_file="res://SFX/Voice Lines/Misc/doppelganger.mp3"
+dest_files=["res://.godot/imported/doppelganger.mp3-b99cd3292b94820102d05b84347d5e9e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

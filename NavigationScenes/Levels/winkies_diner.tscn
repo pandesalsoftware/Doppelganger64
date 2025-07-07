@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://bdsugdhhhqeog"]
+
+[ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_15slr"]
+[ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="1_p0yiw"]
+[ext_resource type="PackedScene" uid="uid://bwpv0pnb7hgys" path="res://InstanceScenes/MulhollandDr/MainTable.glb" id="2_c5tcf"]
+[ext_resource type="PackedScene" uid="uid://dgnvu0xe3lvuc" path="res://InstanceScenes/MulhollandDr/EmptyTable.glb" id="3_bxujr"]
+[ext_resource type="PackedScene" uid="uid://bhnpjf16v40xb" path="res://InstanceScenes/MulhollandDr/EmptyCounter.glb" id="4_g4qae"]
+[ext_resource type="PackedScene" uid="uid://byescbnjs5iyj" path="res://InstanceScenes/MulhollandDr/MainCounter.glb" id="5_gkfwo"]
+[ext_resource type="PackedScene" uid="uid://b7a2p0cgg8qj8" path="res://InstanceScenes/MulhollandDr/WoodenStool.glb" id="6_tbisx"]
+[ext_resource type="PackedScene" uid="uid://bmvcy43cug0k5" path="res://InstanceScenes/MulhollandDr/Diner/window.tscn" id="8_vra32"]
+
+[sub_resource type="Gradient" id="Gradient_pg3ve"]
+offsets = PackedFloat32Array(0.0943396, 0.402516, 0.761006)
+colors = PackedColorArray(0.815122, 0.957117, 0.882543, 1, 0.778442, 0.9055, 0.786537, 1, 0.848986, 0.936844, 0.853959, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x3epg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_htomu"]
+color_ramp = SubResource("Gradient_pg3ve")
+noise = SubResource("FastNoiseLite_x3epg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxrfm"]
+albedo_color = Color(0.317261, 0.484365, 0.422029, 1)
+albedo_texture = SubResource("NoiseTexture2D_htomu")
+metallic_specular = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m6ulk"]
+material = SubResource("StandardMaterial3D_nxrfm")
+size = Vector2(60, 50)
+
+[node name="WinkiesDiner" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_p0yiw")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.0399, 0, 0, 0, 1, 0, 0, 0, 3.28469, 0, 0, 43.0905)
+mesh = SubResource("PlaneMesh_m6ulk")
+
+[node name="Cooper" parent="." instance=ExtResource("1_15slr")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.371698, 4.33506, 8.25253)
+
+[node name="MainTable" parent="." instance=ExtResource("2_c5tcf")]
+transform = Transform3D(3, 0, 0, 0, 2.3567, 0, 0, 0, 3, -37.8839, 0.694593, -24.9697)
+
+[node name="EmptyTable" parent="." instance=ExtResource("3_bxujr")]
+transform = Transform3D(3, 0, 0, 0, 2.3567, 0, 0, 0, 3, 17.5664, 0.0579295, -24.6125)
+
+[node name="EmptyTable2" parent="." instance=ExtResource("3_bxujr")]
+transform = Transform3D(3, 0, 0, 0, 2.3567, 0, 0, 0, 3, -92.7799, 0.0579295, -25.2148)
+
+[node name="MainCounter" parent="." instance=ExtResource("5_gkfwo")]
+transform = Transform3D(2, 0, 0, 0, 2.25491, 0, 0, 0, 2, 55.7587, -3.19819, 40.8281)
+
+[node name="CoffeeMug_003" parent="MainCounter" index="0"]
+transform = Transform3D(0.232085, 0.00551545, 0.0975353, -0.00500262, 0.251747, -0.00233212, -0.0975629, 0.000211744, 0.232139, 5.76701, 4.95978, -1.09512)
+
+[node name="Counter" parent="MainCounter" index="1"]
+transform = Transform3D(-4.55902, 0, 0.979267, 0, 3.5554, 0, -2.02513, 0, -2.20454, 6.03412, 3.67744, -0.379921)
+
+[node name="CashRegister" parent="MainCounter" index="2"]
+transform = Transform3D(-1.18995, 0, 0.348965, 0, 1.10653, 0, -0.443107, 0, -0.937136, 8.56997, 5.7773, 1.04549)
+
+[node name="EmptyCounter" parent="." instance=ExtResource("4_g4qae")]
+transform = Transform3D(-13.5328, 0, 1.74846e-07, 0, 1.44793, 0, -1.18307e-06, 0, -2, 136.113, -0.114134, 38.1212)
+
+[node name="WoodenStool" parent="." instance=ExtResource("6_tbisx")]
+transform = Transform3D(2.32861, 0, 0, 0, 1.4468, 0, 0, 0, 2.72109, 29.1957, 0.169174, 28.2602)
+
+[node name="WoodenStool2" parent="." instance=ExtResource("6_tbisx")]
+transform = Transform3D(2.19672, 0, 0.902765, 0, 1.4468, 0, -0.772554, 0, 2.56697, 16.1115, 0.169174, 36.6756)
+
+[node name="WoodenStool3" parent="." instance=ExtResource("6_tbisx")]
+transform = Transform3D(2.31293, 0, -0.315255, 0, 1.4468, 0, 0.269783, 0, 2.70277, -21.337, 0.169174, 25.349)
+
+[node name="WoodenStool4" parent="." instance=ExtResource("6_tbisx")]
+transform = Transform3D(2.32861, 0, 0, 0, 1.4468, 0, 0, 0, 2.72109, -51.399, 0.169174, 27.7907)
+
+[node name="WoodenStool7" parent="." instance=ExtResource("6_tbisx")]
+transform = Transform3D(2.32861, 0, 0, 0, 1.4468, 0, 0, 0, 2.72109, -33.3079, 0.169174, 28.2602)
+
+[node name="WoodenStool5" parent="." instance=ExtResource("6_tbisx")]
+transform = Transform3D(2.31618, 0, -0.280747, 0, 1.4468, 0, 0.240253, 0, 2.70657, -72.2196, 0.169174, 28.133)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.5853, 12.6932)
+omni_range = 4096.0
+omni_attenuation = 0.381
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5861, 25.5853, 12.6932)
+omni_range = 4096.0
+omni_attenuation = 0.381
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5326, 25.5853, 12.6932)
+omni_range = 4096.0
+omni_attenuation = 0.381
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.5853, 81.6404)
+omni_range = 4096.0
+omni_attenuation = 0.381
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5861, 25.5853, 81.6404)
+omni_range = 4096.0
+omni_attenuation = 0.381
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5326, 25.5853, 81.6404)
+omni_range = 4096.0
+omni_attenuation = 0.381
+
+[node name="Window" parent="." instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -57.4015, -0.0764036, -35.3248)
+
+[node name="Window4" parent="." instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -170.206, -0.0764036, -35.3248)
+
+[node name="Window2" parent="." instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -113.56, -0.0764036, -35.3248)
+
+[node name="Window3" parent="." instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -1.28691, -0.0764036, -35.3248)
+
+[node name="Window5" parent="." instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, 54.7035, -0.0764036, -35.3248)
+
+[editable path="MainCounter"]

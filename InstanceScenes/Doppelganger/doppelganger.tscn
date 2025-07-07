@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://wa2hsu1c3ki3"]
+
+[ext_resource type="Script" uid="uid://4p8qh4tqlc5q" path="res://InstanceScenes/Doppelganger/doppelganger.gd" id="1_hd476"]
+[ext_resource type="PackedScene" uid="uid://jd1ioueoenj0" path="res://InstanceScenes/Doppelganger/Doppelganger.glb" id="1_ooomw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhtsc"]
+
+[node name="Doppelganger" type="CharacterBody3D" groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_hd476")
+
+[node name="DoppelgangerSkin" parent="." instance=ExtResource("1_ooomw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267976, -1.19209e-07, 0.126854)
+
+[node name="Skeleton3D" parent="DoppelgangerSkin/Armature" index="0"]
+bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
+bones/0/rotation = Quaternion(-0.0119155, -4.93653e-08, 0.0020048, 0.999927)
+bones/1/rotation = Quaternion(-0.0711572, 1.22808e-07, -0.784963, 0.615443)
+bones/2/rotation = Quaternion(0.0970125, 1.83239e-08, 0.792126, 0.602598)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/position = Vector3(-0.238056, -1.1975, -0.344886)
+bones/5/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(-0.23475, -2.77124, -0.539207)
+bones/6/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/7/position = Vector3(-0.997169, 0.686603, -0.380835)
+bones/7/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/position = Vector3(-0.983834, 0.693329, -0.382503)
+bones/8/rotation = Quaternion(0.926344, -0.364653, -0.0817885, -0.0471739)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.026591, -0.00180187, 0.0372981, 0.998949)
+bones/9/scale = Vector3(1, 1, 1)
+bones/11/position = Vector3(0.266104, -1.20692, -0.394646)
+bones/11/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/position = Vector3(0.262798, -2.78066, -0.588968)
+bones/12/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/13/position = Vector3(1.03932, 0.730374, -0.437128)
+bones/13/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
+bones/14/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
+bones/15/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
+bones/15/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="DoppelgangerSkin" index="1"]
+autoplay = "Idle02"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 8.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.01605, 0, 0, 0, 5.7477, 0, 0, 0, 1.49446, -0.293017, 2.90192, 0)
+shape = SubResource("BoxShape3D_lhtsc")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+
+[editable path="DoppelgangerSkin"]

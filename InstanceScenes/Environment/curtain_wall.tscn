@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7y2ircvi1uyd"]
+
+[ext_resource type="PackedScene" uid="uid://d3lccwrrs4l7s" path="res://InstanceScenes/Environment/curtain.tscn" id="1_vww2r"]
+
+[node name="CurtainWall" type="Node3D"]
+
+[node name="SoftBody3D" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 89.3236, 1.53776, 88.8641)
+
+[node name="SoftBody3D2" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 78.1541, 1.53776, 88.8641)
+
+[node name="SoftBody3D3" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 67.1446, 1.53776, 88.8641)
+
+[node name="SoftBody3D4" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 55.9752, 1.53776, 88.8641)
+
+[node name="SoftBody3D5" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 44.9777, 1.53776, 88.8641)
+
+[node name="SoftBody3D6" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 33.8083, 1.53776, 88.8641)
+
+[node name="SoftBody3D7" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 22.474, 1.53776, 88.8641)
+
+[node name="SoftBody3D8" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 11.3046, 1.53776, 88.8641)
+
+[node name="SoftBody3D9" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 0.295097, 1.53776, 88.8641)
+
+[node name="SoftBody3D13" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -43.6491, 1.53776, 88.8641)
+
+[node name="SoftBody3D14" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.6423, 1.53776, 88.8641)
+
+[node name="SoftBody3D15" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -65.8184, 1.53776, 88.8641)
+
+[node name="SoftBody3D16" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -75.3608, 1.53776, 88.8641)
+
+[node name="SoftBody3D10" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -10.8744, 1.53776, 88.8641)
+
+[node name="SoftBody3D11" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -21.8718, 1.53776, 88.8641)
+
+[node name="SoftBody3D12" parent="." instance=ExtResource("1_vww2r")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -33.0413, 1.53776, 88.8641)

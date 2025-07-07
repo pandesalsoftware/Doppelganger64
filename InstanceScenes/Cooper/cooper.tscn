@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://40s4yrlc0p76"]
+
+[ext_resource type="Script" uid="uid://bc00t4yo8d4eq" path="res://InstanceScenes/Cooper/cooper.gd" id="1_rj3jh"]
+[ext_resource type="PackedScene" uid="uid://1giht2dxp8nf" path="res://InstanceScenes/Cooper/Cooper.glb" id="2_5j7ao"]
+[ext_resource type="AudioStream" uid="uid://5lpdvlvmvba8" path="res://SFX/Footsteps/RandomizedFootsteps/Footstep3.wav" id="5_7ised"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uoxg2"]
+size = Vector3(1, 0.912109, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4bd7k"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xvqy7"]
+random_pitch = 1.64
+random_volume_offset_db = 4.57
+streams_count = 1
+stream_0/stream = ExtResource("5_7ised")
+
+[node name="Cooper" type="CharacterBody3D" groups=["Cooper"]]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.652896, 3.52026, 0)
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_rj3jh")
+
+[node name="CooperSkin" parent="." instance=ExtResource("2_5j7ao")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222736, -1.2084, -0.194659)
+
+[node name="Skeleton3D" parent="CooperSkin/Armature" index="0"]
+bones/0/rotation = Quaternion(-0.0119155, -4.93792e-08, 0.0020048, 0.999927)
+bones/1/rotation = Quaternion(-0.0711572, 1.21061e-07, -0.784963, 0.615443)
+bones/2/rotation = Quaternion(0.0970124, 1.85461e-08, 0.792126, 0.602598)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.061132)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/7/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.926344, -0.364653, -0.0817885, -0.0471739)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.026591, -0.00180187, 0.0372982, 0.998949)
+bones/9/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.99521, 0.00363778, -0.0760773, -0.0612902)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/13/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
+bones/15/scale = Vector3(1, 1, 1)
+
+[node name="InteractRay" type="RayCast3D" parent="CooperSkin"]
+unique_name_in_owner = true
+transform = Transform3D(1.41397, 0, 0, 0, -0.0141618, 1.44286, 1.6241e-14, -3.27184, -0.00624526, 0.036701, 5.13847, 0.532251)
+collision_mask = 5
+collide_with_areas = true
+debug_shape_thickness = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.54317, 0, 0, 0, 6.3954, 0, 0, 0, 1.42911, -0.185753, 1.70606, -0.170961)
+shape = SubResource("BoxShape3D_uoxg2")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 4.11941, 0.11136)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.58838)
+shape = SubResource("SphereShape3D_4bd7k")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_xvqy7")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.86849
+anchor_right = 0.625
+anchor_bottom = 0.914063
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "\"E to interact\""
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[editable path="CooperSkin"]

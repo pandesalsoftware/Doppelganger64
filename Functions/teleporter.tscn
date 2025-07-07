@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnhwnk8xbrfcs"]
+
+[ext_resource type="Script" uid="uid://cqt5v3kfv7858" path="res://Functions/teleporter.gd" id="1_o26yf"]
+[ext_resource type="Texture2D" uid="uid://dbynwu8d6ypxj" path="res://2DAssets/doppelganger_icon.png" id="2_q7ss3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekejj"]
+
+[node name="Teleporter" type="CharacterBody3D"]
+script = ExtResource("1_o26yf")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(6.25654, 0, 0, 0, 1.94687, 0, 0, 0, 1, 0, 1.0583, 0)
+shape = SubResource("BoxShape3D_ekejj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.550513, 0, 0, 0, 0.557745, 0, 0, 0, 1, 0, 0.468129, -0.0208341)
+texture = ExtResource("2_q7ss3")
+
+[node name="UI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+anchor_left = 0.43457
+anchor_top = 0.298177
+anchor_right = 0.59375
+anchor_bottom = 0.388021
+theme_override_font_sizes/font_size = 50
+text = "Leave?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.25654, 0, 0, 0, 1.94687, 0, 0, 0, 1, 0, 1.0583, 0)
+shape = SubResource("BoxShape3D_ekejj")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
