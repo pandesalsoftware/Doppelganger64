@@ -889,6 +889,168 @@ transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.24
 [node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/IWall15" instance=ExtResource("5_0iq4q")]
 transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -114.686, 1.53776, 88.8641)
 
+[node name="IWall16" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
+transform = Transform3D(1, 0, 0, 0, 0.998491, 0.0549153, 0, -0.0549153, 0.998491, 309.766, -10.1535, 304.838)
+
+[node name="SoftBody3D3" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 67.1446, 1.53776, 88.8641)
+
+[node name="SoftBody3D4" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 55.9752, 1.53776, 88.8641)
+
+[node name="SoftBody3D5" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 44.9777, 1.53776, 88.8641)
+
+[node name="SoftBody3D6" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 33.8083, 1.53776, 88.8641)
+
+[node name="SoftBody3D7" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 22.474, 1.53776, 88.8641)
+
+[node name="SoftBody3D8" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 11.3046, 1.53776, 88.8641)
+
+[node name="SoftBody3D9" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 0.295097, 1.53776, 88.8641)
+
+[node name="SoftBody3D13" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -43.6491, 1.53776, 88.8641)
+
+[node name="SoftBody3D14" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.6423, 1.53776, 88.8641)
+
+[node name="SoftBody3D15" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -65.8184, 1.53776, 88.8641)
+
+[node name="SoftBody3D10" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -10.8744, 1.53776, 88.8641)
+
+[node name="SoftBody3D11" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -21.8718, 1.53776, 88.8641)
+
+[node name="SoftBody3D12" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -33.0413, 1.53776, 88.8641)
+
+[node name="SoftBody3D16" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -77.7976, 1.53776, 88.8641)
+
+[node name="SoftBody3D17" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -90.5315, 1.53776, 88.8641)
+
+[node name="SoftBody3D18" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -101.952, 1.53776, 88.8641)
+
+[node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/IWall16" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -114.686, 1.53776, 88.8641)
+
+[node name="IWall17" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
+transform = Transform3D(1, 0, 0, 0, 0.998491, 0.0549153, 0, -0.0549153, 0.998491, 303.416, -10.1535, -13.7631)
+
+[node name="SoftBody3D3" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 67.1446, 1.53776, 88.8641)
+
+[node name="SoftBody3D4" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 55.9752, 1.53776, 88.8641)
+
+[node name="SoftBody3D5" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 44.9777, 1.53776, 88.8641)
+
+[node name="SoftBody3D6" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 33.8083, 1.53776, 88.8641)
+
+[node name="SoftBody3D7" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 22.474, 1.53776, 88.8641)
+
+[node name="SoftBody3D8" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 11.3046, 1.53776, 88.8641)
+
+[node name="SoftBody3D9" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 0.295097, 1.53776, 88.8641)
+
+[node name="SoftBody3D13" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -43.6491, 1.53776, 88.8641)
+
+[node name="SoftBody3D14" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.6423, 1.53776, 88.8641)
+
+[node name="SoftBody3D15" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -65.8184, 1.53776, 88.8641)
+
+[node name="SoftBody3D10" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -10.8744, 1.53776, 88.8641)
+
+[node name="SoftBody3D11" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -21.8718, 1.53776, 88.8641)
+
+[node name="SoftBody3D12" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -33.0413, 1.53776, 88.8641)
+
+[node name="SoftBody3D16" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -77.7976, 1.53776, 88.8641)
+
+[node name="SoftBody3D17" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -90.5315, 1.53776, 88.8641)
+
+[node name="SoftBody3D18" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -101.952, 1.53776, 88.8641)
+
+[node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/IWall17" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -114.686, 1.53776, 88.8641)
+
+[node name="IWall18" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
+transform = Transform3D(1, 0, 0, 0, 0.998491, 0.0549153, 0, -0.0549153, 0.998491, 296.883, -10.1535, -134.997)
+
+[node name="SoftBody3D3" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 67.1446, 1.53776, 88.8641)
+
+[node name="SoftBody3D4" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 55.9752, 1.53776, 88.8641)
+
+[node name="SoftBody3D5" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 44.9777, 1.53776, 88.8641)
+
+[node name="SoftBody3D6" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 33.8083, 1.53776, 88.8641)
+
+[node name="SoftBody3D7" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 22.474, 1.53776, 88.8641)
+
+[node name="SoftBody3D8" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 11.3046, 1.53776, 88.8641)
+
+[node name="SoftBody3D9" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 0.295097, 1.53776, 88.8641)
+
+[node name="SoftBody3D13" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -43.6491, 1.53776, 88.8641)
+
+[node name="SoftBody3D14" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.6423, 1.53776, 88.8641)
+
+[node name="SoftBody3D15" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -65.8184, 1.53776, 88.8641)
+
+[node name="SoftBody3D10" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -10.8744, 1.53776, 88.8641)
+
+[node name="SoftBody3D11" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -21.8718, 1.53776, 88.8641)
+
+[node name="SoftBody3D12" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -33.0413, 1.53776, 88.8641)
+
+[node name="SoftBody3D16" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -77.7976, 1.53776, 88.8641)
+
+[node name="SoftBody3D17" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -90.5315, 1.53776, 88.8641)
+
+[node name="SoftBody3D18" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -101.952, 1.53776, 88.8641)
+
+[node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/IWall18" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -114.686, 1.53776, 88.8641)
+
 [node name="CurtainWall3" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
 transform = Transform3D(-0.0271016, -0.0548952, 0.998124, 0, 0.998491, 0.0549153, -0.999633, 0.00148829, -0.0270607, -53.4425, -8.25246, 15.558)
 
@@ -1046,6 +1208,108 @@ transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.24
 transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -84.1798, 1.6139, 87.4798)
 
 [node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall4" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -96.6725, 1.6325, 87.1416)
+
+[node name="UnderscoreWall22" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
+transform = Transform3D(-0.0271016, -0.0548952, 0.998124, 0, 0.998491, 0.0549153, -0.999633, 0.00148829, -0.0270607, 94.3501, -8.25246, 135.534)
+
+[node name="SoftBody3D4" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 55.9752, 1.53776, 88.8641)
+
+[node name="SoftBody3D5" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 44.9777, 1.53776, 88.8641)
+
+[node name="SoftBody3D6" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 33.8083, 1.53776, 88.8641)
+
+[node name="SoftBody3D7" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 22.474, 1.53776, 88.8641)
+
+[node name="SoftBody3D8" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 11.3046, 1.53776, 88.8641)
+
+[node name="SoftBody3D9" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 0.295097, 1.53776, 88.8641)
+
+[node name="SoftBody3D13" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -43.6491, 1.53776, 88.8641)
+
+[node name="SoftBody3D14" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.6423, 1.53776, 88.8641)
+
+[node name="SoftBody3D10" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -10.8744, 1.53776, 88.8641)
+
+[node name="SoftBody3D11" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -21.8718, 1.53776, 88.8641)
+
+[node name="SoftBody3D12" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -33.0413, 1.53776, 88.8641)
+
+[node name="SoftBody3D15" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -62.9009, 1.58222, 88.0558)
+
+[node name="SoftBody3D16" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -75.3936, 1.60082, 87.7176)
+
+[node name="SoftBody3D17" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.3202, 1.56944, 88.2881)
+
+[node name="SoftBody3D18" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -84.1798, 1.6139, 87.4798)
+
+[node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall22" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -96.6725, 1.6325, 87.1416)
+
+[node name="UnderscoreWall23" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
+transform = Transform3D(-0.0554381, -0.0548309, 0.996955, -3.52871e-11, 0.998491, 0.0549153, -0.998462, 0.0030444, -0.0553544, 99.8082, -8.25246, 300.615)
+
+[node name="SoftBody3D4" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 55.9752, 1.53776, 88.8641)
+
+[node name="SoftBody3D5" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 44.9777, 1.53776, 88.8641)
+
+[node name="SoftBody3D6" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 33.8083, 1.53776, 88.8641)
+
+[node name="SoftBody3D7" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 22.474, 1.53776, 88.8641)
+
+[node name="SoftBody3D8" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 11.3046, 1.53776, 88.8641)
+
+[node name="SoftBody3D9" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, 0.295097, 1.53776, 88.8641)
+
+[node name="SoftBody3D13" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -43.6491, 1.53776, 88.8641)
+
+[node name="SoftBody3D14" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.6423, 1.53776, 88.8641)
+
+[node name="SoftBody3D10" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -10.8744, 1.53776, 88.8641)
+
+[node name="SoftBody3D11" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -21.8718, 1.53776, 88.8641)
+
+[node name="SoftBody3D12" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -33.0413, 1.53776, 88.8641)
+
+[node name="SoftBody3D15" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -62.9009, 1.58222, 88.0558)
+
+[node name="SoftBody3D16" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -75.3936, 1.60082, 87.7176)
+
+[node name="SoftBody3D17" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -54.3202, 1.56944, 88.2881)
+
+[node name="SoftBody3D18" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
+transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -84.1798, 1.6139, 87.4798)
+
+[node name="SoftBody3D19" parent="Envrionment/Curtains/StartingRoom/UnderscoreWall23" instance=ExtResource("5_0iq4q")]
 transform = Transform3D(-2.98433, -0.0145948, 0.371652, 0.0139851, 6.59406, 0.244142, -0.30589, 0.443865, -3.61475, -96.6725, 1.6325, 87.1416)
 
 [node name="UnderscoreWall5" type="Node3D" parent="Envrionment/Curtains/StartingRoom" groups=["Curtains"]]
@@ -1927,7 +2191,6 @@ transform = Transform3D(0.270014, -0.316751, 0.909264, 0.160609, 0.945927, 0.281
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Hallway01/EndHallwayOneCamera"]
 transform = Transform3D(-29.5055, 0.160609, -7.79132, 2.2074, 0.945925, 9.25173, 9.40577, 0.281828, -26.6123, -9.49446, -1.17045, -55.8168)
-visible = false
 size = Vector3(1.70588, 1, 1.50879)
 material = SubResource("StandardMaterial3D_7cm66")
 
@@ -1938,6 +2201,47 @@ collision_mask = 2
 script = ExtResource("10_3l8ix")
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Hallway01/EndHallwayOneCamera/Area3D"]
+transform = Transform3D(-29.5055, 0.160609, -7.79132, 2.2074, 0.945925, 9.25173, 9.40577, 0.281828, -26.6123, -9.49446, -1.17044, -55.8168)
+shape = SubResource("ConcavePolygonShape3D_4oh8o")
+
+[node name="Hallway2" type="Node3D" parent="Hallway01"]
+transform = Transform3D(0.999151, 0, 0.0411956, 0, 1, 0, -0.0411956, 0, 0.999151, -169.885, 0, 57.5171)
+
+[node name="EndHallwayOneCamera2" type="Camera3D" parent="Hallway01/Hallway2"]
+transform = Transform3D(-0.962239, 0.0864799, 0.258102, 0.160609, 0.945927, 0.281829, -0.219773, 0.31264, -0.924097, -14.4311, 19.1499, -245.291)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hallway01/Hallway2/EndHallwayOneCamera2"]
+transform = Transform3D(-29.97, 0.160609, -6.01779, 2.82476, 0.945925, 9.10167, 7.59838, 0.281828, -27.1194, -28.7458, 31.6097, -154.868)
+size = Vector3(1.70588, 1, 1.50879)
+material = SubResource("StandardMaterial3D_7cm66")
+
+[node name="Area3D" type="Area3D" parent="Hallway01/Hallway2/EndHallwayOneCamera2"]
+transform = Transform3D(0.998047, 0.0181381, -0.0597659, -0.0175292, 0.999789, 0.0106972, 0.0599473, -0.00962862, 0.998155, -22.5845, 33.2106, -98.5968)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("10_3l8ix")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D"]
+transform = Transform3D(-29.5055, 0.160609, -7.79132, 2.2074, 0.945925, 9.25173, 9.40577, 0.281828, -26.6123, -9.49446, -1.17044, -55.8168)
+shape = SubResource("ConcavePolygonShape3D_4oh8o")
+
+[node name="Hallway2Corner" type="Node3D" parent="Hallway01/Hallway2"]
+
+[node name="EndHallwayOneCamera2" type="Camera3D" parent="Hallway01/Hallway2/Hallway2Corner"]
+transform = Transform3D(0.145917, -0.305153, 0.941058, 0.160609, 0.945927, 0.281829, -0.976173, 0.110019, 0.187037, 1.47495, 19.1499, -232.55)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2"]
+transform = Transform3D(-30.3991, 0.160609, -3.63996, 3.62227, 0.945924, 8.84773, 5.16616, 0.281828, -27.6221, -6.16602, -10.504, -26.3863)
+size = Vector3(1.70588, 1, 1.50879)
+material = SubResource("StandardMaterial3D_7cm66")
+
+[node name="Area3D" type="Area3D" parent="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2"]
+transform = Transform3D(0.989501, 0.0428999, -0.138006, -0.0396257, 0.998865, 0.0263875, 0.138982, -0.0206417, 0.990079, -4.42407, -8.23822, 30.1721)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("10_3l8ix")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D"]
 transform = Transform3D(-29.5055, 0.160609, -7.79132, 2.2074, 0.945925, 9.25173, 9.40577, 0.281828, -26.6123, -9.49446, -1.17044, -55.8168)
 shape = SubResource("ConcavePolygonShape3D_4oh8o")
 
@@ -2004,6 +2308,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 333.615, 48.4769, 12.3758)
 
 [node name="RandomChance for total darkness in map" type="Marker3D" parent="IdeaMarker"]
 
+[node name="Certain roomms have certain spawn rates for random events" type="Marker3D" parent="IdeaMarker"]
+
+[node name="Use more area3D signals to trigger events at or around the curtains" type="Marker3D" parent="IdeaMarker/Certain roomms have certain spawn rates for random events"]
+
 [connection signal="body_entered" from="StartingRoomCameras/StartingArea/Area3D" to="StartingRoomCameras/StartingArea/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="StartingRoomCameras/StartingArea/Area3D" to="StartingRoomCameras/StartingArea/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="StartingRoomCameras/Wideshot/Area3D" to="StartingRoomCameras/Wideshot/Area3D" method="_enter_radius"]
@@ -2024,6 +2332,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 333.615, 48.4769, 12.3758)
 [connection signal="body_exited" from="Hallway01/Hallway/Area3D" to="Hallway01/Hallway/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Hallway01/EndHallwayOneCamera/Area3D" to="Hallway01/EndHallwayOneCamera/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Hallway01/EndHallwayOneCamera/Area3D" to="Hallway01/EndHallwayOneCamera/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" method="_exit_radius"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
 [editable path="Characters/Laura"]
