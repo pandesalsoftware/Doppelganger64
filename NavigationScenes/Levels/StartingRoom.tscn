@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=38 format=3 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -84,6 +84,16 @@ size = Vector3(3.45026, 7.62982, 3.2581)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4oh8o"]
 data = PackedVector3Array(-0.85294, -0.5, 0.754394, -0.85294, -0.5, -0.754394, -0.85294, 0.5, -0.754394, 0.85294, -0.5, -0.754394, -0.85294, -0.5, -0.754394, -0.85294, -0.5, 0.754394, -0.85294, 0.5, -0.754394, -0.85294, -0.5, -0.754394, 0.85294, -0.5, -0.754394, -0.85294, 0.5, -0.754394, -0.85294, 0.5, 0.754394, -0.85294, -0.5, 0.754394, -0.85294, -0.5, 0.754394, -0.85294, 0.5, 0.754394, 0.85294, 0.5, 0.754394, 0.85294, 0.5, 0.754394, -0.85294, 0.5, 0.754394, -0.85294, 0.5, -0.754394, -0.85294, -0.5, 0.754394, 0.85294, -0.5, 0.754394, 0.85294, -0.5, -0.754394, 0.85294, 0.5, 0.754394, 0.85294, -0.5, 0.754394, -0.85294, -0.5, 0.754394, 0.85294, -0.5, -0.754394, 0.85294, -0.5, 0.754394, 0.85294, 0.5, 0.754394, 0.85294, -0.5, -0.754394, 0.85294, 0.5, -0.754394, -0.85294, 0.5, -0.754394, -0.85294, 0.5, -0.754394, 0.85294, 0.5, -0.754394, 0.85294, 0.5, 0.754394, 0.85294, 0.5, 0.754394, 0.85294, 0.5, -0.754394, 0.85294, -0.5, -0.754394)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qsinv"]
+data = PackedVector3Array(-1.74361, -0.5, 0.835297, -1.74361, -0.5, -0.835297, -1.74361, 0.5, -0.835297, 1.74361, -0.5, -0.835297, -1.74361, -0.5, -0.835297, -1.74361, -0.5, 0.835297, -1.74361, 0.5, -0.835297, -1.74361, -0.5, -0.835297, 1.74361, -0.5, -0.835297, -1.74361, 0.5, -0.835297, -1.74361, 0.5, 0.835297, -1.74361, -0.5, 0.835297, -1.74361, -0.5, 0.835297, -1.74361, 0.5, 0.835297, 1.74361, 0.5, 0.835297, 1.74361, 0.5, 0.835297, -1.74361, 0.5, 0.835297, -1.74361, 0.5, -0.835297, -1.74361, -0.5, 0.835297, 1.74361, -0.5, 0.835297, 1.74361, -0.5, -0.835297, 1.74361, 0.5, 0.835297, 1.74361, -0.5, 0.835297, -1.74361, -0.5, 0.835297, 1.74361, -0.5, -0.835297, 1.74361, -0.5, 0.835297, 1.74361, 0.5, 0.835297, 1.74361, -0.5, -0.835297, 1.74361, 0.5, -0.835297, -1.74361, 0.5, -0.835297, -1.74361, 0.5, -0.835297, 1.74361, 0.5, -0.835297, 1.74361, 0.5, 0.835297, 1.74361, 0.5, 0.835297, 1.74361, 0.5, -0.835297, 1.74361, -0.5, -0.835297)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tu6a2"]
+transparency = 1
+albedo_color = Color(0.48108, 1, 0.720391, 0.239216)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wtcnq"]
+data = PackedVector3Array(-1.75755, -0.5, 0.754395, -1.75755, -0.5, -0.754395, -1.75755, 0.5, -0.754395, 1.75755, -0.5, -0.754395, -1.75755, -0.5, -0.754395, -1.75755, -0.5, 0.754395, -1.75755, 0.5, -0.754395, -1.75755, -0.5, -0.754395, 1.75755, -0.5, -0.754395, -1.75755, 0.5, -0.754395, -1.75755, 0.5, 0.754395, -1.75755, -0.5, 0.754395, -1.75755, -0.5, 0.754395, -1.75755, 0.5, 0.754395, 1.75755, 0.5, 0.754395, 1.75755, 0.5, 0.754395, -1.75755, 0.5, 0.754395, -1.75755, 0.5, -0.754395, -1.75755, -0.5, 0.754395, 1.75755, -0.5, 0.754395, 1.75755, -0.5, -0.754395, 1.75755, 0.5, 0.754395, 1.75755, -0.5, 0.754395, -1.75755, -0.5, 0.754395, 1.75755, -0.5, -0.754395, 1.75755, -0.5, 0.754395, 1.75755, 0.5, 0.754395, 1.75755, -0.5, -0.754395, 1.75755, 0.5, -0.754395, -1.75755, 0.5, -0.754395, -1.75755, 0.5, -0.754395, 1.75755, 0.5, -0.754395, 1.75755, 0.5, 0.754395, 1.75755, 0.5, 0.754395, 1.75755, 0.5, -0.754395, 1.75755, -0.5, -0.754395)
 
 [node name="StartingRoom" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.13, 0, 0)
@@ -2231,8 +2241,8 @@ shape = SubResource("ConcavePolygonShape3D_4oh8o")
 transform = Transform3D(0.145917, -0.305153, 0.941058, 0.160609, 0.945927, 0.281829, -0.976173, 0.110019, 0.187037, 1.47495, 19.1499, -232.55)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2"]
-transform = Transform3D(-30.3991, 0.160609, -3.63996, 3.62227, 0.945924, 8.84773, 5.16616, 0.281828, -27.6221, -6.16602, -10.504, -26.3863)
-size = Vector3(1.70588, 1, 1.50879)
+transform = Transform3D(-30.399, 0.160605, -3.63996, 3.62225, 0.945914, 8.84773, 5.16617, 0.281828, -27.6221, 20.615, -13.0144, -33.2224)
+size = Vector3(3.48722, 1, 1.67059)
 material = SubResource("StandardMaterial3D_7cm66")
 
 [node name="Area3D" type="Area3D" parent="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2"]
@@ -2242,8 +2252,29 @@ collision_mask = 2
 script = ExtResource("10_3l8ix")
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D"]
-transform = Transform3D(-29.5055, 0.160609, -7.79132, 2.2074, 0.945925, 9.25173, 9.40577, 0.281828, -26.6123, -9.49446, -1.17044, -55.8168)
-shape = SubResource("ConcavePolygonShape3D_4oh8o")
+transform = Transform3D(-29.5054, 0.160606, -7.79131, 2.20739, 0.945915, 9.25172, 9.40576, 0.281828, -26.6123, 16.1547, -2.38804, -66.3472)
+shape = SubResource("ConcavePolygonShape3D_qsinv")
+
+[node name="DeadEndFocusCamera" type="Node3D" parent="Hallway01/Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.303, 0, -34.5625)
+
+[node name="EndHallwayOneCamera2" type="Camera3D" parent="Hallway01/Hallway2/DeadEndFocusCamera"]
+transform = Transform3D(0.611491, -0.549408, 0.569411, 0.205034, 0.805077, 0.556608, -0.764225, -0.223612, 0.604945, 20.9595, 40.6683, -177.403)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2"]
+transform = Transform3D(-24.1231, 0.205034, -17.3986, -6.58013, 0.805073, 16.195, 18.4036, 0.556605, -17.0153, 27.0142, -18.4828, -54.8679)
+size = Vector3(3.51509, 1, 1.50879)
+material = SubResource("StandardMaterial3D_tu6a2")
+
+[node name="Area3D" type="Area3D" parent="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2"]
+transform = Transform3D(0.996839, 0.0231735, -0.0759787, -0.0221882, 0.999658, 0.0137896, 0.0762722, -0.0120603, 0.997012, 7.19974, -9.80447, 46.846)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("10_3l8ix")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2/Area3D"]
+transform = Transform3D(-22.4972, 0.228977, -19.0008, -7.35886, 0.802838, 15.9915, 20.0908, 0.550468, -15.4193, 12.1864, -6.98953, -103.035)
+shape = SubResource("ConcavePolygonShape3D_wtcnq")
 
 [node name="Characters" type="Node3D" parent="."]
 
@@ -2312,6 +2343,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 333.615, 48.4769, 12.3758)
 
 [node name="Use more area3D signals to trigger events at or around the curtains" type="Marker3D" parent="IdeaMarker/Certain roomms have certain spawn rates for random events"]
 
+[node name="DonutSpawn?" type="Marker3D" parent="IdeaMarker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.134, 0, 446.206)
+
+[node name="Use coffee to throw at Doppelganger to stop chase?" type="Marker3D" parent="IdeaMarker/DonutSpawn?"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.056, 0, -310.604)
+
 [connection signal="body_entered" from="StartingRoomCameras/StartingArea/Area3D" to="StartingRoomCameras/StartingArea/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="StartingRoomCameras/StartingArea/Area3D" to="StartingRoomCameras/StartingArea/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="StartingRoomCameras/Wideshot/Area3D" to="StartingRoomCameras/Wideshot/Area3D" method="_enter_radius"]
@@ -2336,6 +2373,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 333.615, 48.4769, 12.3758)
 [connection signal="body_exited" from="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/EndHallwayOneCamera2/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/Hallway2Corner/EndHallwayOneCamera2/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2/Area3D" to="Hallway01/Hallway2/DeadEndFocusCamera/EndHallwayOneCamera2/Area3D" method="_exit_radius"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
 [editable path="Characters/Laura"]
