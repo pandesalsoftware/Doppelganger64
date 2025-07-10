@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var Cooper = $Characters/Cooper_RE
+@onready var Cooper = $Characters/Cooper
 
 
 
