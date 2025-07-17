@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://lt4p4e7ma6c7"]
+
+[ext_resource type="Script" uid="uid://cu28173lmdebp" path="res://Splash/Splash.gd" id="1_rets4"]
+[ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="2_shuxx"]
+[ext_resource type="Texture2D" uid="uid://c38qono7erctk" path="res://Splash/pandesoftlogo.png" id="3_shuxx"]
+
+[sub_resource type="Animation" id="Animation_cejea"]
+resource_name = "Fade_In"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_irgbn"]
+resource_name = "Fade_Out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sbdtd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17i3i"]
+_data = {
+&"Fade_In": SubResource("Animation_cejea"),
+&"Fade_Out": SubResource("Animation_irgbn"),
+&"RESET": SubResource("Animation_sbdtd")
+}
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rets4")
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.0352941, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.604167
+anchor_right = 0.600586
+anchor_bottom = 0.6875
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_shuxx")
+theme_override_font_sizes/font_size = 45
+text = "Pandesoft"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pandesoftlogo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40625
+anchor_top = 0.333333
+anchor_right = 0.640137
+anchor_bottom = 0.593088
+offset_right = -48.5006
+offset_bottom = -37.4916
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25393, 1.23143)
+texture = ExtResource("3_shuxx")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cover" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.118056
+anchor_top = -0.0864198
+anchor_right = 1.13194
+anchor_bottom = 1.11111
+offset_bottom = -6.10352e-05
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AP" type="AnimationPlayer" parent="Cover"]
+libraries = {
+&"": SubResource("AnimationLibrary_17i3i")
+}
+
+[connection signal="animation_finished" from="Cover/AP" to="." method="_on_ap_animation_finished"]
+[connection signal="current_animation_changed" from="Cover/AP" to="." method="_on_ap_current_animation_changed"]

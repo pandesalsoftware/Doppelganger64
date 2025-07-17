@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://b85kuendwltyk"]
+[gd_scene load_steps=18 format=3 uid="uid://b85kuendwltyk"]
 
+[ext_resource type="Script" uid="uid://sbk5c5ixsosj" path="res://NavigationScenes/MainMenu/in_memoriam.gd" id="1_owl2u"]
 [ext_resource type="PackedScene" uid="uid://c7y2ircvi1uyd" path="res://InstanceScenes/Environment/curtain_wall.tscn" id="1_qqiqo"]
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="2_owl2u"]
 [ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="4_o0tky"]
@@ -23,7 +24,7 @@ background_mode = 1
 
 [sub_resource type="Animation" id="Animation_o0tky"]
 resource_name = "Move"
-length = 10.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,10 +44,10 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(5.73, 6.7, 7.46667, 8.79721, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(5.73, 6.7, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.164667, -2.64394, 0.269233), Vector3(0.0933621, -1.9494, 0.168136), Vector3(0.0815225, -1.94899, 0.172861), Vector3(0.0994433, -1.94963, 0.165705), Vector3(0.0815225, -1.94899, 0.172861)]
+"values": [Vector3(-0.164667, -2.64394, 0.269233), Vector3(0.0933621, -1.9494, 0.168136), Vector3(0.0815225, -1.94899, 0.172861)]
 }
 
 [sub_resource type="Animation" id="Animation_qqiqo"]
@@ -76,10 +77,28 @@ tracks/1/keys = {
 "values": [Vector3(0, -2.60075, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_df7q7"]
+resource_name = "Sway"
+length = 7.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-18.4455, 13.0525, 58.2068), Vector3(-18.4455, 12.6991, 58.2068)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_owl2u"]
 _data = {
 &"Move": SubResource("Animation_o0tky"),
-&"RESET": SubResource("Animation_qqiqo")
+&"RESET": SubResource("Animation_qqiqo"),
+&"Sway": SubResource("Animation_df7q7")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_qqiqo"]
@@ -87,10 +106,13 @@ font = ExtResource("4_o0tky")
 font_size = 75
 outline_size = 29
 outline_color = Color(0.144982, 0.0741293, 0.000140349, 1)
+shadow_size = 15
+shadow_color = Color(0.145098, 0.0745098, 0, 0.654902)
+shadow_offset = Vector2(5, 8)
 
 [sub_resource type="Animation" id="Animation_owl2u"]
 resource_name = "Fade"
-length = 10.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -110,10 +132,22 @@ tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 9.01028, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 9.01028, 10, 11.8667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.73333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_8vw03"]
@@ -142,6 +176,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_df7q7"]
 _data = {
@@ -151,6 +197,7 @@ _data = {
 
 [node name="InMemoriam" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.5989, 0, 0)
+script = ExtResource("1_owl2u")
 
 [node name="Envrionment" type="Node3D" parent="."]
 transform = Transform3D(0.999974, 0, 0, 0, 0.999974, 0, 0, 0, 0.999974, 0, 0, 0)
@@ -277,3 +324,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_df7q7")
 }
 autoplay = "Fade"
+
+[node name="ColorRect" type="ColorRect" parent="2D"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="Camera3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
