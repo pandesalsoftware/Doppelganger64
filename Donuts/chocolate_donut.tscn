@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://btwaaalw7cxvh"]
+
+[ext_resource type="PackedScene" uid="uid://b8ajpyls2m2rv" path="res://InstanceScenes/Objects/ChocoDonut.glb" id="1_ksol1"]
+[ext_resource type="Script" uid="uid://dnj6d05bpidr6" path="res://Donuts/donut.gd" id="2_iveqe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ksol1"]
+size = Vector3(2.54858, 3.35486, 2.55078)
+
+[node name="ChocolateDonut" type="Node3D"]
+
+[node name="ChocoDonut" parent="." instance=ExtResource("1_ksol1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93187, 0)
+
+[node name="Area3D" type="Area3D" parent="ChocoDonut"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("2_iveqe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChocoDonut/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0474854, 0.182921, -0.0856816)
+shape = SubResource("BoxShape3D_ksol1")
+debug_color = Color(0.90644, 0.246908, 0.452905, 0.42)
+
+[connection signal="body_entered" from="ChocoDonut/Area3D" to="ChocoDonut/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="ChocoDonut/Area3D" to="ChocoDonut/Area3D" method="_exit_radius"]

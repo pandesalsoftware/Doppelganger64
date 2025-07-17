@@ -1,0 +1,279 @@
+[gd_scene load_steps=16 format=3 uid="uid://b85kuendwltyk"]
+
+[ext_resource type="PackedScene" uid="uid://c7y2ircvi1uyd" path="res://InstanceScenes/Environment/curtain_wall.tscn" id="1_qqiqo"]
+[ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="2_owl2u"]
+[ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="4_o0tky"]
+[ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="5_vx0xw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5ka2"]
+albedo_texture = ExtResource("2_owl2u")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.659753
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7njc"]
+material = SubResource("StandardMaterial3D_s5ka2")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_llqrg"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="Environment" id="Environment_w43eu"]
+background_mode = 1
+
+[sub_resource type="Animation" id="Animation_o0tky"]
+resource_name = "Move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-18.4455, 13.0525, -45.992), Vector3(-18.4455, 13.0525, 58.2068)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.73, 6.7, 7.46667, 8.79721, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.164667, -2.64394, 0.269233), Vector3(0.0933621, -1.9494, 0.168136), Vector3(0.0815225, -1.94899, 0.172861), Vector3(0.0994433, -1.94963, 0.165705), Vector3(0.0815225, -1.94899, 0.172861)]
+}
+
+[sub_resource type="Animation" id="Animation_qqiqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-18.4455, 13.0525, 58.2068)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.60075, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owl2u"]
+_data = {
+&"Move": SubResource("Animation_o0tky"),
+&"RESET": SubResource("Animation_qqiqo")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_qqiqo"]
+font = ExtResource("4_o0tky")
+font_size = 75
+outline_size = 29
+outline_color = Color(0.144982, 0.0741293, 0.000140349, 1)
+
+[sub_resource type="Animation" id="Animation_owl2u"]
+resource_name = "Fade"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.01028, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8vw03"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_df7q7"]
+_data = {
+&"Fade": SubResource("Animation_owl2u"),
+&"RESET": SubResource("Animation_8vw03")
+}
+
+[node name="InMemoriam" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.5989, 0, 0)
+
+[node name="Envrionment" type="Node3D" parent="."]
+transform = Transform3D(0.999974, 0, 0, 0, 0.999974, 0, 0, 0, 0.999974, 0, 0, 0)
+
+[node name="Furniture" type="Node3D" parent="Envrionment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8312, 0, 0)
+
+[node name="Curtains" type="Node3D" parent="Envrionment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.81495, 0)
+
+[node name="CurtainWall" parent="Envrionment/Curtains" instance=ExtResource("1_qqiqo")]
+transform = Transform3D(-0.00893609, -0.0301693, 0.999531, 6.3608e-05, 0.999571, 0.0301711, -0.999986, 0.000333195, -0.00893005, -62.4648, -1.57682, 31.7699)
+
+[node name="CurtainWall2" parent="Envrionment/Curtains" instance=ExtResource("1_qqiqo")]
+transform = Transform3D(-0.00893609, -0.0301693, 0.999531, 6.3608e-05, 0.999571, 0.0301711, -0.999986, 0.000333195, -0.00893005, -122.066, -1.57682, 27.848)
+
+[node name="CurtainWall3" parent="Envrionment/Curtains" instance=ExtResource("1_qqiqo")]
+transform = Transform3D(-1.00003, 7.09637e-05, -0.000242143, 6.36081e-05, 0.999571, 0.0301711, 0.000244259, 0.030171, -0.999571, 6.55595, -1.57682, 19.1134)
+
+[node name="CurtainWall4" parent="Envrionment/Curtains" instance=ExtResource("1_qqiqo")]
+transform = Transform3D(-1.00003, 7.09637e-05, -0.000242143, 6.36081e-05, 0.999571, 0.0301711, 0.000244259, 0.030171, -0.999571, 6.55595, -1.57682, 201.149)
+
+[node name="Floor" type="MeshInstance3D" parent="Envrionment"]
+transform = Transform3D(98.6786, 0, 0, 0, 1.0037, 0, 0, 0, 79.6523, 2.94897, 0, 17.1533)
+mesh = SubResource("PlaneMesh_v7njc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_llqrg")
+
+[node name="Floor2" type="MeshInstance3D" parent="Envrionment"]
+transform = Transform3D(98.6786, 0, 0, 0, 1.0037, 0, 0, 0, 79.6523, 3.05255, 0.0280235, 176.387)
+mesh = SubResource("PlaneMesh_v7njc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/Floor2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_llqrg")
+
+[node name="Floor3" type="MeshInstance3D" parent="Envrionment"]
+transform = Transform3D(98.6786, 0, 0, 0, 1.0037, 0, 0, 0, 79.6523, 2.94897, 0, -142.117)
+mesh = SubResource("PlaneMesh_v7njc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/Floor3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_llqrg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment"]
+environment = SubResource("Environment_w43eu")
+
+[node name="AmbientLights" type="Node3D" parent="Envrionment"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Envrionment/AmbientLights"]
+transform = Transform3D(0.992863, 0.0892333, 0.0794564, -0.0938169, 0.170415, 0.980923, 0.0739885, -0.98135, 0.177566, 20.6332, 45.1173, 90.4513)
+light_color = Color(0.96089, 0.782971, 0.753143, 1)
+light_energy = 7.055
+spot_range = 75.32
+spot_attenuation = 0.33
+spot_angle = 41.09
+spot_angle_attenuation = 0.143587
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Envrionment/AmbientLights"]
+transform = Transform3D(0.992863, 0.0892333, 0.0794564, -0.0938169, 0.170415, 0.980923, 0.0739885, -0.98135, 0.177566, 20.6332, 45.1173, -34.9782)
+visible = false
+light_color = Color(0.96089, 0.782971, 0.753143, 1)
+light_energy = 7.055
+spot_range = 75.32
+spot_attenuation = 0.33
+spot_angle = 41.09
+spot_angle_attenuation = 0.143587
+
+[node name="venusdemilo" parent="." instance=ExtResource("5_vx0xw")]
+transform = Transform3D(-2.99158, 0, 0.224676, 0, 3, 0, -0.224676, 0, -2.99158, -2.26728, 0.665981, 80.8441)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.857275, 0, -0.514859, 0, 1, 0, 0.514859, 0, -0.857275, -18.4455, 13.0525, 58.2068)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_owl2u")
+}
+autoplay = "Move"
+
+[node name="2D" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="2D"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0546875
+anchor_top = 0.817708
+anchor_right = 0.436523
+anchor_bottom = 0.942708
+text = "Doppelganger"
+label_settings = SubResource("LabelSettings_qqiqo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tribute" type="Label" parent="2D"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0292969
+anchor_top = 0.389323
+anchor_right = 0.78125
+anchor_bottom = 0.514323
+text = "A Tribute to David Lynch"
+label_settings = SubResource("LabelSettings_qqiqo")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="2D/Tribute"]
+libraries = {
+&"": SubResource("AnimationLibrary_df7q7")
+}
+autoplay = "Fade"
