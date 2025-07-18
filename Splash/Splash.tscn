@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ywnvc1xhdti2"]
 
 [ext_resource type="Script" uid="uid://c06i12mfn2i4i" path="res://Splash/SplashGodot.gd" id="1_qq8hf"]
-[ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="2_mdjhr"]
+[ext_resource type="FontFile" uid="uid://bxy2pnnlr7bv" path="res://Fonts/helvetica-neue-55/HelveticaNeue-Condensed.otf" id="2_yr0iu"]
 [ext_resource type="Texture2D" uid="uid://bevw5sno1aysr" path="res://Splash/Godot_SplashIcon1.png" id="3_mdjhr"]
 
 [sub_resource type="Animation" id="Animation_cejea"]
@@ -86,23 +86,9 @@ anchor_top = 0.59375
 anchor_right = 0.645507
 anchor_bottom = 0.669271
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_mdjhr")
+theme_override_fonts/font = ExtResource("2_yr0iu")
 theme_override_font_sizes/font_size = 45
 text = "Godot  Engine"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.414063
-anchor_top = 0.24349
-anchor_right = 0.645507
-anchor_bottom = 0.319011
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_mdjhr")
-theme_override_font_sizes/font_size = 45
-text = "Made with..."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

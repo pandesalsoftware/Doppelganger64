@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://lt4p4e7ma6c7"]
 
 [ext_resource type="Script" uid="uid://cu28173lmdebp" path="res://Splash/Splash.gd" id="1_rets4"]
-[ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="2_shuxx"]
+[ext_resource type="FontFile" uid="uid://bxy2pnnlr7bv" path="res://Fonts/helvetica-neue-55/HelveticaNeue-Condensed.otf" id="2_shuxx"]
 [ext_resource type="Texture2D" uid="uid://caxfrj825nm7v" path="res://Splash/Pandesoft_SplashIcon.png" id="3_shuxx"]
 
 [sub_resource type="Animation" id="Animation_cejea"]
@@ -90,20 +90,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_shuxx")
 theme_override_font_sizes/font_size = 45
 text = "Pandesoft"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.445313
-anchor_top = 0.246094
-anchor_right = 0.608398
-anchor_bottom = 0.329427
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_shuxx")
-theme_override_font_sizes/font_size = 45
-text = "By..."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
