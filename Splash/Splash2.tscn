@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cu28173lmdebp" path="res://Splash/Splash.gd" id="1_rets4"]
 [ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="2_shuxx"]
-[ext_resource type="Texture2D" uid="uid://c38qono7erctk" path="res://Splash/pandesoftlogo.png" id="3_shuxx"]
+[ext_resource type="Texture2D" uid="uid://caxfrj825nm7v" path="res://Splash/Pandesoft_SplashIcon.png" id="3_shuxx"]
 
 [sub_resource type="Animation" id="Animation_cejea"]
 resource_name = "Fade_In"
-length = 1.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,7 +14,7 @@ tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 1.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -82,10 +82,10 @@ metadata/_edit_lock_ = true
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4375
-anchor_top = 0.604167
-anchor_right = 0.600586
-anchor_bottom = 0.6875
+anchor_left = 0.445313
+anchor_top = 0.60026
+anchor_right = 0.608398
+anchor_bottom = 0.683593
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_shuxx")
 theme_override_font_sizes/font_size = 45
@@ -93,13 +93,27 @@ text = "Pandesoft"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.445313
+anchor_top = 0.246094
+anchor_right = 0.608398
+anchor_bottom = 0.329427
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_shuxx")
+theme_override_font_sizes/font_size = 45
+text = "By..."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Pandesoftlogo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.40625
-anchor_top = 0.333333
-anchor_right = 0.640137
-anchor_bottom = 0.593088
+anchor_left = 0.367187
+anchor_top = 0.302083
+anchor_right = 0.664551
+anchor_bottom = 0.595692
 offset_right = -48.5006
 offset_bottom = -37.4916
 grow_horizontal = 2
@@ -107,7 +121,6 @@ grow_vertical = 2
 scale = Vector2(1.25393, 1.23143)
 texture = ExtResource("3_shuxx")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Cover" type="ColorRect" parent="."]
 layout_mode = 1
