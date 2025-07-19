@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=92 format=3 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="11_wyi3l"]
 [ext_resource type="PackedScene" uid="uid://btwaaalw7cxvh" path="res://Donuts/chocolate_donut.tscn" id="14_qvkwb"]
 [ext_resource type="PackedScene" uid="uid://wa2hsu1c3ki3" path="res://InstanceScenes/Doppelganger/doppelganger.tscn" id="15_7cm66"]
+[ext_resource type="PackedScene" uid="uid://dw6bdfthvcbc2" path="res://Donuts/glazed_donut.tscn" id="15_dd8pe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvkwb"]
 size = Vector3(3.45026, 7.62982, 3.2581)
@@ -2302,6 +2303,7 @@ transform = Transform3D(0.115748, -0.301616, 0.946378, 0.160609, 0.945927, 0.281
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/StartingRoom/StatueCamera"]
 transform = Transform3D(30.396, 0.17176, 3.20088, -4.12393, 0.945867, -8.65587, -4.79452, 0.275343, 27.7381, 1.26793, -14.2118, -32.9965)
+visible = false
 size = Vector3(1.73022, 1, 2.05697)
 material = SubResource("StandardMaterial3D_3ng64")
 
@@ -2342,6 +2344,7 @@ transform = Transform3D(0.0167002, 0.990663, -0.13531, -0.00641264, 0.135432, 0.
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/Room2/Room2Camera"]
 transform = Transform3D(0.518456, -0.00641264, 29.228, 30.7571, 0.135432, -0.458314, -4.20099, 0.990766, 0.251822, 8.62605, 1.51033, -102.862)
+visible = false
 size = Vector3(4.38584, 1, 4.23939)
 material = SubResource("StandardMaterial3D_7cm66")
 
@@ -2507,6 +2510,7 @@ fov = 78.0465
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/Room6/RoomNorthEnd"]
 transform = Transform3D(-13.0417, 0.179894, -26.0017, -22.3415, 0.531155, 13.0745, 17.1665, 0.827945, -2.73805, 22.1801, 24.9595, -112.596)
+visible = false
 size = Vector3(5.89541, 1, 1.50879)
 material = SubResource("StandardMaterial3D_ds84l")
 
@@ -2652,6 +2656,7 @@ transform = Transform3D(0.0125724, 0.726623, -0.686921, 0.00111641, 0.686965, 0.
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Hallways/Hallway01/Hallway"]
 transform = Transform3D(0.390291, 0.00111671, 29.2308, 22.5595, 0.686965, -0.289494, -21.3269, 0.72669, 0.228754, 10.4128, 4.38341, -86.1498)
+visible = false
 size = Vector3(4.36949, 1, 1.80734)
 material = SubResource("StandardMaterial3D_dd8pe")
 
@@ -2799,6 +2804,7 @@ fov = 114.4
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Hallways/Hallway4/Hallway4Fork"]
 transform = Transform3D(-27.7421, -0.396996, 6.12767, -2.68006, 0.610132, 23.0223, -13.6783, 0.685644, -16.939, -20.2421, -46.3618, -98.7852)
+visible = false
 size = Vector3(5.64491, 1, 2.29277)
 material = SubResource("StandardMaterial3D_en5q8")
 
@@ -2814,6 +2820,7 @@ shape = SubResource("ConcavePolygonShape3D_3ng64")
 
 [node name="Hallway4Left" type="Camera3D" parent="CameraSystem/Hallways/Hallway4"]
 transform = Transform3D(0.471557, 0.821415, -0.320797, 0.585324, -0.019462, 0.810566, 0.659568, -0.569999, -0.489972, -252.302, 30.049, -264.241)
+visible = false
 fov = 114.4
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Hallways/Hallway4/Hallway4Left"]
@@ -2932,6 +2939,7 @@ transform = Transform3D(-0.0156135, -0.995287, 0.0957126, -0.153252, 0.0969753, 
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Hallways/Hallway6/HallwaySix/Camera3D"]
 transform = Transform3D(-30.6565, -0.157775, 0.315409, -0.141676, 0.0966406, 29.0957, -4.90787, 0.982737, -2.8106, 0.115662, -11.1287, -140.076)
+visible = false
 size = Vector3(5.92537, 1, 1.39928)
 material = SubResource("StandardMaterial3D_h17qh")
 
@@ -3216,9 +3224,34 @@ shape = SubResource("ConcavePolygonShape3D_7gi8m")
 [node name="Collectables" type="Node3D" parent="."]
 
 [node name="Donuts" type="Node3D" parent="Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.93928, 0)
+
+[node name="GlazedDonut" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -0.989136, -1.02543, 11.7571)
 
 [node name="ChocolateDonut" parent="Collectables/Donuts" instance=ExtResource("14_qvkwb")]
-transform = Transform3D(6.345, 0, 0, 0, 6.345, 0, 0, 0, 6.345, -2.0437, -1.25519, 0)
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -26.8563, -1.25519, -23.0366)
+
+[node name="ChocolateDonut4" parent="Collectables/Donuts" instance=ExtResource("14_qvkwb")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -70.7544, -1.25519, -30.7335)
+
+[node name="ChocolateDonut5" parent="Collectables/Donuts" instance=ExtResource("14_qvkwb")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -70.7544, -1.25519, 27.6958)
+
+[node name="ChocolateDonut2" parent="Collectables/Donuts" instance=ExtResource("14_qvkwb")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -3.22694, -1.25519, -4.54083)
+
+[node name="ChocolateDonut3" parent="Collectables/Donuts" instance=ExtResource("14_qvkwb")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 18.6107, -1.25519, -3.56864)
+
+[node name="GlazedDonut2" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -9.28131, -1.02543, -16.1997)
+
+[node name="GlazedDonut3" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -46.4279, -1.02543, -29.7706)
+
+[node name="GlazedDonut4" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -71.7657, -1.02543, -0.961334)
 
 [connection signal="body_entered" from="CameraSystem/Rooms/StartingRoom/StartingArea/Area3D" to="CameraSystem/Rooms/StartingRoom/StartingArea/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="CameraSystem/Rooms/StartingRoom/StartingArea/Area3D" to="CameraSystem/Rooms/StartingRoom/StartingArea/Area3D" method="_exit_radius"]
