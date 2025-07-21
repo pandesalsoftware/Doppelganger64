@@ -16,6 +16,8 @@ var _last_movement_direction := Vector3.BACK
 @onready var _Skin: Node3D = %CooperSkin
 @onready var _WalkSound: AudioStreamPlayer3D = %WalkSound
 
+var can_run = true
+
 
 func _ready():
 	pass
@@ -56,6 +58,7 @@ func _input(event):
 		
 	if Input.is_action_pressed("Run"):
 		move_speed = 16
+		$SprintBoostTimer.start()
 		AP.play("Run001")
 
 	elif Input.is_action_just_released("Run"):
@@ -119,3 +122,13 @@ func _KO():
 
 #Interactable Collisions
 #---------------------------------------------------------
+
+
+func _on_sprint_boost_timer_timeout():
+	move_speed = 8
+	var can_run = false 
+	$SprintCooldownTimer
+
+
+func _on_sprint_cooldown_timer_timeout():
+	pass

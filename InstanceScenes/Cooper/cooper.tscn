@@ -93,4 +93,13 @@ text = "\"E to interact\""
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="SprintBoostTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="SprintCooldownTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="SprintBoostTimer" to="." method="_on_sprint_boost_timer_timeout"]
+[connection signal="timeout" from="SprintCooldownTimer" to="." method="_on_sprint_cooldown_timer_timeout"]
+
 [editable path="CooperSkin"]
