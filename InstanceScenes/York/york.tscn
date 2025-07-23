@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bqvh4iofne8tb"]
+[gd_scene load_steps=24 format=4 uid="uid://bqvh4iofne8tb"]
 
 [ext_resource type="Texture2D" uid="uid://xsin8gi6wbnm" path="res://InstanceScenes/York/York_Face.png" id="1_f1tah"]
 [ext_resource type="Texture2D" uid="uid://w22ex6afdro0" path="res://InstanceScenes/York/York_Torso.png" id="2_rp4sw"]
@@ -2028,6 +2028,9 @@ _data = {
 &"Walk002": SubResource("Animation_cmab7")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1tah"]
+size = Vector3(2.51282, 6.14929, 1.69293)
+
 [node name="York" type="CharacterBody3D"]
 
 [node name="York" type="Node3D" parent="."]
@@ -2157,7 +2160,7 @@ bones/16/rotation = Quaternion(0.434181, 0.672704, 0.0046971, 0.599111)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="York/Armature/Skeleton3D"]
-transform = Transform3D(-0.139809, -0.0556866, -2.23517e-08, 0.0246558, -0.315767, -4.74975e-08, 5.58794e-09, 5.12227e-08, -0.32064, 0.133386, 2.09178, 0.849741)
+transform = Transform3D(-0.13981, -0.0556865, -1.86265e-08, 0.0246558, -0.315767, -2.98023e-08, 6.51926e-09, 3.44589e-08, -0.32064, 0.133386, 2.09177, 0.849744)
 bone_name = "Cube"
 bone_idx = 4
 
@@ -2174,3 +2177,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_youk4")
 }
 autoplay = "Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.252014, 2.57465, 0.104828)
+shape = SubResource("BoxShape3D_f1tah")

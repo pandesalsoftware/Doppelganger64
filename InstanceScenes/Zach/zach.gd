@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var ZS_AP = $ZachSkin/AnimationPlayer
 @onready var ZS : Node3D =  %ZachSkin
 
-@export var move_speed = 8
+@export var move_speed = 6.5
 
 func _physics_process(delta):
 	var current_location = global_transform.origin

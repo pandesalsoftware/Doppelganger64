@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=97 format=3 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3lccwrrs4l7s" path="res://InstanceScenes/Furniture/curtain.tscn" id="5_0iq4q"]
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="6_nys04"]
 [ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="8_mlwue"]
+[ext_resource type="PackedScene" uid="uid://bvm51tn3eid3u" path="res://InstanceScenes/Furniture/tall_lamp.glb" id="9_sd3nw"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="9_wejdm"]
 [ext_resource type="Script" uid="uid://dupqg2jlopf2j" path="res://Functions/camera_trigger.gd" id="10_3l8ix"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="11_qvkwb"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://btwaaalw7cxvh" path="res://Donuts/chocolate_donut.tscn" id="14_qvkwb"]
 [ext_resource type="PackedScene" uid="uid://wa2hsu1c3ki3" path="res://InstanceScenes/Doppelganger/doppelganger.tscn" id="15_7cm66"]
 [ext_resource type="PackedScene" uid="uid://dw6bdfthvcbc2" path="res://Donuts/glazed_donut.tscn" id="15_dd8pe"]
+[ext_resource type="PackedScene" uid="uid://bqvh4iofne8tb" path="res://InstanceScenes/York/york.tscn" id="16_tt8ja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvkwb"]
 size = Vector3(3.45026, 7.62982, 3.2581)
@@ -127,15 +129,18 @@ data = PackedVector3Array(-1.8962, -0.5, 1.41181, -1.8962, -0.5, -1.41181, -1.89
 transparency = 1
 albedo_color = Color(0.48108, 1, 0.720391, 0.239216)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wtcnq"]
-data = PackedVector3Array(-1.75755, -0.5, 0.754395, -1.75755, -0.5, -0.754395, -1.75755, 0.5, -0.754395, 1.75755, -0.5, -0.754395, -1.75755, -0.5, -0.754395, -1.75755, -0.5, 0.754395, -1.75755, 0.5, -0.754395, -1.75755, -0.5, -0.754395, 1.75755, -0.5, -0.754395, -1.75755, 0.5, -0.754395, -1.75755, 0.5, 0.754395, -1.75755, -0.5, 0.754395, -1.75755, -0.5, 0.754395, -1.75755, 0.5, 0.754395, 1.75755, 0.5, 0.754395, 1.75755, 0.5, 0.754395, -1.75755, 0.5, 0.754395, -1.75755, 0.5, -0.754395, -1.75755, -0.5, 0.754395, 1.75755, -0.5, 0.754395, 1.75755, -0.5, -0.754395, 1.75755, 0.5, 0.754395, 1.75755, -0.5, 0.754395, -1.75755, -0.5, 0.754395, 1.75755, -0.5, -0.754395, 1.75755, -0.5, 0.754395, 1.75755, 0.5, 0.754395, 1.75755, -0.5, -0.754395, 1.75755, 0.5, -0.754395, -1.75755, 0.5, -0.754395, -1.75755, 0.5, -0.754395, 1.75755, 0.5, -0.754395, 1.75755, 0.5, 0.754395, 1.75755, 0.5, 0.754395, 1.75755, 0.5, -0.754395, 1.75755, -0.5, -0.754395)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_en5q8"]
+data = PackedVector3Array(-1.75754, -0.5, 0.754395, -1.75754, -0.5, -0.754395, -1.75754, 0.5, -0.754395, 1.75754, -0.5, -0.754395, -1.75754, -0.5, -0.754395, -1.75754, -0.5, 0.754395, -1.75754, 0.5, -0.754395, -1.75754, -0.5, -0.754395, 1.75754, -0.5, -0.754395, -1.75754, 0.5, -0.754395, -1.75754, 0.5, 0.754395, -1.75754, -0.5, 0.754395, -1.75754, -0.5, 0.754395, -1.75754, 0.5, 0.754395, 1.75754, 0.5, 0.754395, 1.75754, 0.5, 0.754395, -1.75754, 0.5, 0.754395, -1.75754, 0.5, -0.754395, -1.75754, -0.5, 0.754395, 1.75754, -0.5, 0.754395, 1.75754, -0.5, -0.754395, 1.75754, 0.5, 0.754395, 1.75754, -0.5, 0.754395, -1.75754, -0.5, 0.754395, 1.75754, -0.5, -0.754395, 1.75754, -0.5, 0.754395, 1.75754, 0.5, 0.754395, 1.75754, -0.5, -0.754395, 1.75754, 0.5, -0.754395, -1.75754, 0.5, -0.754395, -1.75754, 0.5, -0.754395, 1.75754, 0.5, -0.754395, 1.75754, 0.5, 0.754395, 1.75754, 0.5, 0.754395, 1.75754, 0.5, -0.754395, 1.75754, -0.5, -0.754395)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h17qh"]
 transparency = 1
 albedo_color = Color(1, 0.489976, 0.830183, 0.67451)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wtcnq"]
+data = PackedVector3Array(-1.11817, -0.5, 1.63225, -1.11817, -0.5, -1.63225, -1.11817, 0.5, -1.63225, 1.11817, -0.5, -1.63225, -1.11817, -0.5, -1.63225, -1.11817, -0.5, 1.63225, -1.11817, 0.5, -1.63225, -1.11817, -0.5, -1.63225, 1.11817, -0.5, -1.63225, -1.11817, 0.5, -1.63225, -1.11817, 0.5, 1.63225, -1.11817, -0.5, 1.63225, -1.11817, -0.5, 1.63225, -1.11817, 0.5, 1.63225, 1.11817, 0.5, 1.63225, 1.11817, 0.5, 1.63225, -1.11817, 0.5, 1.63225, -1.11817, 0.5, -1.63225, -1.11817, -0.5, 1.63225, 1.11817, -0.5, 1.63225, 1.11817, -0.5, -1.63225, 1.11817, 0.5, 1.63225, 1.11817, -0.5, 1.63225, -1.11817, -0.5, 1.63225, 1.11817, -0.5, -1.63225, 1.11817, -0.5, 1.63225, 1.11817, 0.5, 1.63225, 1.11817, -0.5, -1.63225, 1.11817, 0.5, -1.63225, -1.11817, 0.5, -1.63225, -1.11817, 0.5, -1.63225, 1.11817, 0.5, -1.63225, 1.11817, 0.5, 1.63225, 1.11817, 0.5, 1.63225, 1.11817, 0.5, -1.63225, 1.11817, -0.5, -1.63225)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uylg5"]
-data = PackedVector3Array(-1.80165, -0.5, 1.63225, -1.80165, -0.5, -1.63225, -1.80165, 0.5, -1.63225, 1.80165, -0.5, -1.63225, -1.80165, -0.5, -1.63225, -1.80165, -0.5, 1.63225, -1.80165, 0.5, -1.63225, -1.80165, -0.5, -1.63225, 1.80165, -0.5, -1.63225, -1.80165, 0.5, -1.63225, -1.80165, 0.5, 1.63225, -1.80165, -0.5, 1.63225, -1.80165, -0.5, 1.63225, -1.80165, 0.5, 1.63225, 1.80165, 0.5, 1.63225, 1.80165, 0.5, 1.63225, -1.80165, 0.5, 1.63225, -1.80165, 0.5, -1.63225, -1.80165, -0.5, 1.63225, 1.80165, -0.5, 1.63225, 1.80165, -0.5, -1.63225, 1.80165, 0.5, 1.63225, 1.80165, -0.5, 1.63225, -1.80165, -0.5, 1.63225, 1.80165, -0.5, -1.63225, 1.80165, -0.5, 1.63225, 1.80165, 0.5, 1.63225, 1.80165, -0.5, -1.63225, 1.80165, 0.5, -1.63225, -1.80165, 0.5, -1.63225, -1.80165, 0.5, -1.63225, 1.80165, 0.5, -1.63225, 1.80165, 0.5, 1.63225, 1.80165, 0.5, 1.63225, 1.80165, 0.5, -1.63225, 1.80165, -0.5, -1.63225)
+data = PackedVector3Array(-0.655029, -0.5, 1.52697, -0.655029, -0.5, -1.52697, -0.655029, 0.5, -1.52697, 0.655029, -0.5, -1.52697, -0.655029, -0.5, -1.52697, -0.655029, -0.5, 1.52697, -0.655029, 0.5, -1.52697, -0.655029, -0.5, -1.52697, 0.655029, -0.5, -1.52697, -0.655029, 0.5, -1.52697, -0.655029, 0.5, 1.52697, -0.655029, -0.5, 1.52697, -0.655029, -0.5, 1.52697, -0.655029, 0.5, 1.52697, 0.655029, 0.5, 1.52697, 0.655029, 0.5, 1.52697, -0.655029, 0.5, 1.52697, -0.655029, 0.5, -1.52697, -0.655029, -0.5, 1.52697, 0.655029, -0.5, 1.52697, 0.655029, -0.5, -1.52697, 0.655029, 0.5, 1.52697, 0.655029, -0.5, 1.52697, -0.655029, -0.5, 1.52697, 0.655029, -0.5, -1.52697, 0.655029, -0.5, 1.52697, 0.655029, 0.5, 1.52697, 0.655029, -0.5, -1.52697, 0.655029, 0.5, -1.52697, -0.655029, 0.5, -1.52697, -0.655029, 0.5, -1.52697, 0.655029, 0.5, -1.52697, 0.655029, 0.5, 1.52697, 0.655029, 0.5, 1.52697, 0.655029, 0.5, -1.52697, 0.655029, -0.5, -1.52697)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ds84l"]
 transparency = 1
@@ -251,6 +256,13 @@ albedo_color = Color(1, 0.359566, 0.663999, 0.662745)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tsqm2"]
 data = PackedVector3Array(-2.51947, -0.5, 0.947055, -2.51947, -0.5, -0.947055, -2.51947, 0.5, -0.947055, 2.51947, -0.5, -0.947055, -2.51947, -0.5, -0.947055, -2.51947, -0.5, 0.947055, -2.51947, 0.5, -0.947055, -2.51947, -0.5, -0.947055, 2.51947, -0.5, -0.947055, -2.51947, 0.5, -0.947055, -2.51947, 0.5, 0.947055, -2.51947, -0.5, 0.947055, -2.51947, -0.5, 0.947055, -2.51947, 0.5, 0.947055, 2.51947, 0.5, 0.947055, 2.51947, 0.5, 0.947055, -2.51947, 0.5, 0.947055, -2.51947, 0.5, -0.947055, -2.51947, -0.5, 0.947055, 2.51947, -0.5, 0.947055, 2.51947, -0.5, -0.947055, 2.51947, 0.5, 0.947055, 2.51947, -0.5, 0.947055, -2.51947, -0.5, 0.947055, 2.51947, -0.5, -0.947055, 2.51947, -0.5, 0.947055, 2.51947, 0.5, 0.947055, 2.51947, -0.5, -0.947055, 2.51947, 0.5, -0.947055, -2.51947, 0.5, -0.947055, -2.51947, 0.5, -0.947055, 2.51947, 0.5, -0.947055, 2.51947, 0.5, 0.947055, 2.51947, 0.5, 0.947055, 2.51947, 0.5, -0.947055, 2.51947, -0.5, -0.947055)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt8ja"]
+bg_color = Color(0, 0, 0, 0.337255)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3tg2"]
 albedo_color = Color(0, 0.721592, 0.331717, 1)
 
@@ -316,13 +328,13 @@ transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8312, 0, 0)
 
 [node name="medici_venus" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("9_wejdm")]
-transform = Transform3D(2.31429, 0, 2.12274, 0, 3.58317, 0, -3.71473, 0, 1.32247, -49.6123, -1.74399, 8.8854)
+transform = Transform3D(2.27375, 0, 3.64966, 0, 4.3, 0, -3.64966, 0, 2.27375, -49.6123, -1.74399, 8.8854)
 
 [node name="CoffeeMug" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("8_mlwue")]
 transform = Transform3D(-0.697524, -0.00656203, -0.370834, -0.00743168, 0.789965, 3.12509e-09, 0.370817, 0.00348851, -0.697555, 3.1616, 11.1186, 34.8097)
 
 [node name="venusdemilo" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
-transform = Transform3D(-0.298637, 0, 2.9851, 0, 3, 0, -2.9851, 0, -0.298637, -51.494, 0.824514, 225.127)
+transform = Transform3D(-0.428046, 0, 4.27864, 0, 4.3, 0, -4.27864, 0, -0.428046, -51.494, 0.824514, 225.127)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/venusdemilo"]
 
@@ -330,8 +342,18 @@ transform = Transform3D(-0.298637, 0, 2.9851, 0, 3, 0, -2.9851, 0, -0.298637, -5
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.360397, 3.70096, -0.431187)
 shape = SubResource("BoxShape3D_qvkwb")
 
+[node name="York\'sRoom" type="Node3D" parent="Envrionment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.011, 0, 448.387)
+
+[node name="tall_lamp" parent="Envrionment/York\'sRoom" instance=ExtResource("9_sd3nw")]
+transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 65.9196, 0, -44.6257)
+
+[node name="tall_lamp2" parent="Envrionment/York\'sRoom" instance=ExtResource("9_sd3nw")]
+transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 65.9196, 0, 43.9734)
+
 [node name="Curtains" type="Node3D" parent="Envrionment" groups=["Curtains"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53776, 0)
+metadata/_edit_lock_ = true
 
 [node name="StartingRoom" type="Node3D" parent="Envrionment/Curtains"]
 
@@ -2160,6 +2182,7 @@ transform = Transform3D(-0.0271016, -0.0548952, 0.998124, 0, 0.998491, 0.0549153
 transform = Transform3D(372.978, 0, 0, 0, 1, 0, 0, 0, 388.737, -35.8737, 0, 131.139)
 mesh = SubResource("PlaneMesh_knq37")
 skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor"]
 
@@ -2168,13 +2191,17 @@ shape = SubResource("ConcavePolygonShape3D_j3cva")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Envrionment/Floor"]
 navigation_mesh = SubResource("NavigationMesh_ixjqq")
+metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment"]
 environment = SubResource("Environment_3l8ix")
 
+[node name="Objects" type="Node3D" parent="Envrionment"]
+transform = Transform3D(-1, 0, -0.00019194, 0, 1, 0, 0.00019194, 0, -1, -32.292, 0, 247.793)
+
 [node name="AmbientLights" type="Node3D" parent="Envrionment"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Envrionment/AmbientLights" groups=["NPCs"]]
+[node name="OmniLight3D" type="OmniLight3D" parent="Envrionment/AmbientLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20917, 0, 0)
 light_energy = 16.0
 omni_range = 38.338
@@ -2186,15 +2213,26 @@ spot_range = 90.249
 spot_angle = 66.52
 spot_angle_attenuation = 0.143587
 
+[node name="SpotLight3D3" type="SpotLight3D" parent="Envrionment/AmbientLights"]
+transform = Transform3D(0.807403, 0.372009, 0.45794, -0.420833, -0.180885, 0.888921, 0.413521, -0.910434, 0.0105063, 323.262, 25.5852, 403.581)
+light_energy = 16.0
+spot_range = 90.249
+spot_angle = 66.52
+spot_angle_attenuation = 0.143587
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Envrionment/AmbientLights"]
+transform = Transform3D(0.807403, 0.372009, 0.45794, -0.420833, -0.180885, 0.888921, 0.413521, -0.910434, 0.0105063, 323.353, 26.6949, 492.966)
+light_energy = 16.0
+spot_range = 90.249
+spot_angle = 66.52
+spot_angle_attenuation = 0.143587
+
 [node name="SpotLight3D2" type="SpotLight3D" parent="Envrionment/AmbientLights"]
 transform = Transform3D(0.852001, 0.390998, 0.348159, -0.52354, 0.636305, 0.566588, 0, -0.665009, 0.746836, -56.2239, 25.5852, 225.326)
 light_energy = 16.0
 spot_range = 90.249
 spot_angle = 66.52
 spot_angle_attenuation = 0.143587
-
-[node name="Objects" type="Node3D" parent="Envrionment"]
-transform = Transform3D(-1, 0, -0.00019194, 0, 1, 0, 0.00019194, 0, -1, -32.292, 0, 247.793)
 
 [node name="CameraSystem" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
@@ -2469,7 +2507,6 @@ fov = 78.0465
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/Room5/EndHallwayOneCamera2"]
 transform = Transform3D(-24.1231, 0.205034, -17.3986, -6.58013, 0.805073, 16.195, 18.4036, 0.556605, -17.0153, 27.0142, -18.4828, -54.8679)
-visible = false
 size = Vector3(3.51509, 1, 1.50879)
 material = SubResource("StandardMaterial3D_tu6a2")
 
@@ -2480,26 +2517,43 @@ collision_mask = 2
 script = ExtResource("10_3l8ix")
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CameraSystem/Rooms/Room5/EndHallwayOneCamera2/Area3D"]
-transform = Transform3D(-22.4972, 0.228977, -19.0008, -7.35886, 0.802838, 15.9915, 20.0908, 0.550468, -15.4193, 12.1864, -6.98953, -103.035)
-shape = SubResource("ConcavePolygonShape3D_wtcnq")
+transform = Transform3D(-22.4972, 0.228977, -19.0008, -7.35886, 0.802837, 15.9915, 20.0908, 0.550468, -15.4193, 12.1864, -6.9895, -103.036)
+shape = SubResource("ConcavePolygonShape3D_en5q8")
 
-[node name="DeadEndFocusCamera" type="Camera3D" parent="CameraSystem/Rooms/Room5"]
+[node name="DeadEndCornerCamera" type="Camera3D" parent="CameraSystem/Rooms/Room5"]
 transform = Transform3D(-0.959934, 0.231082, -0.158516, 0.245881, 0.965918, -0.080897, 0.13442, -0.116632, -0.984037, -65.1633, 11.2438, -284.764)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/Room5/DeadEndFocusCamera"]
-transform = Transform3D(4.9137, 0.245882, 27.9551, -3.7985, 0.965921, -6.66825, -30.4195, -0.0808968, 5.34832, -5.93176, -14.7704, -55.4003)
-visible = false
-size = Vector3(3.6033, 1, 3.2645)
+[node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/Room5/DeadEndCornerCamera"]
+transform = Transform3D(4.9137, 0.245882, 27.9548, -3.7985, 0.965921, -6.66817, -30.4195, -0.0808968, 5.34825, -9.29016, -12.1742, -34.6092)
+size = Vector3(2.23634, 1, 3.2645)
 material = SubResource("StandardMaterial3D_h17qh")
 
-[node name="Area3D" type="Area3D" parent="CameraSystem/Rooms/Room5/DeadEndFocusCamera"]
+[node name="Area3D" type="Area3D" parent="CameraSystem/Rooms/Room5/DeadEndCornerCamera"]
 transform = Transform3D(0.473567, 0.245881, 0.84574, -0.19253, 0.965919, -0.173014, -0.859457, -0.0808965, 0.504766, -33.4037, 18.8505, -65.6193)
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("10_3l8ix")
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CameraSystem/Rooms/Room5/DeadEndFocusCamera/Area3D"]
-transform = Transform3D(29.2026, 2.76872e-07, 9.92581, -1.13964e-05, 1, -2.34948e-05, -10.5418, 2.9108e-07, 27.4962, 10.7, -26.5469, 34.2094)
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CameraSystem/Rooms/Room5/DeadEndCornerCamera/Area3D"]
+transform = Transform3D(29.2026, 3.55685e-07, 9.9257, -2.03333e-05, 1, -1.15168e-05, -10.5418, 3.48751e-07, 27.4958, -9.25934, -26.5469, 41.4144)
+shape = SubResource("ConcavePolygonShape3D_wtcnq")
+
+[node name="DeadEndCornerCamera2" type="Camera3D" parent="CameraSystem/Rooms/Room5"]
+transform = Transform3D(-0.959934, 0.231082, -0.158516, 0.245881, 0.965918, -0.080897, 0.13442, -0.116632, -0.984037, -65.1633, 11.2438, -284.764)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CameraSystem/Rooms/Room5/DeadEndCornerCamera2"]
+transform = Transform3D(4.9137, 0.245882, 27.9538, -3.7985, 0.965921, -6.66792, -30.4195, -0.0808968, 5.34802, -3.81595, -18.1526, -89.353)
+size = Vector3(1.31006, 1, 3.05394)
+material = SubResource("StandardMaterial3D_h17qh")
+
+[node name="Area3D" type="Area3D" parent="CameraSystem/Rooms/Room5/DeadEndCornerCamera2"]
+transform = Transform3D(0.473567, 0.245881, 0.84574, -0.19253, 0.965919, -0.173014, -0.859457, -0.0808965, 0.504766, -33.4037, 18.8505, -65.6193)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("10_3l8ix")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CameraSystem/Rooms/Room5/DeadEndCornerCamera2/Area3D"]
+transform = Transform3D(29.2026, 3.55685e-07, 9.92539, -2.03333e-05, 1, 7.46745e-06, -10.5418, 3.48751e-07, 27.4949, 41.5341, -26.5469, 19.4457)
 shape = SubResource("ConcavePolygonShape3D_uylg5")
 
 [node name="Room6" type="Node3D" parent="CameraSystem/Rooms"]
@@ -3003,7 +3057,7 @@ shape = SubResource("ConcavePolygonShape3D_tsqm2")
 [node name="Characters" type="Node3D" parent="."]
 
 [node name="Laura" parent="Characters" instance=ExtResource("11_wyi3l")]
-transform = Transform3D(0.822997, 0, 3.40186, 0, 3.5, 0, -3.40186, 0, 0.822997, -29.4156, 0, 6.24)
+transform = Transform3D(1.01111, 0, 4.17943, 0, 4.3, 0, -4.17943, 0, 1.01111, -29.4156, 0, 6.24)
 
 [node name="LauraSkin" parent="Characters/Laura" index="0"]
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, 0.894755, 0.261081, -2.62598)
@@ -3014,7 +3068,7 @@ bones/1/rotation = Quaternion(-0.0711572, 1.19713e-07, -0.784963, 0.615443)
 bones/2/rotation = Quaternion(0.0970125, 1.17757e-08, 0.792126, 0.602598)
 
 [node name="Hair" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.579379, 0.00219356, -0.203721, -0.00661223, 0.702306, -0.0130255, 0.203623, 0.0165645, 0.579236, -0.0237258, 2.3603, -0.281814)
+transform = Transform3D(0.580049, -0.0055763, -0.201756, -0.00524072, 0.701647, -0.0298887, 0.201747, 0.0342591, 0.579299, -0.0329495, 2.35777, -0.260344)
 
 [node name="Hair" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D/Hair" index="0"]
 transform = Transform3D(1, -2.32831e-10, -2.98023e-08, -3.49246e-10, 1, -6.98492e-10, 2.98023e-08, 1.97906e-09, 1, 0.0423584, 0.0016098, 0.0653)
@@ -3037,17 +3091,64 @@ secondary_damp_threshold = 1.0
 autoplay = "SitDown"
 
 [node name="Cooper" parent="Characters" instance=ExtResource("1_5gbjk")]
-transform = Transform3D(-3.49719, 0, -0.140339, 0, 3.5, 0, 0.140339, 0, -3.49719, 0.652893, 4.18237, 30)
+transform = Transform3D(-4.29654, 0, -0.172417, 0, 4.3, 0, 0.172417, 0, -4.29654, 0.652893, 4.18237, 30)
 collision_mask = 29
 
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
 
 [node name="Doppelganger" parent="Characters" instance=ExtResource("15_7cm66")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 71.4769, 0, 410.661)
+transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, -51.907, 0, 410.035)
 
 [node name="Zach" parent="Characters" instance=ExtResource("14_dd8pe")]
 transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 0, 0.655978, 0)
+
+[node name="York" parent="Characters" instance=ExtResource("16_tt8ja")]
+transform = Transform3D(0.656652, 0, -4.24957, 0, 4.3, 0, 4.24957, 0, 0.656652, 317.249, 0.0598068, 410.999)
+
+[node name="TalkingCamera" type="Camera3D" parent="Characters/York"]
+transform = Transform3D(0.231234, -0.00524182, 0.0242233, 0.00114291, 0.229311, 0.0387117, -0.0247576, -0.0383722, 0.228031, 0.314087, 4.93669, 2.49332)
+fov = 78.0465
+
+[node name="Control" type="Control" parent="Characters/York/TalkingCamera"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="Panel" parent="Characters/York/TalkingCamera/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.666667
+anchor_right = 0.942383
+anchor_bottom = 0.93099
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tt8ja")
+metadata/_edit_use_anchors_ = true
+
+[node name="Speech" type="Label" parent="Characters/York/TalkingCamera/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0799112
+anchor_top = 0.275862
+anchor_right = 0.932297
+anchor_bottom = 0.788177
+text = "I'm talkin here!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Speaker" type="Label" parent="Characters/York/TalkingCamera/Control"]
+layout_mode = 0
+anchor_left = 0.101563
+anchor_top = 0.677083
+anchor_right = 0.147461
+anchor_bottom = 0.707031
+text = "Name"
+metadata/_edit_use_anchors_ = true
 
 [node name="IdeaMarker" type="Node3D" parent="."]
 
@@ -3285,8 +3386,10 @@ transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -71.7657, -1.02543, -0.
 [connection signal="body_exited" from="CameraSystem/Rooms/Room8/Room8Corner3/Area3D" to="CameraSystem/Rooms/Room8/Room8Corner3/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="CameraSystem/Rooms/Room5/EndHallwayOneCamera2/Area3D" to="CameraSystem/Rooms/Room5/EndHallwayOneCamera2/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="CameraSystem/Rooms/Room5/EndHallwayOneCamera2/Area3D" to="CameraSystem/Rooms/Room5/EndHallwayOneCamera2/Area3D" method="_exit_radius"]
-[connection signal="body_entered" from="CameraSystem/Rooms/Room5/DeadEndFocusCamera/Area3D" to="CameraSystem/Rooms/Room5/DeadEndFocusCamera/Area3D" method="_enter_radius"]
-[connection signal="body_exited" from="CameraSystem/Rooms/Room5/DeadEndFocusCamera/Area3D" to="CameraSystem/Rooms/Room5/DeadEndFocusCamera/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="CameraSystem/Rooms/Room5/DeadEndCornerCamera/Area3D" to="CameraSystem/Rooms/Room5/DeadEndCornerCamera/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="CameraSystem/Rooms/Room5/DeadEndCornerCamera/Area3D" to="CameraSystem/Rooms/Room5/DeadEndCornerCamera/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="CameraSystem/Rooms/Room5/DeadEndCornerCamera2/Area3D" to="CameraSystem/Rooms/Room5/DeadEndCornerCamera2/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="CameraSystem/Rooms/Room5/DeadEndCornerCamera2/Area3D" to="CameraSystem/Rooms/Room5/DeadEndCornerCamera2/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="CameraSystem/Rooms/Room6/RoomNorthEnd/Area3D" to="CameraSystem/Rooms/Room6/RoomNorthEnd/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="CameraSystem/Rooms/Room6/RoomNorthEnd/Area3D" to="CameraSystem/Rooms/Room6/RoomNorthEnd/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="CameraSystem/Rooms/Room6/RoomSouthEnd/Area3D" to="CameraSystem/Rooms/Room6/RoomSouthEnd/Area3D" method="_enter_radius"]
