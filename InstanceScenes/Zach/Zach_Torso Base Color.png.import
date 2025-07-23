@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xsin8gi6wbnm"
-path.s3tc="res://.godot/imported/York_Face.png-4cf8970f3240619d0a2650c1ec8d6395.s3tc.ctex"
+uid="uid://qtnbc4psq32l"
+path.s3tc="res://.godot/imported/Zach_Torso Base Color.png-ecdb99697735fe44f192a58cc0ddda1c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "82cc56c4900d35a29cf70542ce726b7d"
+"md5": "2cdca0f6839d2242223fa0f19df6fed1"
 }
 
 [deps]
 
-source_file="res://InstanceScenes/York/York_Face.png"
-dest_files=["res://.godot/imported/York_Face.png-4cf8970f3240619d0a2650c1ec8d6395.s3tc.ctex"]
+source_file="res://InstanceScenes/Zach/Zach_Torso Base Color.png"
+dest_files=["res://.godot/imported/Zach_Torso Base Color.png-ecdb99697735fe44f192a58cc0ddda1c.s3tc.ctex"]
 
 [params]
 
