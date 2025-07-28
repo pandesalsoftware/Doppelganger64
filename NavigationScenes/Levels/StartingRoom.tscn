@@ -46,6 +46,13 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd3nw"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.392157)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tt8ja"]
+data = PackedVector3Array(-0.288453, -0.5, 0.364857, -0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, -0.5, -0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, -0.288453, 0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, -0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, 0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3tg2"]
 albedo_color = Color(0, 0.721592, 0.331717, 1)
 
@@ -69,13 +76,6 @@ data = PackedVector3Array(-344.956, -109.285, 0.5, -344.956, -109.285, -0.5, -34
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7gi8m"]
 data = PackedVector3Array(-215.749, -109.285, 0.5, -215.749, -109.285, -0.5, -215.749, 109.285, -0.5, 215.749, -109.285, -0.5, -215.749, -109.285, -0.5, -215.749, -109.285, 0.5, -215.749, 109.285, -0.5, -215.749, -109.285, -0.5, 215.749, -109.285, -0.5, -215.749, 109.285, -0.5, -215.749, 109.285, 0.5, -215.749, -109.285, 0.5, -215.749, -109.285, 0.5, -215.749, 109.285, 0.5, 215.749, 109.285, 0.5, 215.749, 109.285, 0.5, -215.749, 109.285, 0.5, -215.749, 109.285, -0.5, -215.749, -109.285, 0.5, 215.749, -109.285, 0.5, 215.749, -109.285, -0.5, 215.749, 109.285, 0.5, 215.749, -109.285, 0.5, -215.749, -109.285, 0.5, 215.749, -109.285, -0.5, 215.749, -109.285, 0.5, 215.749, 109.285, 0.5, 215.749, -109.285, -0.5, 215.749, 109.285, -0.5, -215.749, 109.285, -0.5, -215.749, 109.285, -0.5, 215.749, 109.285, -0.5, 215.749, 109.285, 0.5, 215.749, 109.285, 0.5, 215.749, 109.285, -0.5, 215.749, -109.285, -0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd3nw"]
-transparency = 1
-albedo_color = Color(0, 1, 0, 0.392157)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_en5q8"]
-data = PackedVector3Array(-0.890869, -0.5, 0.648254, -0.890869, -0.5, -0.648254, -0.890869, 0.5, -0.648254, 0.890869, -0.5, -0.648254, -0.890869, -0.5, -0.648254, -0.890869, -0.5, 0.648254, -0.890869, 0.5, -0.648254, -0.890869, -0.5, -0.648254, 0.890869, -0.5, -0.648254, -0.890869, 0.5, -0.648254, -0.890869, 0.5, 0.648254, -0.890869, -0.5, 0.648254, -0.890869, -0.5, 0.648254, -0.890869, 0.5, 0.648254, 0.890869, 0.5, 0.648254, 0.890869, 0.5, 0.648254, -0.890869, 0.5, 0.648254, -0.890869, 0.5, -0.648254, -0.890869, -0.5, 0.648254, 0.890869, -0.5, 0.648254, 0.890869, -0.5, -0.648254, 0.890869, 0.5, 0.648254, 0.890869, -0.5, 0.648254, -0.890869, -0.5, 0.648254, 0.890869, -0.5, -0.648254, 0.890869, -0.5, 0.648254, 0.890869, 0.5, 0.648254, 0.890869, -0.5, -0.648254, 0.890869, 0.5, -0.648254, -0.890869, 0.5, -0.648254, -0.890869, 0.5, -0.648254, 0.890869, 0.5, -0.648254, 0.890869, 0.5, 0.648254, 0.890869, 0.5, 0.648254, 0.890869, 0.5, -0.648254, 0.890869, -0.5, -0.648254)
 
 [node name="StartingRoom" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.13, 0, 0)
@@ -2071,7 +2071,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.10819
 transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, -51.907, 0, 410.035)
 
 [node name="York" parent="Characters" instance=ExtResource("16_tt8ja")]
-transform = Transform3D(0.656652, 0, -4.24957, 0, 4.3, 0, 4.24957, 0, 0.656652, 317.249, 0.0598068, 410.999)
+transform = Transform3D(0.735297, 0, -4.75853, 0, 4.815, 0, 4.75853, 0, 0.735297, 317.249, 0.0598068, 442.576)
 
 [node name="TalkingCamera" type="Camera3D" parent="Characters/York"]
 transform = Transform3D(0.231234, -0.00524182, 0.0242233, 0.00114291, 0.229311, 0.0387117, -0.0247576, -0.0383722, 0.228031, 0.314087, 4.93669, 2.49332)
@@ -2116,6 +2116,35 @@ anchor_top = 0.677083
 anchor_right = 0.147461
 anchor_bottom = 0.707031
 text = "Name"
+metadata/_edit_use_anchors_ = true
+
+[node name="YorkQuestOPEN" type="Node3D" parent="Characters/York"]
+transform = Transform3D(0.0355138, 0, 0.22983, 0, 0.232558, 0, -0.22983, 0, 0.0355138, -1.48779, -0.0139086, 3.54556)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Characters/York/YorkQuestOPEN"]
+transform = Transform3D(55.9976, 0, 0, 0, 1, 0, 0, 0, 84.6654, 13.1385, 0, 7.98938)
+size = Vector3(0.576905, 1, 0.729713)
+material = SubResource("StandardMaterial3D_sd3nw")
+
+[node name="Area3D" type="Area3D" parent="Characters/York/YorkQuestOPEN"]
+transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("18_tt8ja")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Characters/York/YorkQuestOPEN/Area3D"]
+transform = Transform3D(1.00002, 0, -3.55271e-15, 0, 1, 0, -1.77636e-15, 0, 1, 0.602417, 0, -0.0763516)
+shape = SubResource("ConcavePolygonShape3D_tt8ja")
+
+[node name="InteractPrompt" type="Label" parent="Characters/York/YorkQuestOPEN"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
 metadata/_edit_use_anchors_ = true
 
 [node name="IdeaMarker" type="Node3D" parent="."]
@@ -2328,23 +2357,9 @@ transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -71.7657, -1.02543, -0.
 
 [node name="Quests" type="Node3D" parent="."]
 
-[node name="YorkQuestOPEN" type="Node3D" parent="Quests"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.205, 0, 435.163)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Quests/YorkQuestOPEN"]
-transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
-size = Vector3(1.78174, 1, 1.29651)
-material = SubResource("StandardMaterial3D_sd3nw")
-
-[node name="Area3D" type="Area3D" parent="Quests/YorkQuestOPEN"]
-transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
-script = ExtResource("18_tt8ja")
-
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Quests/YorkQuestOPEN/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_en5q8")
-
 [connection signal="ready" from="Characters/Cooper/CameraPivot/SpringArm3D/Camera3D" to="Characters/Cooper" method="_on_camera_3d_ready"]
+[connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
 [editable path="Characters/Laura"]
