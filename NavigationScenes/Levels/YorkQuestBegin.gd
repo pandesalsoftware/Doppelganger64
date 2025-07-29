@@ -21,3 +21,4 @@ func _exit_radius(body):
 func _physics_process(delta):
 	if $"../InteractPrompt".visible && Input.is_action_just_pressed("Interact"): 
 		print("Starting York Quest")
+		$"../../TalkingCamera"._talking_begin()

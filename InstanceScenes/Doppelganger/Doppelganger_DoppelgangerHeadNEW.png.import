@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctuxv2odlw4vd"
-path.s3tc="res://.godot/imported/Cooper_Torso.png-2ba4267534ce701a210052a29373d4bc.s3tc.ctex"
+uid="uid://twkjbgos4cw7"
+path.s3tc="res://.godot/imported/Doppelganger_DoppelgangerHeadNEW.png-5dcc31a149aa3fdf953489ed39f8f156.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1ce3af827caad6261edafee2bb2dabac"
+"md5": "96fa12491085f9239142902ba340fcd2"
 }
 
 [deps]
 
-source_file="res://InstanceScenes/Cooper/Cooper_Torso.png"
-dest_files=["res://.godot/imported/Cooper_Torso.png-2ba4267534ce701a210052a29373d4bc.s3tc.ctex"]
+source_file="res://InstanceScenes/Doppelganger/Doppelganger_DoppelgangerHeadNEW.png"
+dest_files=["res://.godot/imported/Doppelganger_DoppelgangerHeadNEW.png-5dcc31a149aa3fdf953489ed39f8f156.s3tc.ctex"]
 
 [params]
 
