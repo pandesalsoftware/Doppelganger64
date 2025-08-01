@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=61 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -10,19 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="8_mlwue"]
 [ext_resource type="PackedScene" uid="uid://bvm51tn3eid3u" path="res://InstanceScenes/Furniture/tall_lamp.glb" id="9_sd3nw"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="9_wejdm"]
+[ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="11_en5q8"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="11_qvkwb"]
-[ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="11_tt8ja"]
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="11_wyi3l"]
+[ext_resource type="Script" uid="uid://d0ikhr038mgnc" path="res://Functions/doppelganger_spawn.gd" id="14_en5q8"]
 [ext_resource type="PackedScene" uid="uid://btwaaalw7cxvh" path="res://Donuts/chocolate_donut.tscn" id="14_qvkwb"]
-[ext_resource type="PackedScene" uid="uid://wa2hsu1c3ki3" path="res://InstanceScenes/Doppelganger/doppelganger.tscn" id="15_7cm66"]
 [ext_resource type="PackedScene" uid="uid://dw6bdfthvcbc2" path="res://Donuts/glazed_donut.tscn" id="15_dd8pe"]
 [ext_resource type="Texture2D" uid="uid://xsin8gi6wbnm" path="res://InstanceScenes/York/York_Face.png" id="15_en5q8"]
 [ext_resource type="Texture2D" uid="uid://w22ex6afdro0" path="res://InstanceScenes/York/York_Torso.png" id="16_457ip"]
 [ext_resource type="Script" uid="uid://3xjep0alvs03" path="res://NavigationScenes/Levels/york.gd" id="17_4oh8o"]
 [ext_resource type="Script" uid="uid://qwajw370qu6j" path="res://NavigationScenes/Levels/YorkQuestBegin.gd" id="18_tt8ja"]
+[ext_resource type="AudioStream" uid="uid://dw0gyrorh0afd" path="res://Musak/run.ogg" id="21_457ip"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en5q8"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.376471, 0.0117647, 0.0117647, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_457ip"]
 material = SubResource("StandardMaterial3D_en5q8")
@@ -2125,9 +2126,10 @@ light_angular_distance = 67.25
 shadow_enabled = true
 
 [node name="Ceiling" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
-transform = Transform3D(475.999, 0, 0, 0, 1, 0, 0, 0, 385.451, 0, 188.776, 128.573)
+transform = Transform3D(475.999, 0, 0, 0, 1, 0, 0, 0, 385.451, 0, 72.3139, 128.573)
 mesh = SubResource("PlaneMesh_457ip")
 
 [node name="Envrionment" type="Node3D" parent="."]
@@ -2184,7 +2186,7 @@ transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 65.9196, 0, -44.6257)
 transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 65.9196, 0, 43.9734)
 
 [node name="Curtains" type="Node3D" parent="Envrionment" groups=["Curtains"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53776, 0)
+transform = Transform3D(1, 0, 0, 0, 0.367093, 0, 0, 0, 1, 0, 2.53463, 0)
 metadata/_edit_lock_ = true
 
 [node name="StartingRoom" type="Node3D" parent="Envrionment/Curtains"]
@@ -4026,7 +4028,7 @@ navigation_mesh = SubResource("NavigationMesh_ixjqq")
 metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment"]
-environment = ExtResource("11_tt8ja")
+environment = ExtResource("11_en5q8")
 
 [node name="Objects" type="Node3D" parent="Envrionment"]
 transform = Transform3D(-1, 0, -0.00019194, 0, 1, 0, 0.00019194, 0, -1, -32.292, 0, 247.793)
@@ -4075,44 +4077,21 @@ transform = Transform3D(1.01111, 0, 4.17943, 0, 4.3, 0, -4.17943, 0, 1.01111, -2
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, 0.894755, 0.261081, -2.62598)
 
 [node name="Skeleton3D" parent="Characters/Laura/LauraSkin/Armature" index="0"]
-bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
 bones/0/rotation = Quaternion(-0.0119155, -4.93719e-08, 0.0020048, 0.999927)
 bones/1/rotation = Quaternion(-0.0711572, 1.24087e-07, -0.784963, 0.615443)
 bones/2/rotation = Quaternion(0.0970125, 1.23641e-08, 0.792126, 0.602598)
-bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(-0.0150833, 0.0379488, -0.0173579, 0.999015)
-bones/5/rotation = Quaternion(0.0119155, 4.92691e-08, -0.0020048, 0.999927)
-bones/6/position = Vector3(-0.23475, -2.77124, -0.539207)
-bones/6/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
 bones/7/position = Vector3(-0.99717, 0.686603, -0.380835)
-bones/7/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
-bones/7/scale = Vector3(1, 1, 1)
-bones/8/position = Vector3(-0.983834, 0.693329, -0.382503)
-bones/8/rotation = Quaternion(0.926344, -0.364653, -0.0817885, -0.0471739)
-bones/8/scale = Vector3(1, 1, 1)
 bones/9/rotation = Quaternion(0.026591, -0.00180187, 0.0372982, 0.998949)
-bones/9/scale = Vector3(1, 1, 1)
-bones/10/position = Vector3(0.262798, -2.78066, -0.588968)
-bones/10/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/11/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/11/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/12/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
-bones/13/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
-bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(0.0195788, -0.220658, -0.311835)
 
 [node name="Hair" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.580049, -0.00557625, -0.201756, -0.00524076, 0.701647, -0.0298886, 0.201747, 0.0342591, 0.579299, -0.0329495, 2.35777, -0.260344)
+transform = Transform3D(0.580049, -0.0055763, -0.201756, -0.00524072, 0.701647, -0.0298887, 0.201747, 0.0342591, 0.579299, -0.0329496, 2.35777, -0.260344)
 
 [node name="Hair" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D/Hair" index="0"]
 transform = Transform3D(1, -2.32831e-10, -2.98023e-08, -3.49246e-10, 1, -6.98492e-10, 2.98023e-08, 1.97906e-09, 1, 0.0423584, 0.0016098, 0.0653)
 
 [node name="Icosphere" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.094434, -1.5546e-10, 2.22826e-11, 4.78266e-11, -0.094434, -6.98492e-10, -2.27374e-11, 9.31323e-10, -0.094434, 0.013734, 0.985821, 0.0405115)
+transform = Transform3D(-0.094434, -9.66551e-11, 2.04636e-11, -6.80274e-11, -0.094434, 0, -1.95541e-11, 0, -0.094434, 0.013734, 0.985821, 0.040512)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="3"]
 target_node = NodePath("../../../../../Cooper/LookAt")
@@ -4133,43 +4112,22 @@ transform = Transform3D(-4.29654, 0, -0.172417, 0, 4.3, 0, 0.172417, 0, -4.29654
 collision_mask = 29
 
 [node name="Skeleton3D" parent="Characters/Cooper/CooperSkin/Armature" index="0"]
-bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
 bones/0/rotation = Quaternion(-0.0119155, -4.93719e-08, 0.0020048, 0.999927)
 bones/1/rotation = Quaternion(-0.0711572, 1.24087e-07, -0.784963, 0.615443)
 bones/2/rotation = Quaternion(0.0970125, 1.23641e-08, 0.792126, 0.602598)
-bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
-bones/3/scale = Vector3(1, 1, 1)
-bones/6/position = Vector3(-0.238056, -1.1975, -0.344886)
-bones/6/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
-bones/7/position = Vector3(-0.23475, -2.77124, -0.539207)
-bones/7/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/7/scale = Vector3(1, 1, 1.00001)
 bones/8/position = Vector3(-0.99717, 0.686603, -0.380835)
-bones/8/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
-bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(-0.983834, 0.693329, -0.382503)
-bones/9/scale = Vector3(1, 1, 1)
 bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372982, 0.998949)
-bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
 bones/12/rotation = Quaternion(0.99521, 0.00363778, -0.0760773, -0.0612902)
-bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
-bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/13/scale = Vector3(1, 1, 1.00001)
-bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/14/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
-bones/15/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
-bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
 
 [node name="Cube" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.287422, 0.00466887, -0.00175724, -0.00437138, 0.302269, 0.0122125, 0.00176744, -0.011657, 0.315967, -0.00251979, 2.48665, -0.291875)
+transform = Transform3D(0.287422, 0.00466884, -0.00175722, -0.00437135, 0.302269, 0.0122125, 0.00176742, -0.011657, 0.315967, -0.00251988, 2.48665, -0.291875)
 
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
 
-[node name="Doppelganger" parent="Characters" instance=ExtResource("15_7cm66")]
-transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, -51.907, 0, 410.035)
+[node name="Doppelganger_Spawn" type="Node3D" parent="Characters/Cooper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314468, 0, -7.83644)
+script = ExtResource("14_en5q8")
 
 [node name="York" type="CharacterBody3D" parent="Characters"]
 transform = Transform3D(0.735297, 0, -4.75853, 0, 4.815, 0, 4.75853, 0, 0.735297, 317.249, 0.0598068, 442.576)
@@ -4301,7 +4259,7 @@ bones/16/rotation = Quaternion(0.00763684, 0.0130862, -0.0117743, 0.999816)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="Characters/York/York/Armature/Skeleton3D"]
-transform = Transform3D(-0.141966, -2.11294e-08, -1.02445e-07, 1.29512e-08, -0.32064, 4.00469e-08, 4.84288e-08, -4.28408e-08, -0.32064, 0.0308379, 2.10393, 0.849744)
+transform = Transform3D(-0.141966, -1.71713e-08, -9.12696e-08, 5.99539e-09, -0.32064, 1.02445e-08, 3.91155e-08, -1.11759e-08, -0.32064, 0.0308378, 2.10393, 0.849744)
 bone_name = "Cube"
 bone_idx = 4
 
@@ -4369,11 +4327,15 @@ anchor_bottom = 0.707031
 text = "Name"
 metadata/_edit_use_anchors_ = true
 
+[node name="CutsceneEndTimer" type="Timer" parent="Characters/York/TalkingCamera"]
+wait_time = 3.0
+
 [node name="YorkQuestOPEN" type="Node3D" parent="Characters/York"]
 transform = Transform3D(0.0355138, 0, 0.22983, 0, 0.232558, 0, -0.22983, 0, 0.0355138, -1.48779, -0.0139086, 3.54556)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Characters/York/YorkQuestOPEN"]
 transform = Transform3D(55.9976, 0, 0, 0, 1, 0, 0, 0, 84.6654, 13.1385, 0, 7.98938)
+visible = false
 size = Vector3(0.576905, 1, 0.729713)
 material = SubResource("StandardMaterial3D_sd3nw")
 
@@ -4608,8 +4570,25 @@ transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -71.7657, -1.02543, -0.
 
 [node name="Quests" type="Node3D" parent="."]
 
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="ChaseMusic" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("21_457ip")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="Timers"]
+
+[node name="CooldownTimer" type="Timer" parent="Timers"]
+
+[node name="LifeTimer" type="Timer" parent="Timers"]
+
+[connection signal="timeout" from="Characters/York/TalkingCamera/CutsceneEndTimer" to="Characters/York/TalkingCamera" method="_on_cutscene_end_timer_timeout"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
 [editable path="Characters/Laura"]

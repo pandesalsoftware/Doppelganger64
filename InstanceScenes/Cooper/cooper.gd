@@ -130,3 +130,9 @@ func _on_sprint_boost_timer_timeout():
 
 func _on_sprint_cooldown_timer_timeout():
 	pass
+
+
+#Camera Switching 
+#---------------------------------------------------------
+func _switch_back_cam():
+	_camera.make_current()

@@ -56,7 +56,7 @@ bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
 bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
 
 [node name="Cube" parent="CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.287422, 0.00466887, -0.00175724, -0.00437138, 0.302269, 0.0122125, 0.00176744, -0.011657, 0.315967, -0.00251978, 2.48665, -0.291875)
+transform = Transform3D(0.287422, 0.00466884, -0.00175722, -0.00437135, 0.302269, 0.0122125, 0.00176742, -0.011657, 0.315967, -0.00251988, 2.48665, -0.291875)
 
 [node name="InteractRay" type="RayCast3D" parent="CooperSkin"]
 unique_name_in_owner = true
