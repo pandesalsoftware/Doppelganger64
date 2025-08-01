@@ -8,6 +8,8 @@ func _ready():
 	DS_spawn_timer_start()
 
 
+#Adding and Removing  -------------------------------------------------------------------
+
 func _doppelganger_inst():
 	var doppelgangerScene = preload("res://InstanceScenes/Doppelganger/doppelganger.tscn")
 	var doppelgangerInst = doppelgangerScene.instantiate()
@@ -26,15 +28,18 @@ func _doppelganger_QF():
 	doppelgangerPos.child.queue_free()
 
 
+#Timers -------------------------------------------------------------------
+
 func DS_spawn_timer_start():
 	print("Doppelganger spawn timer started!")
 	ST.start(randi_range(5, 30))
 
 
 func DS_on_spawn_timer_timeout():
-	print("Doppelganger Spawn Timer timed out! Doppelganger spawned! Cool down Timer started!")
+	print("Doppelganger Spawn Timer timed out! Doppelganger spawned!")
 	_doppelganger_inst()
 	CT.start(randi_range(60, 90))
+	ST.stop()
 
 
 func _on_cooldown_timer_timeout():

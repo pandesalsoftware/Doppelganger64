@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=66 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cgyqn8rlglb8n" path="res://InstanceScenes/Furniture/table.tscn" id="4_hdc3r"]
 [ext_resource type="PackedScene" uid="uid://d3lccwrrs4l7s" path="res://InstanceScenes/Furniture/curtain.tscn" id="5_0iq4q"]
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="6_nys04"]
+[ext_resource type="Script" uid="uid://jcg5byfmp2pa" path="res://Functions/DropStatue.gd" id="8_4oh8o"]
 [ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="8_mlwue"]
 [ext_resource type="PackedScene" uid="uid://bvm51tn3eid3u" path="res://InstanceScenes/Furniture/tall_lamp.glb" id="9_sd3nw"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="9_wejdm"]
@@ -30,6 +31,49 @@ material = SubResource("StandardMaterial3D_en5q8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvkwb"]
 size = Vector3(3.45026, 7.62982, 3.2581)
+
+[sub_resource type="Animation" id="Animation_wtcnq"]
+resource_name = "Fall_Over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.13, 0.14, 0.533333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.53441, 0), Vector3(0.216128, 1.35462, -0.101835), Vector3(0.331064, 1.22408, -0.251142), Vector3(0.207028, 1.2147, -0.221081), Vector3(1.27827, 0.190297, -1.39665), Vector3(1.53122, 0.403676, -1.16684)]
+}
+
+[sub_resource type="Animation" id="Animation_qsinv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.53441, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tu6a2"]
+_data = {
+&"Fall_Over": SubResource("Animation_wtcnq"),
+&"RESET": SubResource("Animation_qsinv")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd3nw"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.392157)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nwhp8"]
+data = PackedVector3Array(-0.391541, -0.5, 0.334883, -0.391541, -0.5, -0.334883, -0.391541, 0.5, -0.334883, 0.391541, -0.5, -0.334883, -0.391541, -0.5, -0.334883, -0.391541, -0.5, 0.334883, -0.391541, 0.5, -0.334883, -0.391541, -0.5, -0.334883, 0.391541, -0.5, -0.334883, -0.391541, 0.5, -0.334883, -0.391541, 0.5, 0.334883, -0.391541, -0.5, 0.334883, -0.391541, -0.5, 0.334883, -0.391541, 0.5, 0.334883, 0.391541, 0.5, 0.334883, 0.391541, 0.5, 0.334883, -0.391541, 0.5, 0.334883, -0.391541, 0.5, -0.334883, -0.391541, -0.5, 0.334883, 0.391541, -0.5, 0.334883, 0.391541, -0.5, -0.334883, 0.391541, 0.5, 0.334883, 0.391541, -0.5, 0.334883, -0.391541, -0.5, 0.334883, 0.391541, -0.5, -0.334883, 0.391541, -0.5, 0.334883, 0.391541, 0.5, 0.334883, 0.391541, -0.5, -0.334883, 0.391541, 0.5, -0.334883, -0.391541, 0.5, -0.334883, -0.391541, 0.5, -0.334883, 0.391541, 0.5, -0.334883, 0.391541, 0.5, 0.334883, 0.391541, 0.5, 0.334883, 0.391541, 0.5, -0.334883, 0.391541, -0.5, -0.334883)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owvdk"]
 albedo_texture = ExtResource("6_nys04")
@@ -2083,10 +2127,6 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd3nw"]
-transparency = 1
-albedo_color = Color(0, 1, 0, 0.392157)
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tt8ja"]
 data = PackedVector3Array(-0.288453, -0.5, 0.364857, -0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, -0.5, -0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, -0.288453, 0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, -0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, 0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857)
 
@@ -2168,13 +2208,50 @@ transform = Transform3D(2.27375, 0, 3.64966, 0, 4.3, 0, -3.64966, 0, 2.27375, -4
 transform = Transform3D(-0.697524, -0.00656203, -0.370834, -0.00743168, 0.789965, 3.12509e-09, 0.370817, 0.00348851, -0.697555, 3.1616, 11.1186, 34.8097)
 
 [node name="venusdemilo" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
-transform = Transform3D(-0.428046, 0, 4.27864, 0, 4.3, 0, -4.27864, 0, -0.428046, -51.494, 0.824514, 225.127)
+transform = Transform3D(0.156443, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.156443, -50.6885, 0, 229.482)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/venusdemilo"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/venusdemilo/StaticBody3D"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.360397, 3.70096, -0.431187)
 shape = SubResource("BoxShape3D_qvkwb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Envrionment/StartingRoomFurniture/Objects/venusdemilo"]
+libraries = {
+&"": SubResource("AnimationLibrary_tu6a2")
+}
+
+[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/venusdemilo"]
+
+[node name="DropStatue" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
+transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, -0.999495, -35.6854, -0.059807, 236.43)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/DropStatue"]
+transform = Transform3D(55.9977, 0, 0, 0, 0.999991, 0, 1.83582e-05, 0, 84.6654, 18.1483, -0.239617, 11.019)
+visible = false
+size = Vector3(0.783081, 1, 0.669766)
+material = SubResource("StandardMaterial3D_sd3nw")
+
+[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/DropStatue"]
+transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("8_4oh8o")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/DropStatue/Area3D"]
+transform = Transform3D(1.00002, 0, 0, 0, 0.999991, 0, 2.17929e-07, 0, 1, 0.691882, -0.239617, -0.0405679)
+shape = SubResource("ConcavePolygonShape3D_nwhp8")
+
+[node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/DropStatue"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
+metadata/_edit_use_anchors_ = true
 
 [node name="York\'sRoom" type="Node3D" parent="Envrionment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.011, 0, 448.387)
@@ -4126,7 +4203,7 @@ transform = Transform3D(0.287422, 0.00466884, -0.00175722, -0.00437135, 0.302269
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
 
 [node name="Doppelganger_Spawn" type="Node3D" parent="Characters/Cooper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314468, 0, -7.83644)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881176, 0, -21.9586)
 script = ExtResource("14_en5q8")
 
 [node name="York" type="CharacterBody3D" parent="Characters"]
@@ -4581,13 +4658,14 @@ stream = ExtResource("21_457ip")
 
 [node name="CooldownTimer" type="Timer" parent="Timers"]
 
-[node name="LifeTimer" type="Timer" parent="Timers"]
-
+[connection signal="animation_finished" from="Envrionment/StartingRoomFurniture/Objects/venusdemilo/AnimationPlayer" to="Envrionment/StartingRoomFurniture/Objects/DropStatue/Area3D" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/DropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/DropStatue/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/DropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/DropStatue/Area3D" method="_exit_radius"]
 [connection signal="timeout" from="Characters/York/TalkingCamera/CutsceneEndTimer" to="Characters/York/TalkingCamera" method="_on_cutscene_end_timer_timeout"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
-[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]

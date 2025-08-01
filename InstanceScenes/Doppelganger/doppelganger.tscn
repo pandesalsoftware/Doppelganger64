@@ -27,6 +27,8 @@ target_desired_distance = 8.0
 transform = Transform3D(2.01605, 0, 0, 0, 5.7477, 0, 0, 0, 1.49446, -0.293017, 2.90192, 0)
 shape = SubResource("BoxShape3D_lhtsc")
 
+[node name="LifeTimer" type="Timer" parent="."]
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 
 [editable path="DoppelgangerSkin"]

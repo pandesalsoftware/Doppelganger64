@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7y2ircvi1uyd" path="res://InstanceScenes/Environment/curtain_wall.tscn" id="1_qqiqo"]
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="2_owl2u"]
 [ext_resource type="FontFile" uid="uid://jqt5lxw20trn" path="res://Fonts/Snell Roundhand Regular.ttf" id="4_o0tky"]
+[ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="4_owl2u"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="5_vx0xw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5ka2"]
@@ -18,9 +19,6 @@ material = SubResource("StandardMaterial3D_s5ka2")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_llqrg"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
-
-[sub_resource type="Environment" id="Environment_w43eu"]
-background_mode = 1
 
 [sub_resource type="Animation" id="Animation_o0tky"]
 resource_name = "Move"
@@ -251,7 +249,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_llqrg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment"]
-environment = SubResource("Environment_w43eu")
+environment = ExtResource("4_owl2u")
 
 [node name="AmbientLights" type="Node3D" parent="Envrionment"]
 
