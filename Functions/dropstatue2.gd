@@ -1,12 +1,12 @@
 extends Area3D
 
 
-#HALLWAY STATUE
+#START STATUE
 
 
 @onready var  InteractPrompt = $"../InteractPrompt"
-@onready var AniObject = $"../../HALLWAYvenusdemilo"
-@onready var AniObj_AP = $"../../HALLWAYvenusdemilo/AnimationPlayer"
+@onready var AniObject = $"../../STARTmedici_venus"
+@onready var AniObj_AP = $"../../STARTmedici_venus/AnimationPlayer"
 
 var in_radius = false 
 
