@@ -4316,7 +4316,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881176, 0, -21.9586)
 script = ExtResource("14_en5q8")
 
 [node name="York" type="CharacterBody3D" parent="Characters"]
-transform = Transform3D(4.72955, 0, 0.903148, 0, 4.815, 0, -0.903148, 0, 4.72955, -74.3071, 0.0598068, -34.9474)
+transform = Transform3D(5.01045, 0, 0.913391, 0, 4.46433, 0, -0.956789, 0, 4.78319, -74.3071, 0.0598068, -34.9474)
 
 [node name="York" type="Node3D" parent="Characters/York"]
 

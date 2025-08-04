@@ -1,5 +1,6 @@
 extends Area3D
 
+var D_START = preload("res://Dialogue/York/yorkcontrol.tscn")
 
 var in_radius = false 
 
@@ -22,3 +23,7 @@ func _physics_process(delta):
 	if $"../InteractPrompt".visible && Input.is_action_just_pressed("Interact"): 
 		print("Starting York Quest")
 		$"../../TalkingCamera"._talking_begin()
+		$"../InteractPrompt".visible = false
+		#Instancing Dialogue scene 
+		var dS = D_START.instantiate()
+		add_child(dS)
