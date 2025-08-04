@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=75 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://3xjep0alvs03" path="res://NavigationScenes/Levels/york.gd" id="17_4oh8o"]
 [ext_resource type="Script" uid="uid://qwajw370qu6j" path="res://NavigationScenes/Levels/YorkQuestBegin.gd" id="18_tt8ja"]
 [ext_resource type="AudioStream" uid="uid://dw0gyrorh0afd" path="res://Musak/run.ogg" id="21_457ip"]
+[ext_resource type="PackedScene" uid="uid://r8ds3y23rlg4" path="res://InstanceScenes/Zach/zach.tscn" id="21_qsinv"]
+[ext_resource type="Script" uid="uid://o3tubur6atyp" path="res://Dialogue/Zach/ZachQuestBegin.gd" id="22_tu6a2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en5q8"]
 albedo_color = Color(0.376471, 0.0117647, 0.0117647, 1)
@@ -2194,6 +2196,9 @@ size = Vector3(2.51282, 6.14929, 1.69293)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tt8ja"]
 data = PackedVector3Array(-0.288453, -0.5, 0.364857, -0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, -0.5, -0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, -0.288453, 0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, -0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, 0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tu6a2"]
+data = PackedVector3Array(-0.288453, -0.5, 0.284818, -0.288453, -0.5, -0.284818, -0.288453, 0.5, -0.284818, 0.288453, -0.5, -0.284818, -0.288453, -0.5, -0.284818, -0.288453, -0.5, 0.284818, -0.288453, 0.5, -0.284818, -0.288453, -0.5, -0.284818, 0.288453, -0.5, -0.284818, -0.288453, 0.5, -0.284818, -0.288453, 0.5, 0.284818, -0.288453, -0.5, 0.284818, -0.288453, -0.5, 0.284818, -0.288453, 0.5, 0.284818, 0.288453, 0.5, 0.284818, 0.288453, 0.5, 0.284818, -0.288453, 0.5, 0.284818, -0.288453, 0.5, -0.284818, -0.288453, -0.5, 0.284818, 0.288453, -0.5, 0.284818, 0.288453, -0.5, -0.284818, 0.288453, 0.5, 0.284818, 0.288453, -0.5, 0.284818, -0.288453, -0.5, 0.284818, 0.288453, -0.5, -0.284818, 0.288453, -0.5, 0.284818, 0.288453, 0.5, 0.284818, 0.288453, -0.5, -0.284818, 0.288453, 0.5, -0.284818, -0.288453, 0.5, -0.284818, -0.288453, 0.5, -0.284818, 0.288453, 0.5, -0.284818, 0.288453, 0.5, 0.284818, 0.288453, 0.5, 0.284818, 0.288453, 0.5, -0.284818, 0.288453, -0.5, -0.284818)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3tg2"]
 albedo_color = Color(0, 0.721592, 0.331717, 1)
@@ -4445,7 +4450,7 @@ bones/16/rotation = Quaternion(0.00763684, 0.0130862, -0.0117743, 0.999816)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="Characters/York/York/Armature/Skeleton3D"]
-transform = Transform3D(-0.141966, -1.71713e-08, -9.12696e-08, 5.99539e-09, -0.32064, 1.02445e-08, 3.91155e-08, -1.11759e-08, -0.32064, 0.0308378, 2.10393, 0.849744)
+transform = Transform3D(-0.104973, 0.00176207, -0.215862, -0.00183814, -0.320607, 0.0019427, 0.09556, -0.00423139, -0.237087, 0.83264, 2.09682, 0.531852)
 bone_name = "Cube"
 bone_idx = 4
 
@@ -4456,6 +4461,17 @@ skeleton = NodePath("")
 [node name="Cooper" type="MeshInstance3D" parent="Characters/York/York/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_1pn4n")
 skin = SubResource("Skin_mu7kw")
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Characters/York/York/Armature/Skeleton3D"]
+target_node = NodePath("../../../../../Cooper/LookAt")
+bone_name = "Neck"
+bone = 3
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 3.14159
+primary_damp_threshold = 1.0
+secondary_limit_angle = 3.14159
+secondary_damp_threshold = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/York/York"]
 libraries = {
@@ -4495,6 +4511,68 @@ transform = Transform3D(1.00002, 0, -3.55271e-15, 0, 1, 0, -1.77636e-15, 0, 1, 0
 shape = SubResource("ConcavePolygonShape3D_tt8ja")
 
 [node name="InteractPrompt" type="Label" parent="Characters/York/YorkQuestOPEN"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
+metadata/_edit_use_anchors_ = true
+
+[node name="Zach" parent="Characters" instance=ExtResource("21_qsinv")]
+transform = Transform3D(3.61791, 0, -2.50414, 0, 4.4, 0, 2.50414, 0, 3.61791, 15.1423, 0.110929, -7.16059)
+
+[node name="Skeleton3D" parent="Characters/Zach/ZachSkin/Armature" index="0"]
+bones/0/rotation = Quaternion(-0.0119155, -4.93672e-08, 0.0020048, 0.999927)
+bones/1/rotation = Quaternion(-0.0711572, 1.20301e-07, -0.784963, 0.615443)
+bones/2/rotation = Quaternion(0.0970125, 1.72859e-08, 0.792126, 0.602598)
+bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
+bones/5/position = Vector3(-0.238056, -1.1975, -0.344886)
+bones/6/position = Vector3(-0.238056, -1.1975, -0.344886)
+bones/6/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
+bones/7/position = Vector3(-0.23475, -2.77124, -0.539207)
+bones/7/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/8/position = Vector3(-0.997169, 0.686603, -0.380835)
+bones/8/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
+bones/9/position = Vector3(-0.983834, 0.693329, -0.382503)
+bones/9/rotation = Quaternion(0.926344, -0.364653, -0.0817885, -0.0471739)
+bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372981, 0.998949)
+bones/11/position = Vector3(0.266104, -1.20692, -0.394646)
+bones/11/rotation = Quaternion(0, 1.19209e-07, 0, 1)
+bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
+bones/12/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
+bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
+bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
+bones/14/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
+bones/15/position = Vector3(1.03932, 0.730374, -0.437128)
+bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
+bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
+
+[node name="Cube" parent="Characters/Zach/ZachSkin/Armature/Skeleton3D" index="0"]
+transform = Transform3D(-0.141967, 4.55766e-08, -2.6077e-08, -2.16241e-08, -0.32064, 8.3819e-09, 1.30385e-08, -1.02445e-08, -0.32064, 0.0308379, 2.10393, 0.849744)
+
+[node name="ZachQuestOPEN" type="Node3D" parent="Characters/Zach"]
+transform = Transform3D(0.0355138, 0, 0.22983, 0, 0.232558, 0, -0.22983, 0, 0.0355138, -1.48779, -0.0139086, 3.54556)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Characters/Zach/ZachQuestOPEN"]
+transform = Transform3D(38.8006, 0, 61.0468, 0, 1, 0, -40.3763, 0, 58.6645, 14.4453, 0, 4.71087)
+size = Vector3(0.576905, 1, 0.569635)
+material = SubResource("StandardMaterial3D_sd3nw")
+
+[node name="Area3D" type="Area3D" parent="Characters/Zach/ZachQuestOPEN"]
+transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("22_tu6a2")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Characters/Zach/ZachQuestOPEN/Area3D"]
+transform = Transform3D(0.692909, 0, 1.09019, 0, 1, 0, -0.476893, 0, 0.692899, 0.625753, 0, -0.115075)
+shape = SubResource("ConcavePolygonShape3D_tu6a2")
+
+[node name="InteractPrompt" type="Label" parent="Characters/Zach/ZachQuestOPEN"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.476563
@@ -4734,6 +4812,9 @@ stream = ExtResource("21_457ip")
 [connection signal="timeout" from="Characters/York/TalkingCamera/CutsceneEndTimer" to="Characters/York/TalkingCamera" method="_on_cutscene_end_timer_timeout"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
+[connection signal="animation_finished" from="Characters/Zach/ZachSkin/AnimationPlayer" to="Characters/Zach" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_exit_radius"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
@@ -4743,3 +4824,4 @@ stream = ExtResource("21_457ip")
 [editable path="Characters/Laura/LauraSkin"]
 [editable path="Characters/Cooper"]
 [editable path="Characters/Cooper/CooperSkin"]
+[editable path="Characters/Zach"]

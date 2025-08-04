@@ -2,8 +2,8 @@ extends Control
 
 
 var messages = [
-	"My name is York.", 
-	"I'm looking for Zach."
+	"My name is Zach.", 
+	"I'm looking for York!"
 ]
 
 var typing_speed = .1

@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var DS_AP = $DoppelgangerSkin/AnimationPlayer
 @onready var DS : Node3D =  %DoppelgangerSkin
 
-@export var move_speed = 6
+@export var move_speed = 4
 
 func _physics_process(delta):
 	var current_location = global_transform.origin
