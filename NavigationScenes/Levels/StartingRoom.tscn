@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=72 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -2192,13 +2192,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1tah"]
 size = Vector3(2.51282, 6.14929, 1.69293)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt8ja"]
-bg_color = Color(0, 0, 0, 0.337255)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tt8ja"]
 data = PackedVector3Array(-0.288453, -0.5, 0.364857, -0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, -0.5, -0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, -0.364857, 0.288453, -0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, -0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, -0.288453, 0.5, 0.364857, -0.288453, 0.5, -0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, 0.364857, -0.288453, -0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, -0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, -0.5, -0.364857, 0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, -0.288453, 0.5, -0.364857, 0.288453, 0.5, -0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, 0.364857, 0.288453, 0.5, -0.364857, 0.288453, -0.5, -0.364857)
 
@@ -2274,7 +2267,7 @@ transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8312, 0, 0)
 
 [node name="STARTmedici_venus" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("9_wejdm")]
-transform = Transform3D(2.27375, 0, 3.64966, 0, 4.3, 0, -3.64966, 0, 2.27375, -50.8931, 0.73786, 8.8854)
+transform = Transform3D(2.27377, 0, 3.64965, 0, 4.3, 0, -3.64965, 0, 2.27377, -50.8931, 0.73786, 8.8854)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTmedici_venus"]
 
@@ -2344,6 +2337,7 @@ transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, 
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue"]
 transform = Transform3D(55.9818, 0, 2.13956, 0, 1, 0, -1.41507, 0, 84.6436, 10.7446, -0.239617, 10.0442)
+visible = false
 size = Vector3(0.736725, 1, 0.467734)
 material = SubResource("StandardMaterial3D_pdm1b")
 
@@ -4322,7 +4316,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881176, 0, -21.9586)
 script = ExtResource("14_en5q8")
 
 [node name="York" type="CharacterBody3D" parent="Characters"]
-transform = Transform3D(0.735297, 0, -4.75853, 0, 4.815, 0, 4.75853, 0, 0.735297, 317.249, 0.0598068, 442.576)
+transform = Transform3D(4.72955, 0, 0.903148, 0, 4.815, 0, -0.903148, 0, 4.72955, -74.3071, 0.0598068, -34.9474)
 
 [node name="York" type="Node3D" parent="Characters/York"]
 
@@ -4477,47 +4471,6 @@ shape = SubResource("BoxShape3D_f1tah")
 transform = Transform3D(0.231234, -0.00524182, 0.0242233, 0.00114291, 0.229311, 0.0387117, -0.0247576, -0.0383722, 0.228031, 0.314087, 4.93669, 2.49332)
 fov = 78.0465
 script = ExtResource("17_4oh8o")
-
-[node name="Control" type="Control" parent="Characters/York/TalkingCamera"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="Panel" parent="Characters/York/TalkingCamera/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0625
-anchor_top = 0.666667
-anchor_right = 0.942383
-anchor_bottom = 0.93099
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tt8ja")
-metadata/_edit_use_anchors_ = true
-
-[node name="Speech" type="Label" parent="Characters/York/TalkingCamera/Control/TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0799112
-anchor_top = 0.275862
-anchor_right = 0.932297
-anchor_bottom = 0.788177
-text = "I'm talkin here!"
-metadata/_edit_use_anchors_ = true
-
-[node name="Speaker" type="Label" parent="Characters/York/TalkingCamera/Control"]
-layout_mode = 0
-anchor_left = 0.101563
-anchor_top = 0.677083
-anchor_right = 0.147461
-anchor_bottom = 0.707031
-text = "Name"
-metadata/_edit_use_anchors_ = true
 
 [node name="CutsceneEndTimer" type="Timer" parent="Characters/York/TalkingCamera"]
 wait_time = 3.0
