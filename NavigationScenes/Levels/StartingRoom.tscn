@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=66 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="6_nys04"]
 [ext_resource type="Script" uid="uid://jcg5byfmp2pa" path="res://Functions/DropStatue.gd" id="8_4oh8o"]
 [ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="8_mlwue"]
-[ext_resource type="PackedScene" uid="uid://bvm51tn3eid3u" path="res://InstanceScenes/Furniture/tall_lamp.glb" id="9_sd3nw"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="9_wejdm"]
 [ext_resource type="Script" uid="uid://vayaoonhomna" path="res://Functions/dropstatue2.gd" id="9_wtcnq"]
 [ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="11_en5q8"]
@@ -2212,7 +2211,7 @@ light_angular_distance = 67.25
 shadow_enabled = true
 
 [node name="Ceiling" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.0828, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -26.0828, 0)
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
@@ -2221,7 +2220,32 @@ mesh = SubResource("PlaneMesh_457ip")
 
 [node name="Curtains" type="Node3D" parent="."]
 
-[node name="CurtainWall" parent="Curtains" instance=ExtResource("11_tu6a2")]
+[node name="StartingRoom" type="Node3D" parent="Curtains"]
+
+[node name="CurtainWall" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
+
+[node name="CurtainWall2" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
+
+[node name="CurtainWall3" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, -33)
+
+[node name="CurtainWall4" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, 118)
+
+[node name="StartingRoom2" type="Node3D" parent="Curtains"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6311, 0, 215.91)
+
+[node name="CurtainWall" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
+
+[node name="CurtainWall2" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
+
+[node name="CurtainWall3" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, 4.24052)
+
+[node name="CurtainWall4" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, 89.501)
 
 [node name="Envrionment" type="Node3D" parent="."]
 
@@ -2348,17 +2372,8 @@ theme_override_font_sizes/font_size = 45
 text = "\"E\""
 metadata/_edit_use_anchors_ = true
 
-[node name="York\'sRoom" type="Node3D" parent="Envrionment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.011, 0, 448.387)
-
-[node name="tall_lamp" parent="Envrionment/York\'sRoom" instance=ExtResource("9_sd3nw")]
-transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 65.9196, 0, -44.6257)
-
-[node name="tall_lamp2" parent="Envrionment/York\'sRoom" instance=ExtResource("9_sd3nw")]
-transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 65.9196, 0, 43.9734)
-
 [node name="Floor" type="MeshInstance3D" parent="Envrionment"]
-transform = Transform3D(372.978, 0, 0, 0, 1, 0, 0, 0, 388.737, -35.8737, 0, 131.139)
+transform = Transform3D(324.074, 0, 0, 0, 0.875, 0, 0, 0, 337.782, 0, 0, 57.955)
 mesh = SubResource("PlaneMesh_knq37")
 skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
@@ -2387,20 +2402,6 @@ omni_range = 38.338
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Envrionment/AmbientLights"]
 transform = Transform3D(0.852001, 0.390998, 0.348159, -0.52354, 0.636305, 0.566588, 0, -0.665009, 0.746836, -29.0931, 25.5852, 20.1775)
-light_energy = 16.0
-spot_range = 90.249
-spot_angle = 66.52
-spot_angle_attenuation = 0.143587
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="Envrionment/AmbientLights"]
-transform = Transform3D(0.807403, 0.372009, 0.45794, -0.420833, -0.180885, 0.888921, 0.413521, -0.910434, 0.0105063, 323.262, 25.5852, 403.581)
-light_energy = 16.0
-spot_range = 90.249
-spot_angle = 66.52
-spot_angle_attenuation = 0.143587
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="Envrionment/AmbientLights"]
-transform = Transform3D(0.807403, 0.372009, 0.45794, -0.420833, -0.180885, 0.888921, 0.413521, -0.910434, 0.0105063, 323.353, 26.6949, 492.966)
 light_energy = 16.0
 spot_range = 90.249
 spot_angle = 66.52
@@ -2837,8 +2838,8 @@ stream = ExtResource("21_457ip")
 [connection signal="animation_finished" from="Characters/Zach/ZachSkin/AnimationPlayer" to="Characters/Zach" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_exit_radius"]
-[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
