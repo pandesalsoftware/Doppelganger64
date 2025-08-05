@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
 [ext_resource type="PackedScene" uid="uid://b15g7s35ofpgg" path="res://InstanceScenes/Furniture/chair.tscn" id="2_2la2r"]
+[ext_resource type="PackedScene" uid="uid://unxo3wq82obo" path="res://InstanceScenes/Environment/New Curtains/curtain_walls.tscn" id="2_qsinv"]
 [ext_resource type="PackedScene" uid="uid://bgn46eypg3uw6" path="res://InstanceScenes/Furniture/tall_lamp.tscn" id="3_ka1d1"]
 [ext_resource type="PackedScene" uid="uid://cgyqn8rlglb8n" path="res://InstanceScenes/Furniture/table.tscn" id="4_hdc3r"]
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="6_nys04"]
@@ -12,7 +13,6 @@
 [ext_resource type="Script" uid="uid://vayaoonhomna" path="res://Functions/dropstatue2.gd" id="9_wtcnq"]
 [ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="11_en5q8"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="11_qvkwb"]
-[ext_resource type="PackedScene" uid="uid://b3pdqlj5v33gd" path="res://InstanceScenes/Environment/New Curtains/curtain_wall.tscn" id="11_tu6a2"]
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="11_wyi3l"]
 [ext_resource type="Script" uid="uid://d0ikhr038mgnc" path="res://Functions/doppelganger_spawn.gd" id="14_en5q8"]
 [ext_resource type="PackedScene" uid="uid://btwaaalw7cxvh" path="res://Donuts/chocolate_donut.tscn" id="14_qvkwb"]
@@ -2218,34 +2218,7 @@ visible = false
 transform = Transform3D(475.999, 0, 0, 0, 1, 0, 0, 0, 385.451, 0, 72.3139, 128.573)
 mesh = SubResource("PlaneMesh_457ip")
 
-[node name="Curtains" type="Node3D" parent="."]
-
-[node name="StartingRoom" type="Node3D" parent="Curtains"]
-
-[node name="CurtainWall" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
-
-[node name="CurtainWall2" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
-
-[node name="CurtainWall3" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, -33)
-
-[node name="CurtainWall4" parent="Curtains/StartingRoom" instance=ExtResource("11_tu6a2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, 118)
-
-[node name="StartingRoom2" type="Node3D" parent="Curtains"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6311, 0, 215.91)
-
-[node name="CurtainWall" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
-
-[node name="CurtainWall2" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
-
-[node name="CurtainWall3" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, 4.24052)
-
-[node name="CurtainWall4" parent="Curtains/StartingRoom2" instance=ExtResource("11_tu6a2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41, 0, 89.501)
+[node name="Curtains" parent="." instance=ExtResource("2_qsinv")]
 
 [node name="Envrionment" type="Node3D" parent="."]
 
