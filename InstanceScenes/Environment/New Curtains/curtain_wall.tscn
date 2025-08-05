@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3pdqlj5v33gd"]
+
+[ext_resource type="PackedScene" uid="uid://ds3th3ohb5kpa" path="res://InstanceScenes/Environment/New Curtains/curtain_single.tscn" id="1_na00h"]
+
+[node name="CurtainWall" type="Node3D"]
+
+[node name="CurtainSegment" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 0)
+
+[node name="CurtainSegment2" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 16)
+
+[node name="CurtainSegment3" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33, 0, 8)
+
+[node name="CurtainSegment10" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, -52.6)
+
+[node name="CurtainSegment17" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, -62.9)
+
+[node name="CurtainSegment11" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, -36.6)
+
+[node name="CurtainSegment12" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33, 0, -44.6)
+
+[node name="CurtainSegment4" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, -26.3)
+
+[node name="CurtainSegment5" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, -10.3)
+
+[node name="CurtainSegment6" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33, 0, -18.3)
+
+[node name="CurtainSegment7" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 26.3)
+
+[node name="CurtainSegment8" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 42.3)
+
+[node name="CurtainSegment9" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33, 0, 34.3)
+
+[node name="CurtainSegment13" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 52.5)
+
+[node name="CurtainSegment14" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 68.5)
+
+[node name="CurtainSegment16" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34, 0, 78.5)
+
+[node name="CurtainSegment15" parent="." instance=ExtResource("1_na00h")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33, 0, 60.5)

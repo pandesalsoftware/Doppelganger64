@@ -117,6 +117,8 @@ Turn_Left={
 3d_physics/layer_3="Doppelganger"
 3d_physics/layer_4="Interacts"
 3d_physics/layer_5="Camera"
+3d_physics/layer_6="Zach"
+3d_physics/layer_7="York"
 
 [rendering]
 
