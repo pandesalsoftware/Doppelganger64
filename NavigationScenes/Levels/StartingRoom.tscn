@@ -2438,9 +2438,6 @@ bones/8/position = Vector3(-0.99717, 0.686603, -0.380835)
 bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372982, 0.998949)
 bones/12/rotation = Quaternion(0.99521, 0.00363778, -0.0760773, -0.0612902)
 
-[node name="Cube" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.287422, 0.00466884, -0.00175722, -0.00437135, 0.302269, 0.0122125, 0.00176742, -0.011657, 0.315967, -0.00251988, 2.48665, -0.291875)
-
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
 

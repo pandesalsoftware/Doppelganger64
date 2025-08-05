@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export_group("Movement")
 @export var move_speed := 8
 @export var acceleration := 20.0
+@export var gravity := 25.0
 
 
 var _camera_input_direction := Vector2.ZERO
@@ -64,7 +65,7 @@ func _input(event):
 	elif Input.is_action_just_released("Run"):
 		move_speed = 8
 		
-	if ground_speed > 0.0:
+	if ground_speed > 0.1:
 		AP.play("Walk002")
 		if $Timer.time_left <= 0:
 			%WalkSound.play()
@@ -90,6 +91,12 @@ func _physics_process(delta: float) -> void:
 	
 	_camera_input_direction = Vector2.ZERO
 	
+	#Gravity Handling ------------------------------------------------------
+	if  is_on_floor() == false:
+		velocity.y -= gravity * delta
+	else : 
+		velocity.y = -0.5
+	
 	#Movement Controls #--------------------------------------------------
 	var raw_input := Input.get_vector("Forward","Backward", "Left", "Right")
 	var forward := _camera.global_basis.x
@@ -99,10 +106,14 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
 	
-	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+	var target_velocity_horizontal = move_direction * move_speed
+	
+	velocity.x = lerp(velocity.x, target_velocity_horizontal.x, acceleration *delta)
+	velocity.z = lerp(velocity.z, target_velocity_horizontal.z, acceleration * delta)
+	
 	move_and_slide()
 	
-	if move_direction.length() > 0.2:
+	if move_direction.length() > 0.1:
 		_last_movement_direction = move_direction
 	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
 	_Skin.global_rotation.y = target_angle
