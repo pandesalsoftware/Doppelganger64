@@ -1,13 +1,10 @@
 extends CharacterBody3D
 
-enum {IDLE, RUN, WALK}
-var curAnim = IDLE
-
 @export_group("Camera")
 @export_range(0.0, 1.0) var mouse_sensitivity := 0.25
 
 @export_group("Movement")
-@export var move_speed := 8
+@export var move_speed := 8.0 # Changed to float for consistency
 @export var acceleration := 20.0
 @export var gravity := 25.0
 
@@ -19,15 +16,7 @@ var _last_movement_direction := Vector3.BACK
 @onready var _camera: Camera3D = %Camera3D
 @onready var _Skin: Node3D = %CooperSkin
 @onready var _WalkSound: AudioStreamPlayer3D = %WalkSound
-@onready var AP: AnimationPlayer = $CooperSkin/AnimationPlayer
-
-#Animation Variables 
-@onready var AT: AnimationTree = $AnimationTree
-@export var blendSpeed = 15
-
-#Animation Blend Data
-var Run_V = 0 
-var Walk_V = 0 
+@onready var _animation_player: AnimationPlayer = %CooperSkin/AnimationPlayer # Get AnimationPlayer once
 
 var can_run = true
 
@@ -63,31 +52,15 @@ func _input(event):
 		#Insert Death Animations & Processes here!
 		pass
 		
-#Movement & Animations --------------------------------------------------
-	#Variables
-	var ground_speed := velocity.length()
-	var AP = $CooperSkin/AnimationPlayer
-	
-		
+	# Handle Run input for speed change and timer
 	if Input.is_action_pressed("Run"):
-		move_speed = 16
+		move_speed = 16.0
 		$SprintBoostTimer.start()
-		curAnim = RUN
-
 	elif Input.is_action_just_released("Run"):
-		move_speed = 8
-		
-	if ground_speed > 0.1:
-		curAnim = WALK
-		if $Timer.time_left <= 0:
-			%WalkSound.play()
-			$Timer.start(0.9)
-	else:
-		curAnim = IDLE
-	
+		move_speed = 8.0 # Speed will be reset by timer as well, but this ensures immediate change
 
 func _unhandled_input(event: InputEvent) -> void:
-	var is_camera_motion :=(
+	var is_camera_motion := (
 		event is InputEventMouseMotion and 
 		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	)
@@ -96,27 +69,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	match curAnim:
-		IDLE:
-			Run_V = lerpf(Run_V, 0, blendSpeed * delta)
-			Walk_V = lerpf(Walk_V, 0, blendSpeed * delta)
-		RUN:
-			Run_V = lerpf(Run_V, 1, blendSpeed * delta)
-			Walk_V = lerpf(Walk_V, 0, blendSpeed * delta)
-	
-	
-#Camera Controls 
+	# Camera Controls --------------------------------------------------
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
-	
 	_camera_input_direction = Vector2.ZERO
 	
-	#Gravity Handling ------------------------------------------------------
-	if  is_on_floor() == false:
+	# Gravity Handling ------------------------------------------------------
+	if is_on_floor() == false:
 		velocity.y -= gravity * delta
 	else : 
 		velocity.y = -0.5
 	
-	#Movement Controls #--------------------------------------------------
+	# Movement Controls --------------------------------------------------
 	var raw_input := Input.get_vector("Forward","Backward", "Left", "Right")
 	var forward := _camera.global_basis.x
 	var right := _camera.global_basis.z
@@ -127,7 +90,7 @@ func _physics_process(delta: float) -> void:
 	
 	var target_velocity_horizontal = move_direction * move_speed
 	
-	velocity.x = lerp(velocity.x, target_velocity_horizontal.x, acceleration *delta)
+	velocity.x = lerp(velocity.x, target_velocity_horizontal.x, acceleration * delta)
 	velocity.z = lerp(velocity.z, target_velocity_horizontal.z, acceleration * delta)
 	
 	move_and_slide()
@@ -136,6 +99,20 @@ func _physics_process(delta: float) -> void:
 		_last_movement_direction = move_direction
 	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
 	_Skin.global_rotation.y = target_angle
+
+	# Animation Logic (Moved here for consistent updates) --------------------
+	var ground_speed := velocity.length()
+	
+	if Input.is_action_pressed("Run") and ground_speed > 0.1:
+		_animation_player.play("Run001")
+	elif ground_speed > 0.1:
+		_animation_player.play("Walk002")
+		if $Timer.time_left <= 0:
+			%WalkSound.play()
+			$Timer.start(0.9)
+	else:
+		_animation_player.play("Idle02")
+
 
 #Doppelganger Collisions 
 #---------------------------------------------------------
@@ -153,26 +130,16 @@ func _KO():
 
 
 func _on_sprint_boost_timer_timeout():
-	move_speed = 8
-	var can_run = false 
-	$SprintCooldownTimer
+	move_speed = 8.0 # Reset move speed after sprint boost
+	can_run = false # This variable is not currently used, but kept for context
+	$SprintCooldownTimer.start() # Start cooldown timer
 
 
 func _on_sprint_cooldown_timer_timeout():
-	pass
+	can_run = true # Allow running again after cooldown
 
 
 #Camera Switching 
 #---------------------------------------------------------
 func _switch_back_cam():
 	_camera.make_current()
-
-
-#Animation Handling 
-#---------------------------------------------------------
-
-
-
-func _AT_update():
-	AT["parameters/RunBlend/blend_amount"] = Run_V
-	AT["parameters/WalkBlend/blend_amount"] = Walk_V

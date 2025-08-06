@@ -18,13 +18,13 @@ stream_0/stream = ExtResource("5_7ised")
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_imndf"]
 animation = &"Idle02"
 
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_mqctx"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lrwhm"]
 animation = &"Run001"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_mqctx"]
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t4wpr"]
-animation = &"Walk002"
+animation = &"Walk002_Armature_001"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_27fox"]
 
@@ -32,16 +32,16 @@ animation = &"Walk002"
 graph_offset = Vector2(-666.302, 161.185)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_imndf")
 nodes/Idle/position = Vector2(-680, 120)
-nodes/RunAnim/node = SubResource("AnimationNodeAnimation_lrwhm")
-nodes/RunAnim/position = Vector2(-700, 400)
-nodes/RunBlend/node = SubResource("AnimationNodeBlend2_mqctx")
-nodes/RunBlend/position = Vector2(-400, 80)
-nodes/WalkAnim/node = SubResource("AnimationNodeAnimation_t4wpr")
-nodes/WalkAnim/position = Vector2(-360, 420)
-nodes/WalkBlend/node = SubResource("AnimationNodeBlend2_27fox")
-nodes/WalkBlend/position = Vector2(-60, 100)
-nodes/output/position = Vector2(240, 160)
-node_connections = [&"RunBlend", 0, &"Idle", &"RunBlend", 1, &"RunAnim", &"WalkBlend", 0, &"RunBlend", &"WalkBlend", 1, &"WalkAnim", &"output", 0, &"WalkBlend"]
+nodes/Run/node = SubResource("AnimationNodeAnimation_lrwhm")
+nodes/Run/position = Vector2(-700, 400)
+"nodes/Run 2/node" = SubResource("AnimationNodeBlend2_mqctx")
+"nodes/Run 2/position" = Vector2(-400, 80)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_t4wpr")
+nodes/Walk/position = Vector2(-360, 420)
+nodes/output/position = Vector2(120, 160)
+nodes/walk/node = SubResource("AnimationNodeBlend2_27fox")
+nodes/walk/position = Vector2(-160, 80)
+node_connections = [&"Run 2", 0, &"Idle", &"Run 2", 1, &"Run", &"walk", 0, &"Run 2"]
 
 [node name="Cooper" type="CharacterBody3D" groups=["Cooper"]]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.652896, 3.52026, 0)
@@ -137,8 +137,8 @@ wait_time = 10.0
 root_node = NodePath("%CooperSkin")
 tree_root = SubResource("AnimationNodeBlendTree_djmxl")
 anim_player = NodePath("../CooperSkin/AnimationPlayer")
-parameters/RunBlend/blend_amount = 0.0
-parameters/WalkBlend/blend_amount = 0.0
+"parameters/Run 2/blend_amount" = 0
+parameters/walk/blend_amount = 3.4
 
 [connection signal="timeout" from="SprintBoostTimer" to="." method="_on_sprint_boost_timer_timeout"]
 [connection signal="timeout" from="SprintCooldownTimer" to="." method="_on_sprint_cooldown_timer_timeout"]
