@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+enum {IDLE, RUN, WALK}
+var curAnim = IDLE
+
 @export_group("Camera")
 @export_range(0.0, 1.0) var mouse_sensitivity := 0.25
 
@@ -16,6 +19,15 @@ var _last_movement_direction := Vector3.BACK
 @onready var _camera: Camera3D = %Camera3D
 @onready var _Skin: Node3D = %CooperSkin
 @onready var _WalkSound: AudioStreamPlayer3D = %WalkSound
+@onready var AP: AnimationPlayer = $CooperSkin/AnimationPlayer
+
+#Animation Variables 
+@onready var AT: AnimationTree = $AnimationTree
+@export var blendSpeed = 15
+
+#Animation Blend Data
+var Run_V = 0 
+var Walk_V = 0 
 
 var can_run = true
 
@@ -60,18 +72,18 @@ func _input(event):
 	if Input.is_action_pressed("Run"):
 		move_speed = 16
 		$SprintBoostTimer.start()
-		AP.play("Run001")
+		curAnim = RUN
 
 	elif Input.is_action_just_released("Run"):
 		move_speed = 8
 		
 	if ground_speed > 0.1:
-		AP.play("Walk002")
+		curAnim = WALK
 		if $Timer.time_left <= 0:
 			%WalkSound.play()
 			$Timer.start(0.9)
 	else:
-		AP.play("Idle02")
+		curAnim = IDLE
 	
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -84,6 +96,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	match curAnim:
+		IDLE:
+			Run_V = lerpf(Run_V, 0, blendSpeed * delta)
+			Walk_V = lerpf(Walk_V, 0, blendSpeed * delta)
+		RUN:
+			Run_V = lerpf(Run_V, 1, blendSpeed * delta)
+			Walk_V = lerpf(Walk_V, 0, blendSpeed * delta)
 	
 	
 #Camera Controls 
@@ -147,3 +166,13 @@ func _on_sprint_cooldown_timer_timeout():
 #---------------------------------------------------------
 func _switch_back_cam():
 	_camera.make_current()
+
+
+#Animation Handling 
+#---------------------------------------------------------
+
+
+
+func _AT_update():
+	AT["parameters/RunBlend/blend_amount"] = Run_V
+	AT["parameters/WalkBlend/blend_amount"] = Walk_V

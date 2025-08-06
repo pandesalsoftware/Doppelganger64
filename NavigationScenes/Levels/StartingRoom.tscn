@@ -2431,12 +2431,42 @@ transform = Transform3D(-4.29654, 0, -0.172417, 0, 4.3, 0, 0.172417, 0, -4.29654
 collision_mask = 29
 
 [node name="Skeleton3D" parent="Characters/Cooper/CooperSkin/Armature" index="0"]
-bones/0/rotation = Quaternion(-0.0119155, -4.93719e-08, 0.0020048, 0.999927)
-bones/1/rotation = Quaternion(-0.0711572, 1.24087e-07, -0.784963, 0.615443)
-bones/2/rotation = Quaternion(0.0970125, 1.23641e-08, 0.792126, 0.602598)
-bones/8/position = Vector3(-0.99717, 0.686603, -0.380835)
-bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372982, 0.998949)
-bones/12/rotation = Quaternion(0.99521, 0.00363778, -0.0760773, -0.0612902)
+bones/0/position = Vector3(0.0195334, -0.219271, -0.670633)
+bones/0/rotation = Quaternion(0.322191, 0.00200546, 0.0018901, 0.946671)
+bones/0/scale = Vector3(0.984236, 0.984236, 0.984236)
+bones/1/rotation = Quaternion(-0.0711572, 1.19394e-07, -0.784963, 0.615443)
+bones/2/rotation = Quaternion(0.0970125, -9.38932e-09, 0.792126, 0.602598)
+bones/3/rotation = Quaternion(-0.16447, -0.0608548, -0.078328, 0.981382)
+bones/5/position = Vector3(-0.00590511, -1.07307, -0.36284)
+bones/5/rotation = Quaternion(-0.470242, 0.350849, 0.329562, 0.739707)
+bones/6/position = Vector3(0.083049, -1.00197, -0.368009)
+bones/6/rotation = Quaternion(0.776566, 0.257142, -0.31635, 0.48036)
+bones/7/position = Vector3(0.351857, -2.84403, 1.26078)
+bones/7/rotation = Quaternion(0.281478, 0.347004, -0.110011, 0.887838)
+bones/7/scale = Vector3(1, 1, 1.00001)
+bones/8/position = Vector3(0.0681906, 0.344367, -0.196176)
+bones/8/rotation = Quaternion(0.294572, 0.125712, 0.306862, 0.896247)
+bones/9/position = Vector3(-0.253223, 0.53204, -0.690678)
+bones/9/rotation = Quaternion(0.630639, 0.615072, -0.440188, 0.173825)
+bones/10/rotation = Quaternion(-0.0116035, 0.591636, -0.661229, -0.461095)
+bones/11/position = Vector3(0.266104, -1.20692, -0.66536)
+bones/12/position = Vector3(0.185478, -1.20827, -0.653071)
+bones/12/rotation = Quaternion(-0.196691, 0.152849, 0.0209097, -0.968252)
+bones/13/position = Vector3(0.539677, 0.321955, -4.91347)
+bones/13/rotation = Quaternion(0.554006, 0.0689019, -0.00264724, -0.829652)
+bones/13/scale = Vector3(1, 1, 1.00001)
+bones/14/position = Vector3(-0.265912, 0.18066, -0.243988)
+bones/14/rotation = Quaternion(0.292532, -0.130095, -0.460066, 0.828154)
+bones/15/position = Vector3(-0.457399, 0.407352, -0.450252)
+bones/15/rotation = Quaternion(0.812816, 0.0467711, -0.553294, 0.176092)
+bones/16/rotation = Quaternion(0.70038, -0.18251, 0.3724, 0.580927)
+
+[node name="Cube" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.275933, 0.0657747, -0.00220923, -0.0608776, 0.28039, -0.080542, -0.0142828, 0.0756073, 0.300613, 0.197717, 2.01363, 0.708187)
+
+[node name="AnimationTree" parent="Characters/Cooper" index="8"]
+parameters/RunBlend/blend_amount = 0
+parameters/WalkBlend/blend_amount = 3.4
 
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
@@ -2649,33 +2679,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Zach" parent="Characters" instance=ExtResource("21_qsinv")]
 transform = Transform3D(3.61791, 0, -2.50414, 0, 4.4, 0, 2.50414, 0, 3.61791, 15.1423, 0.110929, -7.16059)
 
-[node name="Skeleton3D" parent="Characters/Zach/ZachSkin/Armature" index="0"]
-bones/0/rotation = Quaternion(-0.0119155, -4.93672e-08, 0.0020048, 0.999927)
-bones/1/rotation = Quaternion(-0.0711572, 1.20301e-07, -0.784963, 0.615443)
-bones/2/rotation = Quaternion(0.0970125, 1.72859e-08, 0.792126, 0.602598)
-bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
-bones/5/position = Vector3(-0.238056, -1.1975, -0.344886)
-bones/6/position = Vector3(-0.238056, -1.1975, -0.344886)
-bones/6/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
-bones/7/position = Vector3(-0.23475, -2.77124, -0.539207)
-bones/7/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/8/position = Vector3(-0.997169, 0.686603, -0.380835)
-bones/8/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
-bones/9/position = Vector3(-0.983834, 0.693329, -0.382503)
-bones/9/rotation = Quaternion(0.926344, -0.364653, -0.0817885, -0.0471739)
-bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372981, 0.998949)
-bones/11/position = Vector3(0.266104, -1.20692, -0.394646)
-bones/11/rotation = Quaternion(0, 1.19209e-07, 0, 1)
-bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
-bones/12/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
-bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
-bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/14/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
-bones/15/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
-bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
-
 [node name="Cube" parent="Characters/Zach/ZachSkin/Armature/Skeleton3D" index="0"]
 transform = Transform3D(-0.141967, 4.55184e-08, -2.42144e-08, -2.16241e-08, -0.32064, 8.3819e-09, 1.21072e-08, -1.02445e-08, -0.32064, 0.0308378, 2.10393, 0.849744)
 
@@ -2805,7 +2808,6 @@ stream = ExtResource("21_457ip")
 [connection signal="timeout" from="Characters/York/TalkingCamera/CutsceneEndTimer" to="Characters/York/TalkingCamera" method="_on_cutscene_end_timer_timeout"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
-[connection signal="animation_finished" from="Characters/Zach/ZachSkin/AnimationPlayer" to="Characters/Zach" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_exit_radius"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]

@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var ZS_AP = $ZachSkin/AnimationPlayer
 @onready var ZS : Node3D =  %ZachSkin
 
+
 @export var move_speed = 6.5
 
 var follow = false 
@@ -34,14 +35,16 @@ func _update_target_location(target_location):
 		NavAgent.set_target_position(target_location)
 
 
-func _start_following():
-	follow = true
-
-
 func _talking():
 	follow = false
 	ZS_AP.play("Speech")
 
 
-func _on_animation_player_animation_finished(Speech):
-	_start_following()
+
+func _start_following():
+	follow = true
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Speech":
+		_start_following()

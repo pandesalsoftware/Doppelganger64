@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://40s4yrlc0p76"]
+[gd_scene load_steps=13 format=3 uid="uid://40s4yrlc0p76"]
 
 [ext_resource type="Script" uid="uid://bc00t4yo8d4eq" path="res://InstanceScenes/Cooper/cooper.gd" id="1_rj3jh"]
 [ext_resource type="PackedScene" uid="uid://1giht2dxp8nf" path="res://InstanceScenes/Cooper/Cooper.glb" id="2_5j7ao"]
@@ -15,6 +15,34 @@ random_volume_offset_db = 4.57
 streams_count = 1
 stream_0/stream = ExtResource("5_7ised")
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_imndf"]
+animation = &"Idle02"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lrwhm"]
+animation = &"Run001"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_mqctx"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t4wpr"]
+animation = &"Walk002"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_27fox"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_djmxl"]
+graph_offset = Vector2(-666.302, 161.185)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_imndf")
+nodes/Idle/position = Vector2(-680, 120)
+nodes/RunAnim/node = SubResource("AnimationNodeAnimation_lrwhm")
+nodes/RunAnim/position = Vector2(-700, 400)
+nodes/RunBlend/node = SubResource("AnimationNodeBlend2_mqctx")
+nodes/RunBlend/position = Vector2(-400, 80)
+nodes/WalkAnim/node = SubResource("AnimationNodeAnimation_t4wpr")
+nodes/WalkAnim/position = Vector2(-360, 420)
+nodes/WalkBlend/node = SubResource("AnimationNodeBlend2_27fox")
+nodes/WalkBlend/position = Vector2(-60, 100)
+nodes/output/position = Vector2(240, 160)
+node_connections = [&"RunBlend", 0, &"Idle", &"RunBlend", 1, &"RunAnim", &"WalkBlend", 0, &"RunBlend", &"WalkBlend", 1, &"WalkAnim", &"output", 0, &"WalkBlend"]
+
 [node name="Cooper" type="CharacterBody3D" groups=["Cooper"]]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.652896, 3.52026, 0)
 collision_layer = 2
@@ -27,43 +55,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222736, -1.2084, -0.194659
 
 [node name="Skeleton3D" parent="CooperSkin/Armature" index="0"]
 bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
-bones/0/rotation = Quaternion(-0.0119155, -4.93672e-08, 0.0020048, 0.999927)
-bones/1/rotation = Quaternion(-0.0711572, 1.19713e-07, -0.784963, 0.615443)
-bones/2/rotation = Quaternion(0.0970125, 1.17757e-08, 0.792126, 0.602598)
+bones/0/rotation = Quaternion(-0.0119155, -4.93746e-08, 0.0020048, 0.999927)
+bones/0/scale = Vector3(0.993008, 0.993008, 0.993008)
+bones/1/rotation = Quaternion(-0.0711572, 1.19536e-07, -0.784963, 0.615443)
+bones/2/rotation = Quaternion(0.0970125, 1.73763e-11, 0.792126, 0.602598)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
 bones/3/scale = Vector3(1, 1, 1)
-bones/6/position = Vector3(-0.238056, -1.1975, -0.344886)
-bones/6/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
-bones/7/position = Vector3(-0.23475, -2.77124, -0.539207)
-bones/7/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/5/position = Vector3(-0.109083, -1.1229, -0.562486)
+bones/5/rotation = Quaternion(-0.0639184, 0.262268, 0.0855874, 0.959064)
+bones/6/position = Vector3(-0.121698, -1.0847, -0.555905)
+bones/6/rotation = Quaternion(0.950824, 0.0963134, -0.293792, 0.0185427)
+bones/7/position = Vector3(0.0911424, -2.82262, -0.516685)
+bones/7/rotation = Quaternion(0.664002, 0.150977, -0.13944, 0.718933)
 bones/7/scale = Vector3(1, 1, 1.00001)
-bones/8/position = Vector3(-0.997169, 0.686603, -0.380835)
-bones/8/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
+bones/8/position = Vector3(-0.080429, 0.390039, -0.341679)
+bones/8/rotation = Quaternion(-0.0179859, 0.0873191, 0.24233, 0.966089)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(-0.983834, 0.693329, -0.382503)
+bones/9/position = Vector3(-0.256492, 0.488557, -0.617646)
+bones/9/rotation = Quaternion(0.933969, -0.305181, 0.0209516, -0.184733)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372981, 0.998949)
+bones/10/rotation = Quaternion(0.164354, 0.56364, -0.40936, 0.698371)
 bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
 bones/12/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
 bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
 bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
 bones/13/scale = Vector3(1, 1, 1.00001)
-bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/14/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
-bones/15/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
-bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
+bones/14/position = Vector3(0.144358, 0.371625, -0.42156)
+bones/14/rotation = Quaternion(-0.000301719, -0.0926519, -0.210706, 0.973149)
+bones/15/position = Vector3(0.03734, 0.482584, -0.441454)
+bones/15/rotation = Quaternion(0.883413, 0.453075, -0.119113, 0.010747)
+bones/16/rotation = Quaternion(0.412323, -0.26312, 0.375504, 0.787245)
 
 [node name="Cube" parent="CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.287422, 0.00466884, -0.00175722, -0.00437135, 0.302269, 0.0122125, 0.00176742, -0.011657, 0.315967, -0.00251988, 2.48665, -0.291875)
-
-[node name="InteractRay" type="RayCast3D" parent="CooperSkin"]
-unique_name_in_owner = true
-transform = Transform3D(1.41397, 0, 0, 0, -0.0141618, 1.44286, 1.6241e-14, -3.27184, -0.00624526, 0.036701, 5.13847, 0.532251)
-collision_mask = 5
-collide_with_areas = true
-debug_shape_thickness = 3
+transform = Transform3D(0.285412, 0.00463623, -0.00174495, -0.00434081, 0.300155, 0.0121271, 0.00175508, -0.0115755, 0.313758, -0.00236526, 2.46772, -0.292015)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.54317, 0, 0, 0, 6.3954, 0, 0, 0, 1.42911, -0.185753, 1.70606, -0.170961)
@@ -107,6 +132,13 @@ wait_time = 0.5
 
 [node name="SprintCooldownTimer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("%CooperSkin")
+tree_root = SubResource("AnimationNodeBlendTree_djmxl")
+anim_player = NodePath("../CooperSkin/AnimationPlayer")
+parameters/RunBlend/blend_amount = 0.0
+parameters/WalkBlend/blend_amount = 0.0
 
 [connection signal="timeout" from="SprintBoostTimer" to="." method="_on_sprint_boost_timer_timeout"]
 [connection signal="timeout" from="SprintCooldownTimer" to="." method="_on_sprint_cooldown_timer_timeout"]
