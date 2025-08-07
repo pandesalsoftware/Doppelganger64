@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export_range(0.0, 1.0) var mouse_sensitivity := 0.25
 
 @export_group("Movement")
-@export var move_speed := 8.0 # Changed to float for consistency
+@export var move_speed := 10.5 # Changed to float for consistency
 @export var acceleration := 20.0
 @export var gravity := 25.0
 
@@ -54,10 +54,10 @@ func _input(event):
 		
 	# Handle Run input for speed change and timer
 	if Input.is_action_pressed("Run"):
-		move_speed = 16.0
+		move_speed = 17.5
 		$SprintBoostTimer.start()
 	elif Input.is_action_just_released("Run"):
-		move_speed = 8.0 # Speed will be reset by timer as well, but this ensures immediate change
+		move_speed = 10.5 # Speed will be reset by timer as well, but this ensures immediate change
 
 func _unhandled_input(event: InputEvent) -> void:
 	var is_camera_motion := (
@@ -130,7 +130,7 @@ func _KO():
 
 
 func _on_sprint_boost_timer_timeout():
-	move_speed = 8.0 # Reset move speed after sprint boost
+	move_speed = 10.5 # Reset move speed after sprint boost
 	can_run = false # This variable is not currently used, but kept for context
 	$SprintCooldownTimer.start() # Start cooldown timer
 

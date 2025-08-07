@@ -4,15 +4,30 @@ extends CharacterBody3D
 @onready var DS_AP = $DoppelgangerSkin/AnimationPlayer
 @onready var DS : Node3D =  %DoppelgangerSkin
 
-@export var move_speed = 2
+@export var move_speed := 8
+@export var accel := 6
+@export var gravity := 25.0
 
 func _physics_process(delta):
+	#Gravity Handling --------------------------------------------
+	if is_on_floor() == false:
+		velocity.y -= gravity * delta 
+	else: 
+		velocity.y = -0.5
+	
+	
+	#Navigation and Movement --------------------------------------------
 	var current_location = global_transform.origin
 	var next_location = NavAgent.get_next_path_position()
+	
+	
 	var new_velocity = (next_location - current_location).normalized() * move_speed
 	
-	velocity = velocity.move_toward(new_velocity, .25)
+	velocity.x = lerp(velocity.x, new_velocity.x, accel * delta)
+	velocity.z = lerp(velocity.z, new_velocity.z, accel * delta)
+	
 	move_and_slide()
+	
 	DS.look_at(next_location)
 	DS.rotate_object_local(Vector3.UP, PI)
 	DS_AP.play("Walk002")

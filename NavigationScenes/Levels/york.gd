@@ -8,7 +8,6 @@ extends Camera3D
 @onready var Cooper = $"../../Cooper"
 
 
-@onready var CE_Timer = $CutsceneEndTimer
 
 func _ready():
 	York_AP.play("Idle")
@@ -17,11 +16,4 @@ func _ready():
 func _talking_begin(): 
 	#York Camera is Active!
 	York_AP.play("Speech")
-	York_Camera.current = true
 	#York Cutscene Started!
-	$CutsceneEndTimer.start()
-
-
-func _on_cutscene_end_timer_timeout():
-	#Coop Camera is Active! 
-	Cooper._switch_back_cam()

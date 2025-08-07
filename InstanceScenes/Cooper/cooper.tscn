@@ -88,7 +88,7 @@ bones/15/rotation = Quaternion(0.883413, 0.453075, -0.119113, 0.010747)
 bones/16/rotation = Quaternion(0.412323, -0.26312, 0.375504, 0.787245)
 
 [node name="Cube" parent="CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.285412, 0.00463623, -0.00174495, -0.00434081, 0.300155, 0.0121271, 0.00175508, -0.0115755, 0.313758, -0.00236526, 2.46772, -0.292015)
+transform = Transform3D(0.285412, 0.0046362, -0.00174493, -0.00434078, 0.300156, 0.0121271, 0.00175506, -0.0115755, 0.313758, -0.00236536, 2.46772, -0.292014)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.54317, 0, 0, 0, 6.3954, 0, 0, 0, 1.42911, -0.185753, 1.70606, -0.170961)

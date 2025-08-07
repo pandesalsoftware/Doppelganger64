@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=71 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -10,10 +10,12 @@
 [ext_resource type="Script" uid="uid://jcg5byfmp2pa" path="res://Functions/DropStatue.gd" id="8_4oh8o"]
 [ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="8_mlwue"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="9_wejdm"]
-[ext_resource type="Script" uid="uid://vayaoonhomna" path="res://Functions/dropstatue2.gd" id="9_wtcnq"]
 [ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="11_en5q8"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="11_qvkwb"]
+[ext_resource type="Script" uid="uid://d2e6ltfhekar0" path="res://Functions/NorthStatueDrop.gd" id="11_tu6a2"]
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="11_wyi3l"]
+[ext_resource type="Script" uid="uid://dak1scrtavhgo" path="res://Functions/EastStatue.gd" id="12_nwhp8"]
+[ext_resource type="Script" uid="uid://vayaoonhomna" path="res://Functions/dropstatue2.gd" id="12_uylg5"]
 [ext_resource type="Script" uid="uid://d0ikhr038mgnc" path="res://Functions/doppelganger_spawn.gd" id="14_en5q8"]
 [ext_resource type="PackedScene" uid="uid://btwaaalw7cxvh" path="res://Donuts/chocolate_donut.tscn" id="14_qvkwb"]
 [ext_resource type="PackedScene" uid="uid://dw6bdfthvcbc2" path="res://Donuts/glazed_donut.tscn" id="15_dd8pe"]
@@ -25,41 +27,97 @@
 [ext_resource type="PackedScene" uid="uid://r8ds3y23rlg4" path="res://InstanceScenes/Zach/zach.tscn" id="21_qsinv"]
 [ext_resource type="Script" uid="uid://o3tubur6atyp" path="res://Dialogue/Zach/ZachQuestBegin.gd" id="22_tu6a2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en5q8"]
-albedo_color = Color(0.376471, 0.0117647, 0.0117647, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_457ip"]
-material = SubResource("StandardMaterial3D_en5q8")
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4oh8o"]
 radius = 1.55742
 height = 7.56026
 
-[sub_resource type="Animation" id="Animation_tu6a2"]
+[sub_resource type="Animation" id="Animation_uylg5"]
 resource_name = "Fall_Over"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33, 0.36, 0.47, 0.58, 0.67),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.533333, 1, 1.23333, 1.43333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-50.8931, 0.73786, 8.8854), Vector3(-50.8931, 5.34527, 8.8854), Vector3(-50.8931, 6.05398, 8.8854), Vector3(-50.8931, 7.16539, 8.8854), Vector3(-50.8931, 8.30637, 8.8854), Vector3(-50.8931, 10.6195, 8.8854)]
+"values": [Vector3(0, 1.32964, 0), Vector3(-0.483185, 1.29772, 0.129396), Vector3(-0.734881, 1.24306, 0.224137), Vector3(-1.07717, 1.04254, 0.474714), Vector3(-1.27187, -0.625013, 2.21748), Vector3(-1.31157, -0.371793, 1.95424), Vector3(-1.29547, -0.498134, 2.08521)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.34, 0.58, 0.866667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.16, 0.34, 0.53, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 1.01363, 0), Vector3(-0.439665, 0.946711, 0.297408), Vector3(-0.872726, 0.604661, 0.836882), Vector3(-0.993997, -0.247104, 1.86312)]
+"values": [Vector3(-50.1227, 0.619909, 9.58518), Vector3(-50.1227, 4.66505, 9.58518), Vector3(-49.8373, 4.81776, 9.58518), Vector3(-49.7004, 7.56654, 9.58518), Vector3(-50.1227, 9.5684, 9.58518), Vector3(-49.8441, 9.5684, 9.58518)]
+}
+
+[sub_resource type="Animation" id="Animation_u3tg2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.32964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-50.1227, 0.619909, 9.58518)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdm1b"]
+_data = {
+&"Fall_Over": SubResource("Animation_uylg5"),
+&"RESET": SubResource("Animation_u3tg2")
+}
+
+[sub_resource type="Animation" id="Animation_tu6a2"]
+resource_name = "Fall_Over"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.27, 0.88, 0.99, 1.09, 1.19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.563288), Vector3(0, 0, -1.12429), Vector3(0, 0, -1.64602), Vector3(0, 0, -1.61138), Vector3(0, 0, -1.67044)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.27, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(146.849, 0.60032, -194.738), Vector3(146.849, 4.09466, -194.738), Vector3(146.849, 5.36208, -194.738)]
 }
 
 [sub_resource type="Animation" id="Animation_nwhp8"]
@@ -67,26 +125,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-50.8931, 0.73786, 8.8854)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 1.01363, 0)]
+"values": [Vector3(146.849, 0.60032, -194.738)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uylg5"]
@@ -147,6 +205,12 @@ albedo_color = Color(0, 1, 0, 0.392157)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_epf8m"]
 data = PackedVector3Array(-0.368362, -0.5, 0.233867, -0.368362, -0.5, -0.233867, -0.368362, 0.5, -0.233867, 0.368362, -0.5, -0.233867, -0.368362, -0.5, -0.233867, -0.368362, -0.5, 0.233867, -0.368362, 0.5, -0.233867, -0.368362, -0.5, -0.233867, 0.368362, -0.5, -0.233867, -0.368362, 0.5, -0.233867, -0.368362, 0.5, 0.233867, -0.368362, -0.5, 0.233867, -0.368362, -0.5, 0.233867, -0.368362, 0.5, 0.233867, 0.368362, 0.5, 0.233867, 0.368362, 0.5, 0.233867, -0.368362, 0.5, 0.233867, -0.368362, 0.5, -0.233867, -0.368362, -0.5, 0.233867, 0.368362, -0.5, 0.233867, 0.368362, -0.5, -0.233867, 0.368362, 0.5, 0.233867, 0.368362, -0.5, 0.233867, -0.368362, -0.5, 0.233867, 0.368362, -0.5, -0.233867, 0.368362, -0.5, 0.233867, 0.368362, 0.5, 0.233867, 0.368362, -0.5, -0.233867, 0.368362, 0.5, -0.233867, -0.368362, 0.5, -0.233867, -0.368362, 0.5, -0.233867, 0.368362, 0.5, -0.233867, 0.368362, 0.5, 0.233867, 0.368362, 0.5, 0.233867, 0.368362, 0.5, -0.233867, 0.368362, -0.5, -0.233867)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uylg5"]
+data = PackedVector3Array(-0.229347, -0.5, 0.233867, -0.229347, -0.5, -0.233867, -0.229347, 0.5, -0.233867, 0.229347, -0.5, -0.233867, -0.229347, -0.5, -0.233867, -0.229347, -0.5, 0.233867, -0.229347, 0.5, -0.233867, -0.229347, -0.5, -0.233867, 0.229347, -0.5, -0.233867, -0.229347, 0.5, -0.233867, -0.229347, 0.5, 0.233867, -0.229347, -0.5, 0.233867, -0.229347, -0.5, 0.233867, -0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, -0.229347, 0.5, 0.233867, -0.229347, 0.5, -0.233867, -0.229347, -0.5, 0.233867, 0.229347, -0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, 0.5, 0.233867, 0.229347, -0.5, 0.233867, -0.229347, -0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, -0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, 0.5, -0.233867, -0.229347, 0.5, -0.233867, -0.229347, 0.5, -0.233867, 0.229347, 0.5, -0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, -0.233867, 0.229347, -0.5, -0.233867)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u3tg2"]
+data = PackedVector3Array(-0.229347, -0.5, 0.233867, -0.229347, -0.5, -0.233867, -0.229347, 0.5, -0.233867, 0.229347, -0.5, -0.233867, -0.229347, -0.5, -0.233867, -0.229347, -0.5, 0.233867, -0.229347, 0.5, -0.233867, -0.229347, -0.5, -0.233867, 0.229347, -0.5, -0.233867, -0.229347, 0.5, -0.233867, -0.229347, 0.5, 0.233867, -0.229347, -0.5, 0.233867, -0.229347, -0.5, 0.233867, -0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, -0.229347, 0.5, 0.233867, -0.229347, 0.5, -0.233867, -0.229347, -0.5, 0.233867, 0.229347, -0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, 0.5, 0.233867, 0.229347, -0.5, 0.233867, -0.229347, -0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, -0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, 0.5, -0.233867, -0.229347, 0.5, -0.233867, -0.229347, 0.5, -0.233867, 0.229347, 0.5, -0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, -0.233867, 0.229347, -0.5, -0.233867)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owvdk"]
 albedo_texture = ExtResource("6_nys04")
@@ -2210,14 +2274,6 @@ light_energy = 0.3
 light_angular_distance = 67.25
 shadow_enabled = true
 
-[node name="Ceiling" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -26.0828, 0)
-visible = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
-transform = Transform3D(475.999, 0, 0, 0, 1, 0, 0, 0, 385.451, 0, 72.3139, 128.573)
-mesh = SubResource("PlaneMesh_457ip")
-
 [node name="Curtains" parent="." instance=ExtResource("2_qsinv")]
 
 [node name="Envrionment" type="Node3D" parent="."]
@@ -2250,7 +2306,7 @@ transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8312, 0, 0)
 
 [node name="STARTmedici_venus" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("9_wejdm")]
-transform = Transform3D(2.27377, 0, 3.64965, 0, 4.3, 0, -3.64965, 0, 2.27377, -50.8931, 0.73786, 8.8854)
+transform = Transform3D(1.02693, 0, 4.17557, 0, 4.3, 0, -4.17558, 0, 1.02693, -50.1227, 0.619909, 9.58518)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTmedici_venus"]
 
@@ -2261,6 +2317,21 @@ debug_color = Color(0, 0.847059, 0.886275, 0.894118)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Envrionment/StartingRoomFurniture/Objects/STARTmedici_venus"]
 libraries = {
+&"": SubResource("AnimationLibrary_pdm1b")
+}
+
+[node name="EASTstatue" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("9_wejdm")]
+transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 146.849, 0.60032, -194.738)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTstatue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTstatue/StaticBody3D"]
+transform = Transform3D(0.816511, 0, 0.57733, 0, 1, 0, -0.57733, 0, 0.816511, -0.173306, 3.83943, -0.832054)
+shape = SubResource("CapsuleShape3D_4oh8o")
+debug_color = Color(0, 0.847059, 0.886275, 0.894118)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Envrionment/StartingRoomFurniture/Objects/EASTstatue"]
+libraries = {
 &"": SubResource("AnimationLibrary_uylg5")
 }
 
@@ -2268,7 +2339,7 @@ libraries = {
 transform = Transform3D(-0.697524, -0.00656203, -0.370834, -0.00743168, 0.789965, 3.12509e-09, 0.370817, 0.00348851, -0.697555, 3.1616, 11.1186, 34.8097)
 
 [node name="HALLWAYvenusdemilo" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
-transform = Transform3D(0.156427, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.156427, -50.6885, 0, 229.482)
+transform = Transform3D(0.156427, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.156427, -50.6885, 1.42185, 229.482)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/HALLWAYvenusdemilo"]
 
@@ -2285,12 +2356,29 @@ libraries = {
 collision_layer = 8
 collision_mask = 2
 
+[node name="NorthHALLWAYvenusdemilo2" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
+transform = Transform3D(0.156427, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.156427, -271.851, 1.42185, 171.855)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/NorthHALLWAYvenusdemilo2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/NorthHALLWAYvenusdemilo2/StaticBody3D"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.360397, 3.70096, -0.431187)
+shape = SubResource("BoxShape3D_qvkwb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Envrionment/StartingRoomFurniture/Objects/NorthHALLWAYvenusdemilo2"]
+libraries = {
+&"": SubResource("AnimationLibrary_tu6a2")
+}
+
+[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/NorthHALLWAYvenusdemilo2"]
+collision_layer = 8
+collision_mask = 2
+
 [node name="HALLWAYDropStatue" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
 transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, -0.999495, -35.6854, -0.059807, 236.43)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue"]
 transform = Transform3D(55.9977, 0, 0, 0, 0.999991, 0, 1.83582e-05, 0, 84.6654, 18.1483, -0.239617, 11.019)
-visible = false
 size = Vector3(0.783081, 1, 0.669766)
 material = SubResource("StandardMaterial3D_sd3nw")
 
@@ -2315,24 +2403,83 @@ theme_override_font_sizes/font_size = 45
 text = "\"E\""
 metadata/_edit_use_anchors_ = true
 
+[node name="NORTHDropStatue" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
+transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, -0.999495, -276.027, -0.059807, 182.186)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue"]
+transform = Transform3D(55.9818, 0, 2.13956, 0, 1, 0, -1.41507, 0, 84.6436, 10.7446, -0.239617, 10.0442)
+size = Vector3(0.736725, 1, 0.467734)
+material = SubResource("StandardMaterial3D_pdm1b")
+
+[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue"]
+transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("11_tu6a2")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue/Area3D"]
+transform = Transform3D(0.999733, 0, 0.0382087, 0, 1, 0, -0.0167137, 0, 0.999743, 0.559666, -0.239617, -0.0520812)
+shape = SubResource("ConcavePolygonShape3D_epf8m")
+
+[node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
+metadata/_edit_use_anchors_ = true
+
+[node name="EASTDropStatue" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
+transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, -0.999495, 143.237, -0.059807, -188.748)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue"]
+transform = Transform3D(55.982, 0, 2.13958, 0, 1, 0, -1.41507, 0, 84.6441, 2.96228, -0.239617, 10.2409)
+visible = false
+size = Vector3(0.458695, 1, 0.467734)
+material = SubResource("StandardMaterial3D_pdm1b")
+
+[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue"]
+transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("12_nwhp8")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D"]
+transform = Transform3D(0.999738, 0, 0.0382091, 0, 1, 0, -0.0167138, 0, 0.99975, 0.420687, -0.239617, -0.0497582)
+shape = SubResource("ConcavePolygonShape3D_uylg5")
+
+[node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
+metadata/_edit_use_anchors_ = true
+
 [node name="STARTDropStatue" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
-transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, -0.999495, -55.9506, -0.059807, 18.1204)
+transform = Transform3D(-0.999496, 0, 0.0316897, 0, 0.999999, 0, -0.0316896, 0, -0.999495, -64.1747, -0.059807, 17.5148)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue"]
-transform = Transform3D(55.9818, 0, 2.13956, 0, 1, 0, -1.41507, 0, 84.6436, 10.7446, -0.239617, 10.0442)
+transform = Transform3D(55.982, 0, 2.13958, 0, 1, 0, -1.41507, 0, 84.6441, 2.96228, -0.239617, 10.2409)
 visible = false
-size = Vector3(0.736725, 1, 0.467734)
+size = Vector3(0.458695, 1, 0.467734)
 material = SubResource("StandardMaterial3D_pdm1b")
 
 [node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue"]
 transform = Transform3D(55.9967, 0, 0, 0, 1, 0, 0, 0, 84.6653, -20.5948, 0, 14.4537)
 collision_layer = 8
 collision_mask = 2
-script = ExtResource("9_wtcnq")
+script = ExtResource("12_uylg5")
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D"]
-transform = Transform3D(0.999733, 0, 0.0382087, 0, 1, 0, -0.0167137, 0, 0.999743, 0.559666, -0.239617, -0.0520812)
-shape = SubResource("ConcavePolygonShape3D_epf8m")
+transform = Transform3D(0.999737, 0, 0.038209, 0, 1, 0, -0.0167137, 0, 0.99975, 0.420687, -0.239617, -0.0497583)
+shape = SubResource("ConcavePolygonShape3D_u3tg2")
 
 [node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue"]
 visible = false
@@ -2363,9 +2510,6 @@ metadata/_edit_lock_ = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment"]
 environment = ExtResource("11_en5q8")
 
-[node name="Objects" type="Node3D" parent="Envrionment"]
-transform = Transform3D(-1, 0, -0.00019194, 0, 1, 0, 0.00019194, 0, -1, -32.292, 0, 247.793)
-
 [node name="AmbientLights" type="Node3D" parent="Envrionment"]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Envrionment/AmbientLights"]
@@ -2386,6 +2530,122 @@ light_energy = 16.0
 spot_range = 90.249
 spot_angle = 66.52
 spot_angle_attenuation = 0.143587
+
+[node name="MiscObjects" type="Node3D" parent="Envrionment"]
+
+[node name="Group1" type="Node3D" parent="Envrionment/MiscObjects"]
+
+[node name="Chair" parent="Envrionment/MiscObjects/Group1" instance=ExtResource("2_2la2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.701, 0.786281, 136.954)
+
+[node name="Tall_Lamp" parent="Envrionment/MiscObjects/Group1" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, 196.918, 0, 127.69)
+
+[node name="Group8" type="Node3D" parent="Envrionment/MiscObjects"]
+
+[node name="Chair" parent="Envrionment/MiscObjects/Group8" instance=ExtResource("2_2la2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.803, 0.786281, -58.5302)
+
+[node name="Table" parent="Envrionment/MiscObjects/Group8" instance=ExtResource("4_hdc3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.455, 0.219491, -56.4654)
+
+[node name="CoffeeMug" parent="Envrionment/MiscObjects/Group8/Table" instance=ExtResource("8_mlwue")]
+transform = Transform3D(0.958889, 0, 0.283781, 0, 1, 0, -0.283781, 0, 0.958889, -2.7816, 10.8272, 4.36121)
+
+[node name="Group2" type="Node3D" parent="Envrionment/MiscObjects"]
+
+[node name="Tall_Lamp2" parent="Envrionment/MiscObjects/Group2" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -158.507, 0, -55.7512)
+
+[node name="Tall_Lamp3" parent="Envrionment/MiscObjects/Group2" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -303.56, 0, -57.9631)
+
+[node name="Tall_Lamp4" parent="Envrionment/MiscObjects/Group2" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -158.507, 0, 77.1784)
+
+[node name="Group7" type="Node3D" parent="Envrionment/MiscObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 366.338, 0, 0)
+
+[node name="Tall_Lamp2" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -165.463, 0, -51.6769)
+
+[node name="Tall_Lamp4" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -165.463, 0, 62.7155)
+
+[node name="Tall_Lamp3" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, -51.6769)
+
+[node name="Tall_Lamp5" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, 62.7155)
+
+[node name="Tall_Lamp6" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, 141.515)
+
+[node name="Tall_Lamp7" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, 255.907)
+
+[node name="Tall_Lamp10" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, 359.133)
+
+[node name="Tall_Lamp8" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, -237.183)
+
+[node name="Tall_Lamp9" parent="Envrionment/MiscObjects/Group7" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -55.6137, 0, -122.79)
+
+[node name="Group6" type="Node3D" parent="Envrionment/MiscObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.982, 0, -155.953)
+
+[node name="Tall_Lamp2" parent="Envrionment/MiscObjects/Group6" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -158.507, 0, -50.7356)
+
+[node name="Tall_Lamp4" parent="Envrionment/MiscObjects/Group6" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -158.507, 0, 77.9509)
+
+[node name="Tall_Lamp3" parent="Envrionment/MiscObjects/Group6" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -275.264, 0, -50.7356)
+
+[node name="Tall_Lamp5" parent="Envrionment/MiscObjects/Group6" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -275.264, 0, 77.9509)
+
+[node name="Group4" type="Node3D" parent="Envrionment/MiscObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -294.587, 0, 184.028)
+
+[node name="Chair" parent="Envrionment/MiscObjects/Group4" instance=ExtResource("2_2la2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.701, 0.786281, 136.954)
+
+[node name="Tall_Lamp" parent="Envrionment/MiscObjects/Group4" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, 196.918, 0, 127.69)
+
+[node name="Group3" type="Node3D" parent="Envrionment/MiscObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.955, 0, 300.829)
+
+[node name="Tall_Lamp2" parent="Envrionment/MiscObjects/Group3" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -161.456, 0, -18.6964)
+
+[node name="Tall_Lamp3" parent="Envrionment/MiscObjects/Group3" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -294.854, 0, -18.6964)
+
+[node name="Tall_Lamp5" parent="Envrionment/MiscObjects/Group3" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -294.854, 0, 71.8781)
+
+[node name="Tall_Lamp4" parent="Envrionment/MiscObjects/Group3" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -161.369, 0, 70.8341)
+
+[node name="Group5" type="Node3D" parent="Envrionment/MiscObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.3351, 0, 213.323)
+
+[node name="Tall_Lamp5" parent="Envrionment/MiscObjects/Group5" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -282.325, 0, 80.0823)
+
+[node name="Tall_Lamp4" parent="Envrionment/MiscObjects/Group5" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -168.064, 0, 79.3872)
+
+[node name="Tall_Lamp6" parent="Envrionment/MiscObjects/Group5" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -282.325, 0, -49.3584)
+
+[node name="Tall_Lamp7" parent="Envrionment/MiscObjects/Group5" instance=ExtResource("3_ka1d1")]
+transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, -168.064, 0, -50.0535)
 
 [node name="Characters" type="Node3D" parent="."]
 
@@ -2431,29 +2691,21 @@ transform = Transform3D(-4.29654, 0, -0.172417, 0, 4.3, 0, 0.172417, 0, -4.29654
 collision_mask = 29
 
 [node name="Skeleton3D" parent="Characters/Cooper/CooperSkin/Armature" index="0"]
-bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
 bones/0/rotation = Quaternion(-0.0119155, -4.93804e-08, 0.0020048, 0.999927)
 bones/0/scale = Vector3(0.987414, 0.987414, 0.987414)
 bones/1/rotation = Quaternion(-0.0711572, 1.19394e-07, -0.784963, 0.615443)
 bones/2/rotation = Quaternion(0.0970125, -9.38932e-09, 0.792126, 0.602598)
-bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
 bones/5/position = Vector3(-0.00590532, -1.06322, -0.736566)
 bones/5/rotation = Quaternion(-0.111525, 0.457608, 0.149334, 0.8694)
 bones/6/position = Vector3(-0.0286116, -0.994458, -0.72472)
 bones/6/rotation = Quaternion(0.871208, 0.164626, -0.455219, 0.0816728)
 bones/7/position = Vector3(0.351857, -2.86373, -0.498667)
 bones/7/rotation = Quaternion(0.631933, 0.26742, -0.246985, 0.684211)
-bones/7/scale = Vector3(1, 1, 1.00001)
 bones/8/position = Vector3(0.338652, 0.254467, -0.323779)
 bones/8/rotation = Quaternion(-0.0260386, 0.120317, 0.477632, 0.869893)
 bones/9/position = Vector3(0.0179411, 0.419844, -0.729961)
 bones/9/rotation = Quaternion(0.832374, -0.507059, 0.163029, -0.153186)
 bones/10/rotation = Quaternion(0.41702, 0.595659, -0.583455, 0.361753)
-bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
-bones/12/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
-bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
-bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/13/scale = Vector3(1, 1, 1.00001)
 bones/14/position = Vector3(-0.264767, 0.207625, -0.414444)
 bones/14/rotation = Quaternion(-0.00655406, -0.12201, -0.449606, 0.884831)
 bones/15/position = Vector3(-0.457399, 0.407352, -0.450252)
@@ -2461,7 +2713,7 @@ bones/15/rotation = Quaternion(0.665203, 0.725129, -0.173403, 0.0402944)
 bones/16/rotation = Quaternion(0.751699, -0.112724, 0.331422, 0.558928)
 
 [node name="Cube" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.283804, 0.00461011, -0.00173512, -0.00431636, 0.298465, 0.0120587, 0.00174519, -0.0115103, 0.31199, -0.00224164, 2.45257, -0.292126)
+transform = Transform3D(0.283804, 0.00461008, -0.0017351, -0.00431633, 0.298465, 0.0120587, 0.00174518, -0.0115103, 0.311991, -0.00224174, 2.45257, -0.292126)
 
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
@@ -2471,7 +2723,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881176, 0, -21.9586)
 script = ExtResource("14_en5q8")
 
 [node name="York" type="CharacterBody3D" parent="Characters"]
-transform = Transform3D(5.01045, 0, 0.913391, 0, 4.46433, 0, -0.956789, 0, 4.78319, -74.3071, 0.0598068, -34.9474)
+transform = Transform3D(5.01045, 0, 0.913391, 0, 4.46433, 0, -0.956789, 0, 4.78319, -295.744, 0.0598068, -45.6028)
 
 [node name="York" type="Node3D" parent="Characters/York"]
 
@@ -2600,7 +2852,7 @@ bones/16/rotation = Quaternion(0.00763684, 0.0130862, -0.0117743, 0.999816)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="Characters/York/York/Armature/Skeleton3D"]
-transform = Transform3D(-0.104973, 0.00176207, -0.215862, -0.00183814, -0.320607, 0.0019427, 0.09556, -0.00423139, -0.237087, 0.83264, 2.09682, 0.531852)
+transform = Transform3D(-0.0507255, 0.00654991, -0.299402, -0.000905119, -0.320573, -0.00623081, 0.132591, 0.000317446, -0.114585, 1.13024, 2.1273, 0.0591399)
 bone_name = "Cube"
 bone_idx = 4
 
@@ -2638,9 +2890,6 @@ transform = Transform3D(0.231234, -0.00524182, 0.0242233, 0.00114291, 0.229311, 
 fov = 78.0465
 script = ExtResource("17_4oh8o")
 
-[node name="CutsceneEndTimer" type="Timer" parent="Characters/York/TalkingCamera"]
-wait_time = 3.0
-
 [node name="YorkQuestOPEN" type="Node3D" parent="Characters/York"]
 transform = Transform3D(0.0355138, 0, 0.22983, 0, 0.232558, 0, -0.22983, 0, 0.0355138, -1.48779, -0.0139086, 3.54556)
 
@@ -2672,7 +2921,10 @@ text = "\"E\""
 metadata/_edit_use_anchors_ = true
 
 [node name="Zach" parent="Characters" instance=ExtResource("21_qsinv")]
-transform = Transform3D(3.61791, 0, -2.50414, 0, 4.4, 0, 2.50414, 0, 3.61791, 15.1423, 0.110929, -7.16059)
+transform = Transform3D(2.90308, 0, -3.30638, 0, 4.4, 0, 3.30638, 0, 2.90308, 302.471, 0.110929, -252.18)
+
+[node name="Cube" parent="Characters/Zach/ZachSkin/Armature/Skeleton3D" index="0"]
+transform = Transform3D(-0.141967, 4.55184e-08, -2.42144e-08, -2.16241e-08, -0.32064, 8.3819e-09, 1.21072e-08, -1.02445e-08, -0.32064, 0.0308378, 2.10393, 0.849744)
 
 [node name="YorkSearcher3D" parent="Characters/Zach" index="3"]
 collision_layer = 32
@@ -2779,8 +3031,6 @@ transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -46.4279, -1.02543, -29
 [node name="GlazedDonut4" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
 transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -71.7657, -1.02543, -0.961334)
 
-[node name="Quests" type="Node3D" parent="."]
-
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="ChaseMusic" type="AudioStreamPlayer2D" parent="Audio"]
@@ -2793,17 +3043,21 @@ stream = ExtResource("21_457ip")
 [node name="CooldownTimer" type="Timer" parent="Timers"]
 
 [connection signal="animation_finished" from="Envrionment/StartingRoomFurniture/Objects/HALLWAYvenusdemilo/AnimationPlayer" to="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue/Area3D" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Envrionment/StartingRoomFurniture/Objects/NorthHALLWAYvenusdemilo2/AnimationPlayer" to="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue/Area3D" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/HALLWAYDropStatue/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/NORTHDropStatue/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" method="_exit_radius"]
-[connection signal="timeout" from="Characters/York/TalkingCamera/CutsceneEndTimer" to="Characters/York/TalkingCamera" method="_on_cutscene_end_timer_timeout"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_exit_radius"]
-[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
