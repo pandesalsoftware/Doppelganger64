@@ -40,3 +40,7 @@ func _update_target_location(target_location):
 func _on_navigation_agent_3d_target_reached():
 	print("Cooper reached!")
 	move_speed = 0
+
+
+func _slip():
+	move_speed = 0 

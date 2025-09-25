@@ -17,12 +17,15 @@ var _last_movement_direction := Vector3.BACK
 @onready var _Skin: Node3D = %CooperSkin
 @onready var _WalkSound: AudioStreamPlayer3D = %WalkSound
 @onready var _animation_player: AnimationPlayer = %CooperSkin/AnimationPlayer # Get AnimationPlayer once
+@onready var _coffeeMug: MeshInstance3D = $CooperSkin/Armature/Skeleton3D/CoffeeMug/CoffeeMug
+
 
 var can_run = true
+var can_spill = false
 
 
 func _ready():
-	pass
+	_coffeeMug.visible = false
 
 func _input(event):
 	#Misc. Controls ---------------------------------------------
@@ -37,6 +40,11 @@ func _input(event):
 	#Input = "2" to Make Cooper non-visible for Screenshots 
 	if event.is_action_pressed("PhotoMode"):
 		_Skin.visible = false
+	
+	if event.is_action_pressed("Spill") and can_spill:
+		_coffeeMug.visible = true 
+		_animation_player.queue("Spill_Coffee")
+		can_spill = false
 	
 	#Scene Navigation -----------------------------
 	#Input = "R"
@@ -112,7 +120,17 @@ func _physics_process(delta: float) -> void:
 			$Timer.start(0.9)
 	else:
 		_animation_player.play("Idle02")
+		
+		
 
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Spill_Coffee":
+		can_spill = true
+		_coffeeMug.visible = false
+
+func _coffee_refill():
+	_coffeeMug.visible = true
+	can_spill = true
 
 #Doppelganger Collisions 
 #---------------------------------------------------------

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=73 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://d2e6ltfhekar0" path="res://Functions/NorthStatueDrop.gd" id="11_tu6a2"]
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="11_wyi3l"]
 [ext_resource type="Script" uid="uid://dak1scrtavhgo" path="res://Functions/EastStatue.gd" id="12_nwhp8"]
+[ext_resource type="Script" uid="uid://ckqx772ogcfee" path="res://Coffee/coffee_pickup_area_3d.gd" id="12_u3tg2"]
 [ext_resource type="Script" uid="uid://vayaoonhomna" path="res://Functions/dropstatue2.gd" id="12_uylg5"]
 [ext_resource type="Script" uid="uid://d0ikhr038mgnc" path="res://Functions/doppelganger_spawn.gd" id="14_en5q8"]
 [ext_resource type="PackedScene" uid="uid://btwaaalw7cxvh" path="res://Donuts/chocolate_donut.tscn" id="14_qvkwb"]
@@ -211,6 +212,10 @@ data = PackedVector3Array(-0.229347, -0.5, 0.233867, -0.229347, -0.5, -0.233867,
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u3tg2"]
 data = PackedVector3Array(-0.229347, -0.5, 0.233867, -0.229347, -0.5, -0.233867, -0.229347, 0.5, -0.233867, 0.229347, -0.5, -0.233867, -0.229347, -0.5, -0.233867, -0.229347, -0.5, 0.233867, -0.229347, 0.5, -0.233867, -0.229347, -0.5, -0.233867, 0.229347, -0.5, -0.233867, -0.229347, 0.5, -0.233867, -0.229347, 0.5, 0.233867, -0.229347, -0.5, 0.233867, -0.229347, -0.5, 0.233867, -0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, -0.229347, 0.5, 0.233867, -0.229347, 0.5, -0.233867, -0.229347, -0.5, 0.233867, 0.229347, -0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, 0.5, 0.233867, 0.229347, -0.5, 0.233867, -0.229347, -0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, -0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, -0.5, -0.233867, 0.229347, 0.5, -0.233867, -0.229347, 0.5, -0.233867, -0.229347, 0.5, -0.233867, 0.229347, 0.5, -0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, 0.233867, 0.229347, 0.5, -0.233867, 0.229347, -0.5, -0.233867)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uylg5"]
+transparency = 1
+albedo_color = Color(0.37254903, 0, 0.9137255, 0.58431375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owvdk"]
 albedo_texture = ExtResource("6_nys04")
@@ -2302,11 +2307,14 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 63.146
 [node name="SaturnLamp" parent="Envrionment/StartingRoomFurniture/Table" index="0"]
 transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907, -1.50737, 14.8137, -0.345863)
 
+[node name="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Table/StaticBody3D" index="0"]
+visible = false
+
 [node name="Objects" type="Node3D" parent="Envrionment/StartingRoomFurniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8312, 0, 0)
 
 [node name="STARTmedici_venus" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("9_wejdm")]
-transform = Transform3D(1.02693, 0, 4.17557, 0, 4.3, 0, -4.17558, 0, 1.02693, -50.1227, 0.619909, 9.58518)
+transform = Transform3D(1.0269517, 0, 4.1755652, 0, 4.3, 0, -4.175575, 0, 1.0269493, -50.1227, 0.619909, 9.58518)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTmedici_venus"]
 
@@ -2335,11 +2343,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_uylg5")
 }
 
-[node name="CoffeeMug" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("8_mlwue")]
-transform = Transform3D(-0.697524, -0.00656203, -0.370834, -0.00743168, 0.789965, 3.12509e-09, 0.370817, 0.00348851, -0.697555, 3.1616, 11.1186, 34.8097)
-
 [node name="HALLWAYvenusdemilo" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
-transform = Transform3D(0.156427, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.156427, -50.6885, 1.42185, 229.482)
+transform = Transform3D(0.15642655, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.15642655, -50.6885, 1.42185, 229.482)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/HALLWAYvenusdemilo"]
 
@@ -2357,7 +2362,7 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="NorthHALLWAYvenusdemilo2" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
-transform = Transform3D(0.156427, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.156427, -271.851, 1.42185, 171.855)
+transform = Transform3D(0.15642655, 0, 4.29715, 0, 4.3, 0, -4.29715, 0, 0.15642655, -271.851, 1.42185, 171.855)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/NorthHALLWAYvenusdemilo2"]
 
@@ -2450,6 +2455,7 @@ script = ExtResource("12_nwhp8")
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D"]
 transform = Transform3D(0.999738, 0, 0.0382091, 0, 1, 0, -0.0167138, 0, 0.99975, 0.420687, -0.239617, -0.0497582)
 shape = SubResource("ConcavePolygonShape3D_uylg5")
+debug_color = Color(0.9537192, 0.21786791, 1.1551381e-06, 0.41960785)
 
 [node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue"]
 visible = false
@@ -2488,6 +2494,36 @@ anchor_left = 0.476563
 anchor_top = 0.854167
 anchor_right = 0.539063
 anchor_bottom = 0.936198
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
+metadata/_edit_use_anchors_ = true
+
+[node name="STARTCoffee" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee"]
+transform = Transform3D(-55.998623, 0, 0.54384446, 0, 0.999999, 0, -0.35969162, 0, -84.66916, -19.176422, -0.29942375, -3.7266731)
+size = Vector3(0.458695, 1, 0.467734)
+material = SubResource("StandardMaterial3D_uylg5")
+
+[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee"]
+transform = Transform3D(-55.968475, 0, 2.683018, 0, 0.999999, 0, -1.774513, 0, -84.62254, 4.502289, -0.059807, -7.190832)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("12_u3tg2")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D"]
+transform = Transform3D(0.999738, 0, 0.0382091, 0, 1, 0, -0.0167138, 0, 0.99975, 0.420687, -0.239617, -0.0497582)
+shape = SubResource("ConcavePolygonShape3D_uylg5")
+debug_color = Color(0.9537192, 0.21786791, 1.1551381e-06, 0.41960785)
+
+[node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+offset_bottom = 0.00018310547
 theme_override_font_sizes/font_size = 45
 text = "\"E\""
 metadata/_edit_use_anchors_ = true
@@ -2664,13 +2700,13 @@ bones/9/rotation = Quaternion(0.026591, -0.00180187, 0.0372982, 0.998949)
 bones/14/position = Vector3(0.0195788, -0.220658, -0.311835)
 
 [node name="Hair" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.580049, -0.0055763, -0.201756, -0.00524072, 0.701647, -0.0298887, 0.201747, 0.0342591, 0.579299, -0.0329496, 2.35777, -0.260344)
+transform = Transform3D(0.580049, -0.005576304, -0.20175624, -0.0052407226, 0.7016466, -0.029888676, 0.2017471, 0.034259066, 0.5792988, -0.03294956, 2.3577695, -0.26034385)
 
 [node name="Hair" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D/Hair" index="0"]
 transform = Transform3D(1, -2.32831e-10, -2.98023e-08, -3.49246e-10, 1, -6.98492e-10, 2.98023e-08, 1.97906e-09, 1, 0.0423584, 0.0016098, 0.0653)
 
 [node name="Icosphere" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.094434, -9.66551e-11, 2.04636e-11, -6.80274e-11, -0.094434, 0, -1.95541e-11, 0, -0.094434, 0.013734, 0.985821, 0.040512)
+transform = Transform3D(-0.09443398, -9.665513e-11, 2.046363e-11, -6.802736e-11, -0.09443397, 0, -1.9554136e-11, 0, -0.09443398, 0.0137340445, 0.98582095, 0.040511966)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Characters/Laura/LauraSkin/Armature/Skeleton3D" index="3"]
 target_node = NodePath("../../../../../Cooper/LookAt")
@@ -2713,7 +2749,10 @@ bones/15/rotation = Quaternion(0.665203, 0.725129, -0.173403, 0.0402944)
 bones/16/rotation = Quaternion(0.751699, -0.112724, 0.331422, 0.558928)
 
 [node name="Cube" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.283804, 0.00461008, -0.0017351, -0.00431633, 0.298465, 0.0120587, 0.00174518, -0.0115103, 0.311991, -0.00224174, 2.45257, -0.292126)
+transform = Transform3D(0.28380442, 0.0046101054, -0.0017351247, -0.0043163565, 0.29846483, 0.012058769, 0.0017451998, -0.011510343, 0.3119906, -0.0022415658, 2.4525745, -0.29212624)
+
+[node name="CoffeeMug" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.010570518, -0.14290649, 0.066793464, 0.09756129, 0.058527023, 0.10978047, -0.12395735, 0.033877574, 0.09209909, -0.59016037, -0.40619415, -0.68949527)
 
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
@@ -2852,7 +2891,7 @@ bones/16/rotation = Quaternion(0.00763684, 0.0130862, -0.0117743, 0.999816)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="Characters/York/York/Armature/Skeleton3D"]
-transform = Transform3D(-0.0507255, 0.00654991, -0.299402, -0.000905119, -0.320573, -0.00623081, 0.132591, 0.000317446, -0.114585, 1.13024, 2.1273, 0.0591399)
+transform = Transform3D(-0.050725475, 0.006549906, -0.29940197, -0.0009051189, -0.32057294, -0.006230807, 0.13259132, 0.00031744642, -0.11458478, 1.1302431, 2.1273012, 0.059139937)
 bone_name = "Cube"
 bone_idx = 4
 
@@ -2924,7 +2963,7 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(2.90308, 0, -3.30638, 0, 4.4, 0, 3.30638, 0, 2.90308, 302.471, 0.110929, -252.18)
 
 [node name="Cube" parent="Characters/Zach/ZachSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.141967, 4.55184e-08, -2.42144e-08, -2.16241e-08, -0.32064, 8.3819e-09, 1.21072e-08, -1.02445e-08, -0.32064, 0.0308378, 2.10393, 0.849744)
+transform = Transform3D(-0.14196698, 4.551839e-08, -2.4214387e-08, -2.1624146e-08, -0.32064, 8.381903e-09, 1.21071935e-08, -1.0244548e-08, -0.32064, 0.03083784, 2.103934, 0.8497437)
 
 [node name="YorkSearcher3D" parent="Characters/Zach" index="3"]
 collision_layer = 32
@@ -3052,12 +3091,14 @@ stream = ExtResource("21_457ip")
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" method="_exit_radius"]
+[connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_exit_radius"]
-[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]

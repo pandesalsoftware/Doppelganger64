@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://8xlt4w4fea8b"]
+
+[ext_resource type="Script" uid="uid://dfplyspe0qnqk" path="res://Coffee/coffee_spill.gd" id="1_gui3x"]
+[ext_resource type="Texture2D" uid="uid://68kj71a7q3bq" path="res://2DAssets/coffeespill.png" id="1_tkvrb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gui3x"]
+transparency = 1
+albedo_texture = ExtResource("1_tkvrb")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iv1us"]
+material = SubResource("StandardMaterial3D_gui3x")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tkvrb"]
+size = Vector3(1.9959869, 1, 2.0186768)
+
+[node name="CoffeeSpill" type="Node3D"]
+script = ExtResource("1_gui3x")
+
+[node name="SpillTexture" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31618807, 9.8109245e-05, -0.10062599)
+mesh = SubResource("PlaneMesh_iv1us")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31802225, 0.51212966, -0.07353866)
+shape = SubResource("BoxShape3D_tkvrb")
+debug_color = Color(1, 0.38794282, 0.40296122, 0.41960785)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

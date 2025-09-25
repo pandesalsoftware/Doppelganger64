@@ -30,6 +30,7 @@ animation = &"Walk002_Armature_001"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_djmxl"]
 graph_offset = Vector2(-666.302, 161.185)
+nodes/output/position = Vector2(120, 160)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_imndf")
 nodes/Idle/position = Vector2(-680, 120)
 nodes/Run/node = SubResource("AnimationNodeAnimation_lrwhm")
@@ -38,7 +39,6 @@ nodes/Run/position = Vector2(-700, 400)
 "nodes/Run 2/position" = Vector2(-400, 80)
 nodes/Walk/node = SubResource("AnimationNodeAnimation_t4wpr")
 nodes/Walk/position = Vector2(-360, 420)
-nodes/output/position = Vector2(120, 160)
 nodes/walk/node = SubResource("AnimationNodeBlend2_27fox")
 nodes/walk/position = Vector2(-160, 80)
 node_connections = [&"Run 2", 0, &"Idle", &"Run 2", 1, &"Run", &"walk", 0, &"Run 2"]
@@ -54,41 +54,40 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222736, -1.2084, -0.194659)
 
 [node name="Skeleton3D" parent="CooperSkin/Armature" index="0"]
-bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
-bones/0/rotation = Quaternion(-0.0119155, -4.93746e-08, 0.0020048, 0.999927)
-bones/0/scale = Vector3(0.993008, 0.993008, 0.993008)
-bones/1/rotation = Quaternion(-0.0711572, 1.19536e-07, -0.784963, 0.615443)
-bones/2/rotation = Quaternion(0.0970125, 1.73763e-11, 0.792126, 0.602598)
+bones/0/position = Vector3(0.019578783, -0.22065751, -0.31183547)
+bones/0/rotation = Quaternion(-0.011915477, -4.9367234e-08, 0.0020047952, 0.999927)
+bones/1/rotation = Quaternion(-0.07115718, 1.1971328e-07, -0.7849631, 0.6154427)
+bones/2/rotation = Quaternion(0.09701248, 1.1775748e-08, 0.7921261, 0.6025985)
 bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
+bones/3/rotation = Quaternion(0.026909884, -0.03818304, 0.014901657, 0.9987973)
 bones/3/scale = Vector3(1, 1, 1)
-bones/5/position = Vector3(-0.109083, -1.1229, -0.562486)
-bones/5/rotation = Quaternion(-0.0639184, 0.262268, 0.0855874, 0.959064)
-bones/6/position = Vector3(-0.121698, -1.0847, -0.555905)
-bones/6/rotation = Quaternion(0.950824, 0.0963134, -0.293792, 0.0185427)
-bones/7/position = Vector3(0.0911424, -2.82262, -0.516685)
-bones/7/rotation = Quaternion(0.664002, 0.150977, -0.13944, 0.718933)
+bones/6/position = Vector3(-0.2380561, -1.1974971, -0.3448858)
+bones/6/rotation = Quaternion(0.9952252, 0.005708097, -0.07587598, -0.06113205)
+bones/7/position = Vector3(-0.23475026, -2.7712367, -0.5392069)
+bones/7/rotation = Quaternion(0.67848486, 9.63321e-07, 8.897161e-07, 0.73461443)
 bones/7/scale = Vector3(1, 1, 1.00001)
-bones/8/position = Vector3(-0.080429, 0.390039, -0.341679)
-bones/8/rotation = Quaternion(-0.0179859, 0.0873191, 0.24233, 0.966089)
+bones/8/position = Vector3(-0.9971695, 0.68660283, -0.38083544)
+bones/8/rotation = Quaternion(0.0029124867, -0.001354509, -0.3051473, 0.9522998)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(-0.256492, 0.488557, -0.617646)
-bones/9/rotation = Quaternion(0.933969, -0.305181, 0.0209516, -0.184733)
+bones/9/position = Vector3(-0.98383415, 0.693329, -0.38250288)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(0.164354, 0.56364, -0.40936, 0.698371)
-bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
-bones/12/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
-bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
-bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
+bones/10/rotation = Quaternion(0.026590966, -0.0018018724, 0.03729814, 0.99894875)
+bones/13/position = Vector3(0.26610422, -1.2069244, -0.39464632)
+bones/13/rotation = Quaternion(0.9952098, 0.0036377902, -0.076077335, -0.061290182)
 bones/13/scale = Vector3(1, 1, 1.00001)
-bones/14/position = Vector3(0.144358, 0.371625, -0.42156)
-bones/14/rotation = Quaternion(-0.000301719, -0.0926519, -0.210706, 0.973149)
-bones/15/position = Vector3(0.03734, 0.482584, -0.441454)
-bones/15/rotation = Quaternion(0.883413, 0.453075, -0.119113, 0.010747)
-bones/16/rotation = Quaternion(0.412323, -0.26312, 0.375504, 0.787245)
+bones/14/position = Vector3(0.26279834, -2.7806637, -0.58896756)
+bones/14/rotation = Quaternion(0.67848486, 9.63321e-07, 8.897161e-07, 0.73461443)
+bones/15/position = Vector3(1.0393184, 0.7303741, -0.43712768)
+bones/15/rotation = Quaternion(0.012876562, -0.010421223, 0.33726275, 0.9412648)
+bones/16/position = Vector3(1.0393184, 0.73037434, -0.4371277)
+bones/16/rotation = Quaternion(0.9170864, 0.39608407, -0.044892784, -0.007385621)
+bones/17/rotation = Quaternion(0.00763685, 0.013086175, -0.01177427, 0.9998159)
 
 [node name="Cube" parent="CooperSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.285412, 0.0046362, -0.00174493, -0.00434078, 0.300156, 0.0121271, 0.00175506, -0.0115755, 0.313758, -0.00236536, 2.46772, -0.292014)
+transform = Transform3D(0.2874219, 0.0046688714, -0.0017572418, -0.0043713767, 0.30226916, 0.012212458, 0.0017674416, -0.011657044, 0.31596732, -0.0025196746, 2.486648, -0.2918749)
+
+[node name="CoffeeMug" parent="CooperSkin/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.051529728, 0.14169024, 0.047580753, 0.1471017, -0.05699248, 0.010406895, 0.026478944, 0.040879074, -0.15040983, -1.9465286, -0.4530079, -0.5440136)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.54317, 0, 0, 0, 6.3954, 0, 0, 0, 1.42911, -0.185753, 1.70606, -0.170961)
@@ -137,9 +136,10 @@ wait_time = 10.0
 root_node = NodePath("%CooperSkin")
 tree_root = SubResource("AnimationNodeBlendTree_djmxl")
 anim_player = NodePath("../CooperSkin/AnimationPlayer")
-"parameters/Run 2/blend_amount" = 0
+"parameters/Run 2/blend_amount" = 0.0
 parameters/walk/blend_amount = 3.4
 
+[connection signal="animation_finished" from="CooperSkin/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="SprintBoostTimer" to="." method="_on_sprint_boost_timer_timeout"]
 [connection signal="timeout" from="SprintCooldownTimer" to="." method="_on_sprint_cooldown_timer_timeout"]
 

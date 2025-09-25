@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctuxv2odlw4vd"
-path.s3tc="res://.godot/imported/Cooper_Torso.png-2ba4267534ce701a210052a29373d4bc.s3tc.ctex"
+uid="uid://68kj71a7q3bq"
+path.s3tc="res://.godot/imported/coffeespill.png-a0a0b3b7bdb243e00354f923aa8e0e67.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "1ce3af827caad6261edafee2bb2dabac"
-}
 
 [deps]
 
-source_file="res://InstanceScenes/Cooper/Cooper_Torso.png"
-dest_files=["res://.godot/imported/Cooper_Torso.png-2ba4267534ce701a210052a29373d4bc.s3tc.ctex"]
+source_file="res://2DAssets/coffeespill.png"
+dest_files=["res://.godot/imported/coffeespill.png-a0a0b3b7bdb243e00354f923aa8e0e67.s3tc.ctex"]
 
 [params]
 

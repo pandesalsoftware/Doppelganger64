@@ -9,5 +9,5 @@ colors = PackedColorArray(0.621524, 0.621524, 0.621524, 1, 0.903598, 0.903598, 0
 [resource]
 width = 100
 height = 100
-color_ramp = SubResource("Gradient_s4k52")
 noise = SubResource("FastNoiseLite_ar4f2")
+color_ramp = SubResource("Gradient_s4k52")
