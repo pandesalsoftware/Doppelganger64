@@ -18,7 +18,7 @@ var _last_movement_direction := Vector3.BACK
 @onready var _WalkSound: AudioStreamPlayer3D = %WalkSound
 @onready var _animation_player: AnimationPlayer = %CooperSkin/AnimationPlayer # Get AnimationPlayer once
 @onready var _coffeeMug: MeshInstance3D = $CooperSkin/Armature/Skeleton3D/CoffeeMug/CoffeeMug
-
+@onready var _coffeeSpillScene: PackedScene = preload("res://Coffee/coffee_spill.tscn")
 
 var can_run = true
 var can_spill = false
@@ -26,6 +26,7 @@ var can_spill = false
 
 func _ready():
 	_coffeeMug.visible = false
+	_animation_player.play("Idle02")
 
 func _input(event):
 	#Misc. Controls ---------------------------------------------
@@ -42,7 +43,6 @@ func _input(event):
 		_Skin.visible = false
 	
 	if event.is_action_pressed("Spill") and can_spill:
-		_coffeeMug.visible = true 
 		_animation_player.queue("Spill_Coffee")
 		can_spill = false
 	
@@ -61,7 +61,7 @@ func _input(event):
 		pass
 		
 	# Handle Run input for speed change and timer
-	if Input.is_action_pressed("Run"):
+	if Input.is_action_pressed("Run") and not _coffeeMug.visible:
 		move_speed = 17.5
 		$SprintBoostTimer.start()
 	elif Input.is_action_just_released("Run"):
@@ -109,22 +109,33 @@ func _physics_process(delta: float) -> void:
 	_Skin.global_rotation.y = target_angle
 
 	# Animation Logic (Moved here for consistent updates) --------------------
+	if not can_spill and _coffeeMug.visible:
+		return
+	
 	var ground_speed := velocity.length()
 	
-	if Input.is_action_pressed("Run") and ground_speed > 0.1:
-		_animation_player.play("Run001")
-	elif ground_speed > 0.1:
-		_animation_player.play("Walk002")
-		if $Timer.time_left <= 0:
-			%WalkSound.play()
-			$Timer.start(0.9)
-	else:
-		_animation_player.play("Idle02")
+	if _coffeeMug.visible:
+		if ground_speed > 0.1:
+			_animation_player.play("Walk_Coffee")
+		else : 
+			_animation_player.play("Idle_Coffee")
 		
-		
+	else : 
+		if Input.is_action_pressed("Run") and ground_speed > 0.1:
+			_animation_player.play("Run001")
+		elif ground_speed > 0.1:
+			_animation_player.play("Walk002")
+			if $Timer.time_left <= 0: 
+				_WalkSound.play()
+				$Timer.start(0.9)
+		else : 
+			_animation_player.play("Idle02")
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Spill_Coffee":
+		var coffeeSpill_Inst = _coffeeSpillScene.instantiate()
+		get_tree().root.add_child(coffeeSpill_Inst)
+		coffeeSpill_Inst.global_position = self.global_position
 		can_spill = true
 		_coffeeMug.visible = false
 

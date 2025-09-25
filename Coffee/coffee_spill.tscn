@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://8xlt4w4fea8b"]
+[gd_scene load_steps=10 format=3 uid="uid://8xlt4w4fea8b"]
 
 [ext_resource type="Script" uid="uid://dfplyspe0qnqk" path="res://Coffee/coffee_spill.gd" id="1_gui3x"]
 [ext_resource type="Texture2D" uid="uid://68kj71a7q3bq" path="res://2DAssets/coffeespill.png" id="1_tkvrb"]
@@ -13,7 +13,97 @@ material = SubResource("StandardMaterial3D_gui3x")
 [sub_resource type="BoxShape3D" id="BoxShape3D_tkvrb"]
 size = Vector3(1.9959869, 1, 2.0186768)
 
-[node name="CoffeeSpill" type="Node3D"]
+[sub_resource type="Animation" id="Animation_h62kk"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpillTexture:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iv1us"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpillTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/CollisionShape3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpillTexture:mesh:material:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gui3x"]
+resource_name = "Scale"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpillTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(10, 10, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/CollisionShape3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(10, 10, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h62kk"]
+_data = {
+&"Fade": SubResource("Animation_h62kk"),
+&"RESET": SubResource("Animation_iv1us"),
+&"Scale": SubResource("Animation_gui3x")
+}
+
+[node name="CoffeeSpill" type="RigidBody3D"]
+collision_layer = 128
+collision_mask = 5
 script = ExtResource("1_gui3x")
 
 [node name="SpillTexture" type="MeshInstance3D" parent="."]
@@ -21,10 +111,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31618807, 9.8109245e-05, -
 mesh = SubResource("PlaneMesh_iv1us")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10879558, 0)
+collision_layer = 128
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31802225, 0.51212966, -0.07353866)
 shape = SubResource("BoxShape3D_tkvrb")
 debug_color = Color(1, 0.38794282, 0.40296122, 0.41960785)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.268
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31802225, 0.3930899, -0.07353866)
+shape = SubResource("BoxShape3D_tkvrb")
+debug_color = Color(1, 0.38794282, 0.40296122, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h62kk")
+}
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

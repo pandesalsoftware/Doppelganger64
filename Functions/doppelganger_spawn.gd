@@ -1,8 +1,8 @@
 extends Node3D
 
-@onready var ST = $"../../../Timers/SpawnTimer"
-@onready var CT = $"../../../Timers/CooldownTimer"
-@onready var ChaseMusic = $"../../../Audio/ChaseMusic"
+@onready var ST = $"../../Timers/SpawnTimer"
+@onready var CT = $"../../Timers/CooldownTimer"
+@onready var ChaseMusic = $"../../Audio/ChaseMusic"
 
 func _ready():
 	DS_spawn_timer_start()
@@ -13,7 +13,7 @@ func _ready():
 func _doppelganger_inst():
 	var doppelgangerScene = preload("res://InstanceScenes/Doppelganger/doppelganger.tscn")
 	var doppelgangerInst = doppelgangerScene.instantiate()
-	var doppelgangerPos = $"."
+	var doppelgangerPos = $Doppelganger_POS
 	print("Doppelganger spawned!")
 	doppelgangerPos.add_child(doppelgangerInst)
 	#Run World Enviroment animation here too! 
@@ -23,8 +23,7 @@ func _doppelganger_inst():
 
 func _doppelganger_QF():
 	print("Doppelganger despawning...")
-	var DG_S = $"."
-	var doppelgangerPos = $"."
+	var doppelgangerPos = $Doppelganger_POS
 	doppelgangerPos.child.queue_free()
 
 

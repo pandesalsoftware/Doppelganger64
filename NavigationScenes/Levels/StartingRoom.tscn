@@ -2528,15 +2528,16 @@ theme_override_font_sizes/font_size = 45
 text = "\"E\""
 metadata/_edit_use_anchors_ = true
 
-[node name="Floor" type="MeshInstance3D" parent="Envrionment"]
+[node name="Floor" type="MeshInstance3D" parent="Envrionment" groups=["Floor"]]
 transform = Transform3D(324.074, 0, 0, 0, 0.875, 0, 0, 0, 337.782, 0, 0, 57.955)
 mesh = SubResource("PlaneMesh_knq37")
 skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/Floor" groups=["Floor"]]
+collision_mask = 129
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/Floor/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/Floor/StaticBody3D" groups=["Floor"]]
 shape = SubResource("ConcavePolygonShape3D_j3cva")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Envrionment/Floor"]
@@ -2757,12 +2758,15 @@ transform = Transform3D(0.010570518, -0.14290649, 0.066793464, 0.09756129, 0.058
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
 
-[node name="Doppelganger_Spawn" type="Node3D" parent="Characters/Cooper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881176, 0, -21.9586)
+[node name="Doppelganger_Spawn" type="Node3D" parent="Characters"]
+transform = Transform3D(-4.29654, 0, -0.172417, 0, 4.3, 0, 0.172417, 0, -4.29654, -32.340103, 4.18237, 137.5777)
 script = ExtResource("14_en5q8")
+
+[node name="Doppelganger_POS" type="Node3D" parent="Characters/Doppelganger_Spawn"]
 
 [node name="York" type="CharacterBody3D" parent="Characters"]
 transform = Transform3D(5.01045, 0, 0.913391, 0, 4.46433, 0, -0.956789, 0, 4.78319, -295.744, 0.0598068, -45.6028)
+visible = false
 
 [node name="York" type="Node3D" parent="Characters/York"]
 
@@ -3097,9 +3101,9 @@ stream = ExtResource("21_457ip")
 [connection signal="body_exited" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Characters/Zach/ZachQuestOPEN/Area3D" to="Characters/Zach/ZachQuestOPEN/Area3D" method="_exit_radius"]
-[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Cooper/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Doppelganger_Spawn" method="DS_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
 [editable path="Envrionment/StartingRoomFurniture/Table"]
 [editable path="Characters/Laura"]

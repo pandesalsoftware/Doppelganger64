@@ -7,7 +7,7 @@
 
 [node name="Doppelganger" type="CharacterBody3D" groups=["Enemies"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 131
 script = ExtResource("1_hd476")
 
 [node name="DoppelgangerSkin" parent="." instance=ExtResource("1_ooomw")]
@@ -39,7 +39,7 @@ bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
 bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
 
 [node name="Cube" parent="DoppelgangerSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.287422, 0.00466884, -0.00175722, -0.00437135, 0.302269, 0.0122124, 0.00176742, -0.011657, 0.315967, -0.00251993, 2.48665, -0.291875)
+transform = Transform3D(0.2874219, 0.0046688383, -0.0017572194, -0.0043713483, 0.30226913, 0.01221245, 0.0017674193, -0.011657038, 0.31596723, -0.002519926, 2.4866486, -0.29187453)
 
 [node name="AnimationPlayer" parent="DoppelgangerSkin" index="1"]
 autoplay = "Idle02"
