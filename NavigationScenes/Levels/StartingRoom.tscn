@@ -2755,6 +2755,9 @@ transform = Transform3D(0.28380442, 0.0046101054, -0.0017351247, -0.0043163565, 
 [node name="CoffeeMug" parent="Characters/Cooper/CooperSkin/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.010570518, -0.14290649, 0.066793464, 0.09756129, 0.058527023, 0.10978047, -0.12395735, 0.033877574, 0.09209909, -0.59016037, -0.40619415, -0.68949527)
 
+[node name="TextureRect" parent="Characters/Cooper" index="9"]
+stretch_mode = 3
+
 [node name="LookAt" type="Node3D" parent="Characters/Cooper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466309, 2.70002, -0.108198)
 

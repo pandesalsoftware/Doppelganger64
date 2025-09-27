@@ -1,8 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://40s4yrlc0p76"]
+[gd_scene load_steps=16 format=3 uid="uid://40s4yrlc0p76"]
 
 [ext_resource type="Script" uid="uid://bc00t4yo8d4eq" path="res://InstanceScenes/Cooper/cooper.gd" id="1_rj3jh"]
 [ext_resource type="PackedScene" uid="uid://1giht2dxp8nf" path="res://InstanceScenes/Cooper/Cooper.glb" id="2_5j7ao"]
+[ext_resource type="Texture2D" uid="uid://bcbvob0vlx1x6" path="res://2DAssets/HUD/C.Equip.png" id="4_imndf"]
 [ext_resource type="AudioStream" uid="uid://5lpdvlvmvba8" path="res://SFX/Footsteps/RandomizedFootsteps/Footstep3.wav" id="5_7ised"]
+[ext_resource type="Texture2D" uid="uid://dl4152t7dgiau" path="res://2DAssets/HUD/C.Unequip.png" id="5_lrwhm"]
+[ext_resource type="Texture2D" uid="uid://68kj71a7q3bq" path="res://2DAssets/coffeespill.png" id="5_mqctx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uoxg2"]
 size = Vector3(1, 0.912109, 1)
@@ -29,7 +32,6 @@ animation = &"Walk002_Armature_001"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_27fox"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_djmxl"]
-graph_offset = Vector2(-666.302, 161.185)
 nodes/output/position = Vector2(120, 160)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_imndf")
 nodes/Idle/position = Vector2(-680, 120)
@@ -138,6 +140,32 @@ tree_root = SubResource("AnimationNodeBlendTree_djmxl")
 anim_player = NodePath("../CooperSkin/AnimationPlayer")
 "parameters/Run 2/blend_amount" = 0.0
 parameters/walk/blend_amount = 3.4
+
+[node name="Equip" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.8208007
+anchor_top = 0.38085935
+anchor_right = 0.9848632
+anchor_bottom = 0.5110677
+offset_bottom = -3.0517578e-05
+texture = ExtResource("4_imndf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Unequip" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.8208007
+anchor_top = 0.38085935
+anchor_right = 0.9848632
+anchor_bottom = 0.5110677
+offset_bottom = -3.0517578e-05
+texture = ExtResource("5_lrwhm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coffeespill" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(920.5, 340.5)
+scale = Vector2(0.35399997, 0.242)
+texture = ExtResource("5_mqctx")
 
 [connection signal="animation_finished" from="CooperSkin/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="SprintBoostTimer" to="." method="_on_sprint_boost_timer_timeout"]
