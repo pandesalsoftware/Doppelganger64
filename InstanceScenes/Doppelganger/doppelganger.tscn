@@ -46,6 +46,8 @@ autoplay = "Idle02"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 8.0
+avoidance_enabled = true
+radius = 1.9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.01605, 0, 0, 0, 5.7477, 0, 0, 0, 1.49446, -0.293017, 2.90192, 0)

@@ -142,6 +142,7 @@ anim_player = NodePath("../CooperSkin/AnimationPlayer")
 parameters/walk/blend_amount = 3.4
 
 [node name="Equip" type="TextureRect" parent="."]
+visible = false
 anchors_preset = -1
 anchor_left = 0.8208007
 anchor_top = 0.38085935

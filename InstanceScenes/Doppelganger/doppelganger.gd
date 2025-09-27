@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var DS_AP = $DoppelgangerSkin/AnimationPlayer
 @onready var DS : Node3D =  %DoppelgangerSkin
 
-@export var move_speed := 8
+@export var move_speed := 10
 @export var accel := 6
 @export var gravity := 25.0
 

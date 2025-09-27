@@ -11,7 +11,7 @@ albedo_texture = ExtResource("1_tkvrb")
 material = SubResource("StandardMaterial3D_gui3x")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tkvrb"]
-size = Vector3(1.9959869, 1, 2.0186768)
+size = Vector3(0.5625297, 1, 0.93753624)
 
 [sub_resource type="Animation" id="Animation_h62kk"]
 resource_name = "Fade"
@@ -116,7 +116,7 @@ collision_layer = 128
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31802225, 0.51212966, -0.07353866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09142655, 0.51212966, -0.052402586)
 shape = SubResource("BoxShape3D_tkvrb")
 debug_color = Color(1, 0.38794282, 0.40296122, 0.41960785)
 
@@ -124,7 +124,7 @@ debug_color = Color(1, 0.38794282, 0.40296122, 0.41960785)
 wait_time = 3.268
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31802225, 0.3930899, -0.07353866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08705741, 0.3930899, -0.07353866)
 shape = SubResource("BoxShape3D_tkvrb")
 debug_color = Color(1, 0.38794282, 0.40296122, 0.41960785)
 

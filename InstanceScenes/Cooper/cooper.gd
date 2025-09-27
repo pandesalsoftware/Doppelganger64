@@ -20,6 +20,9 @@ var _last_movement_direction := Vector3.BACK
 @onready var _coffeeMug: MeshInstance3D = $CooperSkin/Armature/Skeleton3D/CoffeeMug/CoffeeMug
 @onready var _coffeeSpillScene: PackedScene = preload("res://Coffee/coffee_spill.tscn")
 
+@onready var _equip_sprite: TextureRect = $Equip
+@onready var _unequip_sprite: TextureRect = $Unequip
+
 var can_run = true
 var can_spill = false
 
@@ -45,6 +48,7 @@ func _input(event):
 	if event.is_action_pressed("Spill") and can_spill:
 		_animation_player.queue("Spill_Coffee")
 		can_spill = false
+	
 	
 	#Scene Navigation -----------------------------
 	#Input = "R"
@@ -115,12 +119,16 @@ func _physics_process(delta: float) -> void:
 	var ground_speed := velocity.length()
 	
 	if _coffeeMug.visible:
+		_unequip_sprite.visible = false
+		_equip_sprite.visible = true
 		if ground_speed > 0.1:
 			_animation_player.play("Walk_Coffee")
 		else : 
 			_animation_player.play("Idle_Coffee")
 		
 	else : 
+		_equip_sprite.visible = false
+		_unequip_sprite.visible = true
 		if Input.is_action_pressed("Run") and ground_speed > 0.1:
 			_animation_player.play("Run001")
 		elif ground_speed > 0.1:
