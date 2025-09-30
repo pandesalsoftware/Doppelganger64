@@ -15,31 +15,31 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267976, -1.19209e-07, 0.126854)
 
 [node name="Skeleton3D" parent="DoppelgangerSkin/Armature" index="0"]
-bones/0/position = Vector3(0.0195788, -0.220658, -0.311835)
-bones/0/rotation = Quaternion(-0.0119155, -4.93672e-08, 0.0020048, 0.999927)
-bones/1/rotation = Quaternion(-0.0711572, 1.19713e-07, -0.784963, 0.615443)
-bones/2/rotation = Quaternion(0.0970125, 1.17757e-08, 0.792126, 0.602598)
-bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
-bones/6/position = Vector3(-0.238056, -1.1975, -0.344886)
-bones/6/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
-bones/7/position = Vector3(-0.23475, -2.77124, -0.539207)
-bones/7/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/8/position = Vector3(-0.997169, 0.686603, -0.380835)
-bones/8/rotation = Quaternion(0.00291249, -0.00135451, -0.305147, 0.9523)
-bones/9/position = Vector3(-0.983834, 0.693329, -0.382503)
-bones/10/rotation = Quaternion(0.026591, -0.00180187, 0.0372981, 0.998949)
-bones/12/position = Vector3(0.266104, -1.20692, -0.394646)
-bones/12/rotation = Quaternion(0.99521, 0.00363779, -0.0760773, -0.0612902)
-bones/13/position = Vector3(0.262798, -2.78066, -0.588968)
-bones/13/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
-bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/14/rotation = Quaternion(0.0128766, -0.0104212, 0.337263, 0.941265)
-bones/15/position = Vector3(1.03932, 0.730374, -0.437128)
-bones/15/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
-bones/16/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
+bones/0/position = Vector3(0.019578783, -0.22065751, -0.31183547)
+bones/0/rotation = Quaternion(-0.011915477, -4.9367234e-08, 0.0020047952, 0.999927)
+bones/1/rotation = Quaternion(-0.07115718, 1.1971328e-07, -0.7849631, 0.6154427)
+bones/2/rotation = Quaternion(0.09701248, 1.1775748e-08, 0.7921261, 0.6025985)
+bones/3/rotation = Quaternion(0.026909884, -0.03818304, 0.014901657, 0.9987973)
+bones/6/position = Vector3(-0.2380561, -1.1974971, -0.3448858)
+bones/6/rotation = Quaternion(0.9952252, 0.005708097, -0.07587598, -0.06113205)
+bones/7/position = Vector3(-0.23475026, -2.7712367, -0.5392069)
+bones/7/rotation = Quaternion(0.67848486, 9.63321e-07, 8.897161e-07, 0.73461443)
+bones/8/position = Vector3(-0.9971695, 0.68660283, -0.38083544)
+bones/8/rotation = Quaternion(0.0029124867, -0.001354509, -0.3051473, 0.9522998)
+bones/9/position = Vector3(-0.98383415, 0.693329, -0.38250288)
+bones/10/rotation = Quaternion(0.026590966, -0.0018018724, 0.03729814, 0.99894875)
+bones/12/position = Vector3(0.26610422, -1.2069244, -0.39464632)
+bones/12/rotation = Quaternion(0.9952098, 0.0036377902, -0.076077335, -0.061290182)
+bones/13/position = Vector3(0.26279834, -2.7806637, -0.58896756)
+bones/13/rotation = Quaternion(0.67848486, 9.63321e-07, 8.897161e-07, 0.73461443)
+bones/14/position = Vector3(1.0393184, 0.7303741, -0.43712768)
+bones/14/rotation = Quaternion(0.012876562, -0.010421223, 0.33726275, 0.9412648)
+bones/15/position = Vector3(1.0393184, 0.73037434, -0.4371277)
+bones/15/rotation = Quaternion(0.9170864, 0.39608407, -0.044892784, -0.007385621)
+bones/16/rotation = Quaternion(0.00763685, 0.013086175, -0.01177427, 0.9998159)
 
 [node name="Cube" parent="DoppelgangerSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.2874219, 0.0046688383, -0.0017572194, -0.0043713483, 0.30226913, 0.01221245, 0.0017674193, -0.011657038, 0.31596723, -0.002519926, 2.4866486, -0.29187453)
+transform = Transform3D(0.2874219, 0.004668872, -0.0017572399, -0.00437138, 0.30226913, 0.01221245, 0.0017674342, -0.011657038, 0.31596723, -0.0025198273, 2.486649, -0.29187495)
 
 [node name="AnimationPlayer" parent="DoppelgangerSkin" index="1"]
 autoplay = "Idle02"
@@ -55,6 +55,13 @@ shape = SubResource("BoxShape3D_lhtsc")
 
 [node name="LifeTimer" type="Timer" parent="."]
 
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="IdleTimer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="DoppelgangerSkin/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
 
 [editable path="DoppelgangerSkin"]
