@@ -154,8 +154,10 @@ func _coffee_refill():
 #Doppelganger Collisions 
 #---------------------------------------------------------
 #Lose health state (Donut) ... If hit by Doppelganger
+
 func _lose_life():
-	pass
+	move_speed = 0
+	print("One life lost!")
 
 #Lost all Donuts 
 func _KO():

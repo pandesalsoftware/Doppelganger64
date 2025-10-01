@@ -1,16 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://wa2hsu1c3ki3"]
+[gd_scene load_steps=2 format=3 uid="uid://bs3pr43vusnxe"]
 
-[ext_resource type="Script" uid="uid://4p8qh4tqlc5q" path="res://InstanceScenes/Doppelganger/doppelganger.gd" id="1_hd476"]
-[ext_resource type="PackedScene" uid="uid://jd1ioueoenj0" path="res://InstanceScenes/Doppelganger/Doppelganger.glb" id="1_ooomw"]
+[ext_resource type="PackedScene" uid="uid://jd1ioueoenj0" path="res://InstanceScenes/Doppelganger/Doppelganger.glb" id="1_3ta3a"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lhtsc"]
+[node name="Doppelganger_FSM" type="CharacterBody3D"]
 
-[node name="Doppelganger" type="CharacterBody3D" groups=["Enemies"]]
-collision_layer = 4
-collision_mask = 131
-script = ExtResource("1_hd476")
-
-[node name="DoppelgangerSkin" parent="." instance=ExtResource("1_ooomw")]
+[node name="DoppelgangerSkin" parent="." instance=ExtResource("1_3ta3a")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267976, -1.19209e-07, 0.126854)
 
@@ -44,25 +38,5 @@ transform = Transform3D(0.2874219, 0.004668872, -0.0017572399, -0.00437138, 0.30
 
 [node name="AnimationPlayer" parent="DoppelgangerSkin" index="1"]
 autoplay = "Idle02"
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 8.0
-avoidance_enabled = true
-radius = 1.9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.01605, 0, 0, 0, 5.7477, 0, 0, 0, 1.49446, -0.293017, 2.90192, 0)
-shape = SubResource("BoxShape3D_lhtsc")
-
-[node name="LifeTimer" type="Timer" parent="."]
-
-[node name="StunTimer" type="Timer" parent="."]
-wait_time = 1.5
-
-[node name="IdleTimer" type="Timer" parent="."]
-
-[connection signal="animation_finished" from="DoppelgangerSkin/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
-[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
 
 [editable path="DoppelgangerSkin"]
