@@ -101,7 +101,7 @@ _data = {
 &"Scale": SubResource("Animation_gui3x")
 }
 
-[node name="CoffeeSpill" type="RigidBody3D"]
+[node name="CoffeeSpill" type="RigidBody3D" groups=["Spill"]]
 collision_layer = 128
 collision_mask = 5
 script = ExtResource("1_gui3x")

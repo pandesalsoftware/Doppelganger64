@@ -1,18 +1,17 @@
-[gd_scene load_steps=74 format=4 uid="uid://pj4niym8447t"]
+[gd_scene load_steps=70 format=4 uid="uid://pj4niym8447t"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_5gbjk"]
 [ext_resource type="Script" uid="uid://c8qauvetk1rc3" path="res://NavigationScenes/Levels/Level_Scripts/starting_room.gd" id="1_cwivc"]
 [ext_resource type="PackedScene" uid="uid://b15g7s35ofpgg" path="res://InstanceScenes/Furniture/chair.tscn" id="2_2la2r"]
 [ext_resource type="PackedScene" uid="uid://unxo3wq82obo" path="res://InstanceScenes/Environment/New Curtains/curtain_walls.tscn" id="2_qsinv"]
 [ext_resource type="PackedScene" uid="uid://bgn46eypg3uw6" path="res://InstanceScenes/Furniture/tall_lamp.tscn" id="3_ka1d1"]
-[ext_resource type="PackedScene" uid="uid://cgyqn8rlglb8n" path="res://InstanceScenes/Furniture/table.tscn" id="4_hdc3r"]
 [ext_resource type="Texture2D" uid="uid://dtfdtult1baj7" path="res://NavigationScenes/Levels/Textures/BlackLodgeTile.png" id="6_nys04"]
 [ext_resource type="Script" uid="uid://jcg5byfmp2pa" path="res://Functions/DropStatue.gd" id="8_4oh8o"]
-[ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="8_mlwue"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="9_wejdm"]
 [ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="11_en5q8"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="11_qvkwb"]
 [ext_resource type="Script" uid="uid://d2e6ltfhekar0" path="res://Functions/NorthStatueDrop.gd" id="11_tu6a2"]
+[ext_resource type="PackedScene" uid="uid://c76wn0eb6q5ta" path="res://InstanceScenes/Furniture/coffee_refill.tscn" id="11_u3tg2"]
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="11_wyi3l"]
 [ext_resource type="Script" uid="uid://dak1scrtavhgo" path="res://Functions/EastStatue.gd" id="12_nwhp8"]
 [ext_resource type="Script" uid="uid://ckqx772ogcfee" path="res://Coffee/coffee_pickup_area_3d.gd" id="12_u3tg2"]
@@ -91,67 +90,6 @@ tracks/1/keys = {
 _data = {
 &"Fall_Over": SubResource("Animation_uylg5"),
 &"RESET": SubResource("Animation_u3tg2")
-}
-
-[sub_resource type="Animation" id="Animation_tu6a2"]
-resource_name = "Fall_Over"
-length = 1.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.27, 0.88, 0.99, 1.09, 1.19),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.563288), Vector3(0, 0, -1.12429), Vector3(0, 0, -1.64602), Vector3(0, 0, -1.61138), Vector3(0, 0, -1.67044)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.27, 0.633333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(146.849, 0.60032, -194.738), Vector3(146.849, 4.09466, -194.738), Vector3(146.849, 5.36208, -194.738)]
-}
-
-[sub_resource type="Animation" id="Animation_nwhp8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(146.849, 0.60032, -194.738)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uylg5"]
-_data = {
-&"Fall_Over": SubResource("Animation_tu6a2"),
-&"RESET": SubResource("Animation_nwhp8")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvkwb"]
@@ -2304,15 +2242,6 @@ transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, 6.85786, 0, 33.7
 [node name="Tall_Lamp2" parent="Envrionment/StartingRoomFurniture" instance=ExtResource("3_ka1d1")]
 transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, 7.18599, 0, -17.2936)
 
-[node name="Table" parent="Envrionment/StartingRoomFurniture" instance=ExtResource("4_hdc3r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 63.1467, 0.219491, 40.1407)
-
-[node name="SaturnLamp" parent="Envrionment/StartingRoomFurniture/Table" index="0"]
-transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907, -1.50737, 14.8137, -0.345863)
-
-[node name="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Table/StaticBody3D" index="0"]
-visible = false
-
 [node name="Objects" type="Node3D" parent="Envrionment/StartingRoomFurniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8312, 0, 0)
 
@@ -2329,21 +2258,6 @@ debug_color = Color(0, 0.847059, 0.886275, 0.894118)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Envrionment/StartingRoomFurniture/Objects/STARTmedici_venus"]
 libraries = {
 &"": SubResource("AnimationLibrary_pdm1b")
-}
-
-[node name="EASTstatue" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("9_wejdm")]
-transform = Transform3D(4.3, 0, 0, 0, 4.3, 0, 0, 0, 4.3, 146.849, 0.60032, -194.738)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTstatue"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/EASTstatue/StaticBody3D"]
-transform = Transform3D(0.816511, 0, 0.57733, 0, 1, 0, -0.57733, 0, 0.816511, -0.173306, 3.83943, -0.832054)
-shape = SubResource("CapsuleShape3D_4oh8o")
-debug_color = Color(0, 0.847059, 0.886275, 0.894118)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Envrionment/StartingRoomFurniture/Objects/EASTstatue"]
-libraries = {
-&"": SubResource("AnimationLibrary_uylg5")
 }
 
 [node name="HALLWAYvenusdemilo" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_qvkwb")]
@@ -2503,36 +2417,18 @@ theme_override_font_sizes/font_size = 45
 text = "\"E\""
 metadata/_edit_use_anchors_ = true
 
-[node name="STARTCoffee" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
+[node name="STARTCoffee" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_u3tg2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.828018, 0, 38.064598)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee"]
-transform = Transform3D(-55.998623, 0, 0.54384446, 0, 0.999999, 0, -0.35969162, 0, -84.66916, -25.502274, -0.29942375, -2.3930283)
+[node name="STARTCoffee2" parent="Envrionment/StartingRoomFurniture/Objects" instance=ExtResource("11_u3tg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.933495, 0, 373.00092)
+
+[node name="CSGBox3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee2" index="0"]
+transform = Transform3D(-55.998623, 0, 0.54384446, 0, 0.999999, 0, -0.35969162, 0, -84.66916, -23.179428, -0.29942375, -2.393036)
 visible = false
-size = Vector3(0.23308195, 1, 0.26878896)
-material = SubResource("StandardMaterial3D_uylg5")
 
-[node name="Area3D" type="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee"]
-transform = Transform3D(-55.968475, 0, 2.683018, 0, 0.999999, 0, -1.774513, 0, -84.62254, 4.502289, -0.059807, -7.190832)
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("12_u3tg2")
-
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D"]
-transform = Transform3D(0.9997374, 0, 0.03820904, 0, 1, 0, -0.016713696, 0, 0.99974954, 0.5328436, -0.23961702, -0.06787011)
-shape = SubResource("ConcavePolygonShape3D_pdm1b")
-
-[node name="InteractPrompt" type="Label" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.476563
-anchor_top = 0.854167
-anchor_right = 0.539063
-anchor_bottom = 0.936198
-offset_bottom = 0.00018310547
-theme_override_font_sizes/font_size = 45
-text = "\"E\""
-metadata/_edit_use_anchors_ = true
+[node name="Area3D" parent="Envrionment/StartingRoomFurniture/Objects/STARTCoffee2" index="1"]
+transform = Transform3D(-55.968475, 0, 2.683018, 0, 0.999999, 0, -1.774513, 0, -84.62254, 6.8251343, -0.059807, -7.1908264)
 
 [node name="YORKcoffee" type="Node3D" parent="Envrionment/StartingRoomFurniture/Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -234.05658, 0, -41.837486)
@@ -2620,11 +2516,11 @@ transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, 196.918, 0, 127.
 [node name="Chair" parent="Envrionment/MiscObjects/Group8" instance=ExtResource("2_2la2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.803, 0.786281, -58.5302)
 
-[node name="Table" parent="Envrionment/MiscObjects/Group8" instance=ExtResource("4_hdc3r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.455, 0.219491, -56.4654)
+[node name="STARTCoffee" parent="Envrionment/MiscObjects/Group8/Chair" instance=ExtResource("11_u3tg2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.43811, 0, 0)
 
-[node name="CoffeeMug" parent="Envrionment/MiscObjects/Group8/Table" instance=ExtResource("8_mlwue")]
-transform = Transform3D(0.958889, 0, 0.283781, 0, 1, 0, -0.283781, 0, 0.958889, -2.7816, 10.8272, 4.36121)
+[node name="CSGBox3D" parent="Envrionment/MiscObjects/Group8/Chair/STARTCoffee" index="0"]
+visible = false
 
 [node name="Group2" type="Node3D" parent="Envrionment/MiscObjects"]
 
@@ -2687,9 +2583,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -294.587, 0, 184.028)
 
 [node name="Chair" parent="Envrionment/MiscObjects/Group4" instance=ExtResource("2_2la2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.701, 0.786281, 136.954)
-
-[node name="Tall_Lamp" parent="Envrionment/MiscObjects/Group4" instance=ExtResource("3_ka1d1")]
-transform = Transform3D(0.64288, 0, 0, 0, 0.644663, 0, 0, 0, 1, 196.918, 0, 127.69)
 
 [node name="Group3" type="Node3D" parent="Envrionment/MiscObjects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.955, 0, 300.829)
@@ -3086,6 +2979,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.93928, 0)
 [node name="GlazedDonut" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
 transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -0.989136, -1.02543, 11.7571)
 
+[node name="GlazedDonut5" parent="Collectables/Donuts" instance=ExtResource("15_dd8pe")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 156.30191, -1.0254297, -201.25232)
+
 [node name="ChocolateDonut" parent="Collectables/Donuts" instance=ExtResource("14_qvkwb")]
 transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -26.8563, -1.25519, -23.0366)
 
@@ -3131,8 +3027,6 @@ stream = ExtResource("21_457ip")
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/EASTDropStatue/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTDropStatue/Area3D" method="_exit_radius"]
-[connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" method="_enter_radius"]
-[connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" to="Envrionment/StartingRoomFurniture/Objects/STARTCoffee/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Envrionment/StartingRoomFurniture/Objects/YORKcoffee/Area3D" to="Envrionment/StartingRoomFurniture/Objects/YORKcoffee/Area3D" method="_enter_radius"]
 [connection signal="body_exited" from="Envrionment/StartingRoomFurniture/Objects/YORKcoffee/Area3D" to="Envrionment/StartingRoomFurniture/Objects/YORKcoffee/Area3D" method="_exit_radius"]
 [connection signal="body_entered" from="Characters/York/YorkQuestOPEN/Area3D" to="Characters/York/YorkQuestOPEN/Area3D" method="_enter_radius"]
@@ -3143,7 +3037,10 @@ stream = ExtResource("21_457ip")
 [connection signal="timeout" from="Timers/SpawnTimer" to="Characters/Doppelganger_Spawn" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="Characters/Doppelganger_Spawn" method="_on_cooldown_timer_timeout"]
 
-[editable path="Envrionment/StartingRoomFurniture/Table"]
+[editable path="Envrionment/StartingRoomFurniture/Objects/STARTCoffee2"]
+[editable path="Envrionment/StartingRoomFurniture/Objects/STARTCoffee2/Table"]
+[editable path="Envrionment/MiscObjects/Group8/Chair/STARTCoffee"]
+[editable path="Envrionment/MiscObjects/Group8/Chair/STARTCoffee/Table"]
 [editable path="Characters/Laura"]
 [editable path="Characters/Laura/LauraSkin"]
 [editable path="Characters/Cooper"]

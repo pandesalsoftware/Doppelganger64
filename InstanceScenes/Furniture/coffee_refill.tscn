@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://c76wn0eb6q5ta"]
+
+[ext_resource type="Script" uid="uid://ckqx772ogcfee" path="res://Coffee/coffee_pickup_area_3d.gd" id="1_ov77c"]
+[ext_resource type="PackedScene" uid="uid://cgyqn8rlglb8n" path="res://InstanceScenes/Furniture/table.tscn" id="2_sq8l7"]
+[ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="3_j7bpk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uylg5"]
+transparency = 1
+albedo_color = Color(0.37254903, 0, 0.9137255, 0.58431375)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pdm1b"]
+data = PackedVector3Array(-0.116540976, -0.5, 0.13439448, -0.116540976, -0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, 0.116540976, -0.5, -0.13439448, -0.116540976, -0.5, -0.13439448, -0.116540976, -0.5, 0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, -0.5, -0.13439448, 0.116540976, -0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, 0.5, 0.13439448, -0.116540976, -0.5, 0.13439448, -0.116540976, -0.5, 0.13439448, -0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, -0.116540976, 0.5, 0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, -0.5, 0.13439448, 0.116540976, -0.5, 0.13439448, 0.116540976, -0.5, -0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, -0.5, 0.13439448, -0.116540976, -0.5, 0.13439448, 0.116540976, -0.5, -0.13439448, 0.116540976, -0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, -0.5, -0.13439448, 0.116540976, 0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, 0.116540976, 0.5, -0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, -0.13439448, 0.116540976, -0.5, -0.13439448)
+
+[node name="STARTCoffee" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-55.998623, 0, 0.54384446, 0, 0.999999, 0, -0.35969162, 0, -84.66916, -25.502274, -0.29942375, -2.3930283)
+size = Vector3(0.23308195, 1, 0.26878896)
+material = SubResource("StandardMaterial3D_uylg5")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-55.968475, 0, 2.683018, 0, 0.999999, 0, -1.774513, 0, -84.62254, 4.502289, -0.059807, -7.190832)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ov77c")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.9997374, 0, 0.03820904, 0, 1, 0, -0.016713696, 0, 0.99974954, 0.5328436, -0.23961702, -0.06787011)
+shape = SubResource("ConcavePolygonShape3D_pdm1b")
+
+[node name="InteractPrompt" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.476563
+anchor_top = 0.854167
+anchor_right = 0.539063
+anchor_bottom = 0.936198
+offset_bottom = 0.00018310547
+theme_override_font_sizes/font_size = 45
+text = "\"E\""
+metadata/_edit_use_anchors_ = true
+
+[node name="Table" parent="." instance=ExtResource("2_sq8l7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.512512, 0.219491, 2.0761032)
+
+[node name="SaturnLamp" parent="Table" index="0"]
+transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907, -1.50737, 14.8137, -0.345863)
+
+[node name="CollisionShape3D" parent="Table/StaticBody3D" index="0"]
+visible = false
+
+[node name="CoffeeMug2" parent="Table" instance=ExtResource("3_j7bpk")]
+transform = Transform3D(-0.958889, 0, -0.2837809, 0, 1, 0, 0.2837809, 0, -0.958889, 3.11763, 10.8272, 3.975029)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_enter_radius"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_exit_radius"]
+
+[editable path="Table"]
