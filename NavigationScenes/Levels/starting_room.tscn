@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://be38l7kdfocr" path="res://InstanceScenes/Environment/New Curtains/NoPhysics/np_curtain_segment.tscn" id="7_oywxc"]
 [ext_resource type="PackedScene" uid="uid://cmpn3sl8ajaip" path="res://InstanceScenes/Environment/New Curtains/physics_curtain.tscn" id="8_x33c5"]
 [ext_resource type="PackedScene" uid="uid://dqrtqrmcrfmtx" path="res://InstanceScenes/Laura/laura.tscn" id="9_5bfv3"]
+[ext_resource type="Material" uid="uid://coyohqc5co4vt" path="res://InstanceScenes/Environment/New Curtains/curtainDark.tres" id="10_px6ps"]
 [ext_resource type="AudioStream" uid="uid://dw0gyrorh0afd" path="res://Musak/run.ogg" id="10_yjixy"]
 [ext_resource type="PackedScene" uid="uid://c7id7ebtkvw05" path="res://InstanceScenes/Furniture/medici_venus.glb" id="11_spl2r"]
 [ext_resource type="PackedScene" uid="uid://rlmm46b5is1t" path="res://InstanceScenes/Furniture/venusdemilo.glb" id="12_0a07k"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c76wn0eb6q5ta" path="res://InstanceScenes/Furniture/coffee_refill.tscn" id="17_33o45"]
 [ext_resource type="Material" uid="uid://hhlcgcxkwo2g" path="res://InstanceScenes/Environment/New Curtains/curtainLight.tres" id="17_tpcj0"]
 [ext_resource type="Texture2D" uid="uid://xsin8gi6wbnm" path="res://InstanceScenes/York/York_Face.png" id="18_dymge"]
+[ext_resource type="PackedScene" uid="uid://buhwwwm54ptim" path="res://InstanceScenes/Environment/New Curtains/NoPhysics/np_curtain_wall.tscn" id="18_uds52"]
 [ext_resource type="Texture2D" uid="uid://w22ex6afdro0" path="res://InstanceScenes/York/York_Torso.png" id="19_dul1n"]
 [ext_resource type="Script" uid="uid://3xjep0alvs03" path="res://NavigationScenes/Levels/york.gd" id="20_g5bk6"]
 [ext_resource type="Script" uid="uid://qwajw370qu6j" path="res://NavigationScenes/Levels/YorkQuestBegin.gd" id="21_67yq1"]
@@ -42,20 +44,28 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ixjqq"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4k52"]
+cull_mode = 2
+albedo_color = Color(0.907272, 0.0848965, 0.0797467, 1)
+albedo_texture = ExtResource("16_6mtm5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2sm81"]
+material = SubResource("StandardMaterial3D_s4k52")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_px6ps"]
-size = Vector3(1, 10.39856, 15.384626)
+size = Vector3(0.37686157, 10.39856, 15.313895)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uds52"]
-size = Vector3(0.6010742, 10.576721, 3.1277618)
+size = Vector3(0.6010742, 10.576721, 1.5526505)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_213qb"]
 size = Vector3(1, 10.540222, 21.259277)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vnwl1"]
-size = Vector3(1, 10.39856, 11.300507)
+size = Vector3(0.23327637, 10.39856, 12.151176)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w22ud"]
-size = Vector3(1, 10.576721, 16.664463)
+size = Vector3(0.31054688, 10.576721, 16.669024)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o14t2"]
 size = Vector3(1, 10.39856, 12.290992)
@@ -67,10 +77,10 @@ size = Vector3(1, 10.576721, 3.3806653)
 size = Vector3(1, 10.540222, 22.496704)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_niyqy"]
-size = Vector3(1, 10.39856, 15.278252)
+size = Vector3(0.42614746, 10.39856, 15.089443)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uxsn5"]
-size = Vector3(0.6010742, 10.576721, 3.1598206)
+size = Vector3(0.6010742, 10.576721, 3.084793)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nps0c"]
 size = Vector3(1, 10.39856, 11.300507)
@@ -78,8 +88,11 @@ size = Vector3(1, 10.39856, 11.300507)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wn2np"]
 size = Vector3(1, 10.576721, 6.7907495)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_umq1v"]
+size = Vector3(0.24511719, 10.540222, 6.1063843)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_spl2r"]
-size = Vector3(1, 10.540222, 6.1063843)
+size = Vector3(0.2685547, 10.540222, 6.061981)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_niyqy"]
 data = PackedVector3Array(-0.116540976, -0.5, 0.13439448, -0.116540976, -0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, 0.116540976, -0.5, -0.13439448, -0.116540976, -0.5, -0.13439448, -0.116540976, -0.5, 0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, -0.5, -0.13439448, 0.116540976, -0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, 0.5, 0.13439448, -0.116540976, -0.5, 0.13439448, -0.116540976, -0.5, 0.13439448, -0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, -0.116540976, 0.5, 0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, -0.5, 0.13439448, 0.116540976, -0.5, 0.13439448, 0.116540976, -0.5, -0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, -0.5, 0.13439448, -0.116540976, -0.5, 0.13439448, 0.116540976, -0.5, -0.13439448, 0.116540976, -0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, -0.5, -0.13439448, 0.116540976, 0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, -0.116540976, 0.5, -0.13439448, 0.116540976, 0.5, -0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, 0.13439448, 0.116540976, 0.5, -0.13439448, 0.116540976, -0.5, -0.13439448)
@@ -2119,19 +2132,19 @@ albedo_color = Color(0, 1, 0, 0.392157)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tncre"]
 data = PackedVector3Array(-0.19299334, -0.5, 0.11279151, -0.19299334, -0.5, -0.11279151, -0.19299334, 0.5, -0.11279151, 0.19299334, -0.5, -0.11279151, -0.19299334, -0.5, -0.11279151, -0.19299334, -0.5, 0.11279151, -0.19299334, 0.5, -0.11279151, -0.19299334, -0.5, -0.11279151, 0.19299334, -0.5, -0.11279151, -0.19299334, 0.5, -0.11279151, -0.19299334, 0.5, 0.11279151, -0.19299334, -0.5, 0.11279151, -0.19299334, -0.5, 0.11279151, -0.19299334, 0.5, 0.11279151, 0.19299334, 0.5, 0.11279151, 0.19299334, 0.5, 0.11279151, -0.19299334, 0.5, 0.11279151, -0.19299334, 0.5, -0.11279151, -0.19299334, -0.5, 0.11279151, 0.19299334, -0.5, 0.11279151, 0.19299334, -0.5, -0.11279151, 0.19299334, 0.5, 0.11279151, 0.19299334, -0.5, 0.11279151, -0.19299334, -0.5, 0.11279151, 0.19299334, -0.5, -0.11279151, 0.19299334, -0.5, 0.11279151, 0.19299334, 0.5, 0.11279151, 0.19299334, -0.5, -0.11279151, 0.19299334, 0.5, -0.11279151, -0.19299334, 0.5, -0.11279151, -0.19299334, 0.5, -0.11279151, 0.19299334, 0.5, -0.11279151, 0.19299334, 0.5, 0.11279151, 0.19299334, 0.5, 0.11279151, 0.19299334, 0.5, -0.11279151, 0.19299334, -0.5, -0.11279151)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4k52"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oywxc"]
 cull_mode = 2
 albedo_color = Color(0.907272, 0.0848965, 0.0797467, 1)
 albedo_texture = ExtResource("16_6mtm5")
 
-[sub_resource type="BoxMesh" id="BoxMesh_2sm81"]
-material = SubResource("StandardMaterial3D_s4k52")
+[sub_resource type="BoxMesh" id="BoxMesh_x33c5"]
+material = SubResource("StandardMaterial3D_oywxc")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oq6hs"]
-size = Vector3(1, 10.39856, 25.511717)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pd8e"]
+size = Vector3(0.30059814, 10.39856, 23)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xm4ay"]
-size = Vector3(0.6010742, 10.576721, 12.449379)
+[sub_resource type="BoxShape3D" id="BoxShape3D_33o45"]
+size = Vector3(0.17227173, 10.576721, 12.449379)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6aku"]
 size = Vector3(1, 10.540222, 15.787903)
@@ -2139,29 +2152,78 @@ size = Vector3(1, 10.540222, 15.787903)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dgwqk"]
 size = Vector3(1, 10.540222, 16.986763)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bjpf"]
+size = Vector3(0.43304443, 10.540222, 47.17242)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqia3"]
+size = Vector3(0.43304443, 10.540222, 21.808163)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vk3wp"]
+size = Vector3(0.43304443, 10.540222, 25.23416)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3ske"]
+size = Vector3(0.43304443, 10.540222, 10.616158)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvemi"]
+size = Vector3(0.43304443, 10.540222, 9.697985)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uds52"]
+cull_mode = 2
+albedo_color = Color(0.907272, 0.0848965, 0.0797467, 1)
+albedo_texture = ExtResource("16_6mtm5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_oywxc"]
+material = SubResource("StandardMaterial3D_uds52")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6ps"]
+cull_mode = 2
+albedo_color = Color(0.907272, 0.0848965, 0.0797467, 1)
+albedo_texture = ExtResource("16_6mtm5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_uds52"]
+material = SubResource("StandardMaterial3D_px6ps")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_k3gnr"]
-size = Vector3(1, 10.39856, 16.31393)
+size = Vector3(1, 10.39856, 16.308455)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tncre"]
-size = Vector3(1, 10.540222, 24.646729)
+[sub_resource type="BoxShape3D" id="BoxShape3D_dymge"]
+size = Vector3(0.54296875, 10.540222, 15.036682)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_d14ur"]
-size = Vector3(1, 10.540222, 9.770706)
+[sub_resource type="BoxShape3D" id="BoxShape3D_dul1n"]
+size = Vector3(0.54296875, 10.540222, 5.1871643)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6mtm5"]
-size = Vector3(1, 10.540222, 16.536728)
+[sub_resource type="BoxShape3D" id="BoxShape3D_oywxc"]
+size = Vector3(0.43151855, 10.540222, 15.762634)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdwkx"]
+size = Vector3(1, 10.540222, 6.4036255)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0a07k"]
+size = Vector3(0.43304443, 10.540222, 9.770706)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g5bk6"]
+size = Vector3(0.23669434, 10.540222, 16.409477)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84yj1"]
+size = Vector3(0.27514648, 10.540222, 13.903469)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bfv3"]
-size = Vector3(1, 10.540222, 14.082329)
+size = Vector3(0.43341064, 10.540222, 13.903469)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67yq1"]
+size = Vector3(0.375, 10.540222, 2.149692)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yjixy"]
-size = Vector3(1, 10.540222, 2.3751354)
+size = Vector3(1, 10.540222, 2.149692)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tpcj0"]
-size = Vector3(1, 10.540222, 12.013672)
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4jj5"]
+size = Vector3(0.29730225, 10.540222, 12.013672)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x33c5"]
 size = Vector3(12.5368, 13.3579, 9.0711565)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxkkf"]
+size = Vector3(0.36102295, 10.540222, 21.259277)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpcj0"]
 cull_mode = 2
@@ -2171,8 +2233,14 @@ albedo_texture = ExtResource("16_6mtm5")
 [sub_resource type="BoxMesh" id="BoxMesh_px6ps"]
 material = SubResource("StandardMaterial3D_tpcj0")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oywxc"]
-size = Vector3(1, 10.540222, 18.014458)
+[sub_resource type="BoxShape3D" id="BoxShape3D_hb5ut"]
+size = Vector3(0.3935547, 9.930466, 18.129787)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vo1r"]
+size = Vector3(0.37210083, 10.540222, 7.78965)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynrrx"]
+size = Vector3(0.31689453, 10.540222, 9.770706)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4oh8o"]
 radius = 1.55742
@@ -2302,7 +2370,8 @@ script = ExtResource("1_tncre")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Envrionment" unique_id=700413539]
 transform = Transform3D(-0.86602354, -0.43301606, 0.25000072, 0, 0.49999818, 0.86602646, -0.5000033, 0.7499993, -0.4330102, 0, 0, 0)
-shadow_enabled = true
+light_color = Color(0.15829283, 0.20925203, 0.8259743, 1)
+light_energy = 4.942
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Envrionment" unique_id=1210952410]
 environment = ExtResource("2_d14ur")
@@ -2325,15 +2394,18 @@ metadata/_edit_lock_ = true
 
 [node name="AmbientLights" type="Node3D" parent="Envrionment" unique_id=728102935]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Envrionment/AmbientLights" unique_id=515833235]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20917, 0, 0)
-light_energy = 16.0
-omni_range = 38.338
-
 [node name="SpotLight3D" type="SpotLight3D" parent="Envrionment/AmbientLights" unique_id=1150038879]
 transform = Transform3D(0.852001, 0.390998, 0.348159, -0.52354, 0.636305, 0.566588, 0, -0.665009, 0.746836, -29.0931, 25.5852, 20.1775)
 light_energy = 16.0
 spot_range = 90.249
+spot_angle = 66.52
+spot_angle_attenuation = 0.143587
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Envrionment/AmbientLights" unique_id=1354175194]
+transform = Transform3D(0.8710296, 0.45790872, 0.17784052, -0.1406902, -0.11432123, 0.9834314, 0.47065267, -0.8816182, -0.035153866, -7.4504395, 71.10004, 20.1775)
+light_color = Color(0.47059405, 0.0028768713, 0.9306501, 1)
+light_energy = 16.0
+spot_range = 127.55991
 spot_angle = 66.52
 spot_angle_attenuation = 0.143587
 
@@ -2388,6 +2460,9 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="OmniLight3D" parent="Rooms/StartingRoom/Static/STARTCoffee/Table/SaturnLamp" index="0"]
+light_energy = 1.0
+
 [node name="Curtain" type="Node3D" parent="Rooms/StartingRoom" unique_id=1399970584]
 
 [node name="NorthWall" type="Node3D" parent="Rooms/StartingRoom/Curtain" unique_id=2057265721]
@@ -2407,17 +2482,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37891448, 0, -6.503647)
 [node name="NP_CurtainSegment7" parent="Rooms/StartingRoom/Curtain/NorthWall" unique_id=1304795193 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 0.28248024, 0, -12.908366)
 
-[node name="NP_CurtainSegment8" parent="Rooms/StartingRoom/Curtain/NorthWall" unique_id=262482476 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment8" type="Node3D" parent="Rooms/StartingRoom/Curtain/NorthWall" unique_id=262482476]
 transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 0.41717005, 0, 5.632346)
+
+[node name="Flap3" type="MeshInstance3D" parent="Rooms/StartingRoom/Curtain/NorthWall/NP_CurtainSegment8" unique_id=223405167]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.06485054, 5.0550976, -0.9682555)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("10_px6ps")
 
 [node name="PhysicsCurtain" parent="Rooms/StartingRoom/Curtain/NorthWall" unique_id=340656521 instance=ExtResource("8_x33c5")]
 transform = Transform3D(1.0040134, 0, 0, 0, 1, 0, 1.8626451e-09, 0, 0.6618497, -0.030958176, 0, 2.6672277)
+
+[node name="Flap3" parent="Rooms/StartingRoom/Curtain/NorthWall/PhysicsCurtain/NP_CurtainSegment" parent_id_path=PackedInt32Array(340656521, 1793449515) index="0" unique_id=1374896521]
+transform = Transform3D(6.171902e-09, 0.018259235, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.04966688, 5.0550976, -0.040506363)
+
+[node name="Flap5" parent="Rooms/StartingRoom/Curtain/NorthWall/PhysicsCurtain/NP_CurtainSegment" parent_id_path=PackedInt32Array(340656521, 1793449515) index="3" unique_id=363130384]
+transform = Transform3D(6.171902e-09, 0.018259235, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.27922297, 5.0550976, -1.1770487)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/StartingRoom/Curtain/NorthWall" unique_id=110081708]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05892372, 0, -4.9645977)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/StartingRoom/Curtain/NorthWall/StaticBody3D" unique_id=178563513]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -4.7683716e-07, 4.69928, -2.0115676)
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 0.22352552, 4.69928, -2.0469334)
 shape = SubResource("BoxShape3D_px6ps")
 debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 
@@ -2425,7 +2511,7 @@ debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37118816, 0, 7.4854884)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/StartingRoom/Curtain/NorthWall/StaticBody3D2" unique_id=1908152243]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 2.3841858e-06, 4.7883606, -1.6845388)
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 2.3841858e-06, 4.7883606, -2.4720945)
 shape = SubResource("BoxShape3D_uds52")
 debug_color = Color(0.9937001, 0, 0.24056926, 0.41960785)
 
@@ -2495,7 +2581,7 @@ transform = Transform3D(1.0040134, 0, 0, 0, 1, 0, 2.7939677e-09, 0, 0.6618497, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05892372, 0, -4.9645977)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/StartingRoom/Curtain/WestWall/StaticBody3D" unique_id=1409648596]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 4.69928, -0.07588196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1344614, 4.69928, 0.34945488)
 shape = SubResource("BoxShape3D_vnwl1")
 debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 
@@ -2503,7 +2589,7 @@ debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37118816, 0, 7.4854884)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/StartingRoom/Curtain/WestWall/StaticBody3D2" unique_id=452862203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.861023e-06, 4.7883606, 5.1235375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12109947, 4.7883606, 5.1258183)
 shape = SubResource("BoxShape3D_w22ud")
 debug_color = Color(0.9937001, 0, 0.24056926, 0.41960785)
 
@@ -2618,6 +2704,9 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="OmniLight3D" parent="Rooms/WestHall/Static/Static/WestHallCoffee/Table/SaturnLamp" index="0"]
+light_energy = 1.0
+
 [node name="Curtains" type="Node3D" parent="Rooms/WestHall" unique_id=760677690]
 
 [node name="SouthWall" type="Node3D" parent="Rooms/WestHall/Curtains" unique_id=1006136755]
@@ -2677,7 +2766,7 @@ transform = Transform3D(1.0040134, 0, 0, 0, 1, 0, 1.8626451e-09, 0, 0.6618497, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05892372, 0, -4.9645977)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/WestHall/Curtains/NorthWall/StaticBody3D" unique_id=364365573]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -4.7683716e-07, 4.69928, -2.064755)
+transform = Transform3D(0.99999785, 0, -7.264316e-08, 0, 1, 0, 7.264316e-08, 0, 0.99999785, 0.096004486, 4.69928, -2.159151)
 shape = SubResource("BoxShape3D_niyqy")
 debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 
@@ -2760,15 +2849,15 @@ transform = Transform3D(6.1719008e-09, 0.018259235, -0.14918591, 9.878206, -5.58
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 0, -0.050724387)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/WestHall/Curtains/SouthWall2/StaticBody3D" unique_id=1664731523]
-transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 4.770111, -4.601715)
-shape = SubResource("BoxShape3D_spl2r")
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0.25927162, 4.770111, -4.601715)
+shape = SubResource("BoxShape3D_umq1v")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/WestHall/Curtains/SouthWall2" unique_id=649033704]
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 0, 9.087464)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/WestHall/Curtains/SouthWall2/StaticBody3D2" unique_id=1395637462]
-transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 4.770111, -4.601715)
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0.19384766, 4.770111, -4.579513)
 shape = SubResource("BoxShape3D_spl2r")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
@@ -2813,6 +2902,9 @@ grow_vertical = 2
 
 [node name="SaturnLamp" parent="Rooms/YorkRoom/Static/YORKCoffee/Table" index="0"]
 transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907, 22.793495, 14.8137, 22.569794)
+
+[node name="OmniLight3D" parent="Rooms/YorkRoom/Static/YORKCoffee/Table/SaturnLamp" index="0"]
+light_energy = 1.0
 
 [node name="TableMesh" parent="Rooms/YorkRoom/Static/YORKCoffee/Table" index="1"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 24.300869, 5.27574, 22.778229)
@@ -3075,34 +3167,34 @@ transform = Transform3D(-4.388682e-08, 0, 0.6725914, 0, 1, 0, -1.0040134, 0, -2.
 
 [node name="Flap3" parent="Rooms/YorkRoom/Curtains/NorthWall/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(132007923, 1793449515) index="0" unique_id=1374896521]
 transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.04966736, 5.0550976, -0.44604588)
-mesh = SubResource("BoxMesh_2sm81")
+mesh = SubResource("BoxMesh_x33c5")
 
 [node name="Flap6" parent="Rooms/YorkRoom/Curtains/NorthWall/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(132007923, 1793449515) index="1" unique_id=1501733450]
 transform = Transform3D(6.171902e-09, 0.018259235, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.04966688, 5.0550976, 1.5568352)
-mesh = SubResource("BoxMesh_2sm81")
+mesh = SubResource("BoxMesh_x33c5")
 
 [node name="Flap4" parent="Rooms/YorkRoom/Curtains/NorthWall/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(132007923, 1793449515) index="2" unique_id=1688621387]
 transform = Transform3D(6.171902e-09, 0.018259235, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086264, 5.0550976, 0.7162132)
-mesh = SubResource("BoxMesh_2sm81")
+mesh = SubResource("BoxMesh_x33c5")
 
 [node name="Flap5" parent="Rooms/YorkRoom/Curtains/NorthWall/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(132007923, 1793449515) index="3" unique_id=363130384]
 transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.17928505, 5.0550976, -1.5272686)
-mesh = SubResource("BoxMesh_2sm81")
+mesh = SubResource("BoxMesh_x33c5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/YorkRoom/Curtains/NorthWall" unique_id=451318271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05892372, 0, -4.9645977)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/YorkRoom/Curtains/NorthWall/StaticBody3D" unique_id=487399311]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -0.09413099, 4.777216, -15.563053)
-shape = SubResource("BoxShape3D_oq6hs")
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 0.154387, 4.7772555, -14.475594)
+shape = SubResource("BoxShape3D_5pd8e")
 debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/YorkRoom/Curtains/NorthWall" unique_id=425871810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37118816, 0, 7.4854884)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/YorkRoom/Curtains/NorthWall/StaticBody3D2" unique_id=1330846509]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -0.3549075, 4.7883606, -6.345353)
-shape = SubResource("BoxShape3D_xm4ay")
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -0.4390092, 4.7883606, -6.345353)
+shape = SubResource("BoxShape3D_33o45")
 debug_color = Color(0.9937001, 0, 0.24056926, 0.41960785)
 
 [node name="SouthWall" type="Node3D" parent="Rooms/YorkRoom/Curtains" unique_id=1070807391]
@@ -3153,101 +3245,405 @@ transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 4
 shape = SubResource("BoxShape3D_dgwqk")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
-[node name="EastRoom" type="Node3D" parent="Rooms" unique_id=452573905]
+[node name="EastMiddle" type="Node3D" parent="Rooms" unique_id=1820169412]
 
-[node name="Static" type="Node3D" parent="Rooms/EastRoom" unique_id=515582269]
+[node name="Static" type="Node3D" parent="Rooms/EastMiddle" unique_id=1025715437]
 
-[node name="Curtains" type="Node3D" parent="Rooms/EastRoom" unique_id=2037038417]
+[node name="Curtains" type="Node3D" parent="Rooms/EastMiddle" unique_id=1510127844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.27034, 0, -126.66968)
 
-[node name="SouthWall" type="Node3D" parent="Rooms/EastRoom/Curtains" unique_id=518356949]
-transform = Transform3D(-10, 0, -8.742278e-07, 0, 10.000001, 0, 8.742278e-07, 0, -10, 55.444427, 0, -257.06744)
+[node name="NP_CurtainSegment" parent="Rooms/EastMiddle/Curtains" unique_id=262995847 instance=ExtResource("18_uds52")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, 3.634819, 0, -216.57294)
 
-[node name="NP_CurtainSegment" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=1271183178 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment2" parent="Rooms/EastMiddle/Curtains" unique_id=1400985064 instance=ExtResource("18_uds52")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, -217.47745, 0, -216.57294)
 
-[node name="NP_CurtainSegment2" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=1538406409 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment3" parent="Rooms/EastMiddle/Curtains" unique_id=926162914 instance=ExtResource("18_uds52")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, -249.9064, 0, 33.64377)
+
+[node name="NP_CurtainSegment4" parent="Rooms/EastMiddle/Curtains" unique_id=2132962437 instance=ExtResource("18_uds52")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -359.03638, 0, -75.6656)
+
+[node name="NP_CurtainSegment6" type="Node3D" parent="Rooms/EastMiddle/Curtains" unique_id=2142992641]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -359.03638, 0, -296.69595)
+
+[node name="NP_CurtainSegment7" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment6" unique_id=1438854923 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28247797, 0, 9.149277)
+
+[node name="NP_CurtainSegment8" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment6" unique_id=305632937 instance=ExtResource("7_oywxc")]
+transform = Transform3D(-4.3711392e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711392e-08, 1.9677315, 0, 7.856678)
+
+[node name="NP_CurtainSegment5" type="Node3D" parent="Rooms/EastMiddle/Curtains" unique_id=328817704]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -244.25111, 0, -93.80499)
+
+[node name="NP_CurtainSegment" type="Node3D" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=1144506096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21041107, 0, -10.421373)
+
+[node name="Flap3" type="MeshInstance3D" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5/NP_CurtainSegment" unique_id=414680517]
+transform = Transform3D(-1.2877433e-08, -0.03809725, -0.14913478, 9.878206, -5.583833e-08, -4.8110174e-17, -4.315991e-07, -1.2768636, 0.0044496725, 0.18270111, 5.0550976, -0.91685104)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("10_px6ps")
+
+[node name="NP_CurtainSegment2" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=1148056463 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231439, 0, -3.4031484)
 
-[node name="NP_CurtainSegment4" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=1569572473 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment3" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=8601001 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23791504, 0, 4.537052)
+
+[node name="NP_CurtainSegment4" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=2085926034 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885432, 0, -9.479919)
 
-[node name="NP_CurtainSegment6" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=1769541406 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment6" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=1331864791 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37891448, 0, -6.503647)
 
-[node name="NP_CurtainSegment7" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=527903441 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment7" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=1145338187 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28247833, 0, 10.782723)
+
+[node name="NP_CurtainSegment8" parent="Rooms/EastMiddle/Curtains/NP_CurtainSegment5" unique_id=679079789 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460678, 0, 7.452238)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastMiddle/Curtains" unique_id=1170908810]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -75.5526, 0, -210.81418)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastMiddle/Curtains/StaticBody3D" unique_id=1999579222]
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.3790741, 4.770111, -4.413436)
+shape = SubResource("BoxShape3D_2bjpf")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/EastMiddle/Curtains" unique_id=516001266]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -331.90173, 0, 37.64734)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastMiddle/Curtains/StaticBody3D2" unique_id=202331116]
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.303051, 4.770111, 8.26869)
+shape = SubResource("BoxShape3D_jqia3")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Rooms/EastMiddle/Curtains" unique_id=502490509]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -359.44904, 0, -158.91641)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastMiddle/Curtains/StaticBody3D3" unique_id=1136218316]
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.303051, 4.770111, 6.555691)
+shape = SubResource("BoxShape3D_vk3wp")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Rooms/EastMiddle/Curtains" unique_id=1878425456]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -245.53473, 0, -158.91641)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastMiddle/Curtains/StaticBody3D4" unique_id=1515801442]
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.3030548, 4.770111, -0.75330925)
+shape = SubResource("BoxShape3D_f3ske")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Rooms/EastMiddle/Curtains" unique_id=1632095375]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -245.53473, 0, -9.172043)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastMiddle/Curtains/StaticBody3D5" unique_id=1831363107]
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.3030548, 4.770111, -0.5175991)
+shape = SubResource("BoxShape3D_cvemi")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="PhysicsCurtain" parent="Rooms/EastMiddle/Curtains" unique_id=710344648 instance=ExtResource("8_x33c5")]
+transform = Transform3D(10.040134, 0, 0, 0, 10, 0, 1.8626451e-08, 0, 6.618497, -239.02303, 0, -90.790146)
+
+[node name="Flap7" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment" parent_id_path=PackedInt32Array(710344648, 1793449515) index="1" unique_id=787014313]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.049663544, 5.0550976, 4.1961746)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap8" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment" parent_id_path=PackedInt32Array(710344648, 1793449515) index="4" unique_id=667479635]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086311, 5.0550976, 3.3236008)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="NP_CurtainSegment2" type="Node3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain" unique_id=1703931957]
+transform = Transform3D(-4.3711378e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711392e-08, 9.656426, 0, 18.440136)
+
+[node name="Flap7" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment2" unique_id=321122075]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.049663544, 5.0550976, 4.1961746)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap6" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment2" unique_id=563449598]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.04966709, 5.0550976, 2.3345356)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap4" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment2" unique_id=691228008]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086308, 5.0550976, 1.1068538)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap8" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment2" unique_id=193252712]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086311, 5.0550976, 3.3236008)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap9" type="SoftBody3D" parent="Rooms/EastMiddle/Curtains/PhysicsCurtain/NP_CurtainSegment2" unique_id=111457909]
+transform = Transform3D(6.171903e-09, 0.018259237, -0.14918594, 9.878208, -5.5838346e-08, -4.364872e-17, -4.317471e-07, -1.2773017, -0.0021326374, -0.21086597, 5.0550985, 4.4822464)
+mesh = SubResource("BoxMesh_oywxc")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="EastHalls" type="Node3D" parent="Rooms" unique_id=452573905]
+
+[node name="Static" type="Node3D" parent="Rooms/EastHalls" unique_id=515582269]
+
+[node name="Curtains" type="Node3D" parent="Rooms/EastHalls" unique_id=2037038417]
+
+[node name="SouthWall" type="Node3D" parent="Rooms/EastHalls/Curtains" unique_id=518356949]
+transform = Transform3D(-10, 0, -8.742278e-07, 0, 10.000001, 0, 8.742278e-07, 0, -10, 55.444427, 0, -257.06744)
+
+[node name="NP_CurtainSegment" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1271183178 instance=ExtResource("7_oywxc")]
+
+[node name="NP_CurtainSegment2" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1538406409 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231439, 0, -3.4031484)
+
+[node name="NP_CurtainSegment4" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1569572473 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885432, 0, -9.479919)
+
+[node name="NP_CurtainSegment6" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1769541406 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37891448, 0, -6.503647)
+
+[node name="NP_CurtainSegment7" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=527903441 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 0.28248024, 0, -12.908366)
 
-[node name="NP_CurtainSegment8" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=732413815 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment8" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=732413815 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 0.011348724, 0, 5.7296963)
 
-[node name="PhysicsCurtain" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=1926931664 instance=ExtResource("8_x33c5")]
+[node name="PhysicsCurtain" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1926931664 instance=ExtResource("8_x33c5")]
 transform = Transform3D(1.0040134, 0, 0, 0, 1, 0, 1.8626451e-09, 0, 0.6618497, -0.030958176, 0, 2.6672277)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=271731150]
+[node name="Flap5" parent="Rooms/EastHalls/Curtains/SouthWall/PhysicsCurtain/NP_CurtainSegment" parent_id_path=PackedInt32Array(1926931664, 1793449515) index="3" unique_id=363130384]
+transform = Transform3D(6.171902e-09, 0.018259235, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.40887642, 5.0550976, -0.28120422)
+
+[node name="Flap7" type="SoftBody3D" parent="Rooms/EastHalls/Curtains/SouthWall/PhysicsCurtain/NP_CurtainSegment" parent_id_path=PackedInt32Array(1926931664, 1793449515) index="4" unique_id=1619312574]
+transform = Transform3D(6.171902e-09, 0.018259235, -0.14918591, 9.878207, -5.583834e-08, -4.3648713e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.40887833, 5.0550976, 2.3280563)
+mesh = SubResource("BoxMesh_uds52")
+surface_material_override/0 = ExtResource("17_tpcj0")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="PhysicsCurtain2" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=529457514 instance=ExtResource("8_x33c5")]
+transform = Transform3D(1.0040134, 0, 7.1054274e-15, 0, 1, 0, 1.8626451e-09, 0, 0.6618497, 5.120554, 0, -8.205145)
+
+[node name="PhysicsCurtain3" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1085577810 instance=ExtResource("8_x33c5")]
+transform = Transform3D(1.0040134, 0, 7.1054274e-15, 0, 1, 0, 1.8626451e-09, 0, 0.6618497, 9.348101, 0, 1.8554859)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=271731150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05892372, 0, -4.9645977)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastRoom/Curtains/SouthWall/StaticBody3D" unique_id=303826108]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -9.536743e-07, 4.69928, -1.5469157)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/SouthWall/StaticBody3D" unique_id=303826108]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -1.9073486e-06, 4.69928, -1.549654)
 shape = SubResource("BoxShape3D_k3gnr")
 debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/EastRoom/Curtains/SouthWall" unique_id=1885075109]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/SouthWall" unique_id=1885075109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37118816, 0, 7.4854884)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastRoom/Curtains/SouthWall/StaticBody3D2" unique_id=651246692]
-transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 2.861023e-06, 4.7883606, -1.7005682)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/SouthWall/StaticBody3D2" unique_id=651246692]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -0.46253014, 4.7883606, -1.6630611)
 shape = SubResource("BoxShape3D_uxsn5")
 debug_color = Color(0.9937001, 0, 0.24056926, 0.41960785)
 
-[node name="NorthWall" type="Node3D" parent="Rooms/EastRoom/Curtains" unique_id=294951185]
+[node name="NorthWall" type="Node3D" parent="Rooms/EastHalls/Curtains" unique_id=294951185]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -38.97944, 0, -205.69876)
 
-[node name="NP_CurtainSegment" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=1104110696 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=1104110696 instance=ExtResource("7_oywxc")]
 
-[node name="NP_CurtainSegment2" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=1410718277 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment2" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=1410718277 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231439, 0, -3.4031484)
 
-[node name="NP_CurtainSegment3" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=1511907733 instance=ExtResource("7_oywxc")]
+[node name="Flap3" parent="Rooms/EastHalls/Curtains/NorthWall/NP_CurtainSegment2" index="0"]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174705e-07, -1.2773014, -0.0021326372, -0.06485081, 5.0550976, -1.0884132)
+
+[node name="NP_CurtainSegment3" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=1511907733 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23791182, 0, 2.9036071)
 
-[node name="NP_CurtainSegment4" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=712331882 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment4" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=712331882 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885432, 0, -9.479919)
 
-[node name="NP_CurtainSegment5" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=7714213 instance=ExtResource("7_oywxc")]
+[node name="Flap5" parent="Rooms/EastHalls/Curtains/NorthWall/NP_CurtainSegment4" index="1"]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174705e-07, -1.2773014, -0.0021326372, -0.30960178, 5.0550976, -1.4568825)
+
+[node name="Flap4" parent="Rooms/EastHalls/Curtains/NorthWall/NP_CurtainSegment4" index="2"]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174705e-07, -1.2773014, -0.0021326372, -0.22496223, 5.0550976, 0.34368896)
+
+[node name="Flap6" parent="Rooms/EastHalls/Curtains/NorthWall/NP_CurtainSegment4" index="3"]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174705e-07, -1.2773014, -0.0021326372, 0.081095695, 5.0550976, 0.113471985)
+
+[node name="NP_CurtainSegment5" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=7714213 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3592434, 0, -12.696981)
 
-[node name="NP_CurtainSegment6" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=1036430091 instance=ExtResource("7_oywxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37891448, 0, -6.503647)
-
-[node name="NP_CurtainSegment7" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=2131837216 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment7" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=2131837216 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28247797, 0, 9.149277)
 
-[node name="NP_CurtainSegment8" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=1648989050 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment8" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=1648989050 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460653, 0, 5.818793)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastRoom/Curtains/NorthWall" unique_id=1594914465]
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=1594914465]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastRoom/Curtains/NorthWall/StaticBody3D" unique_id=123445507]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, -1.8878174)
-shape = SubResource("BoxShape3D_tncre")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/NorthWall/StaticBody3D" unique_id=123445507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08203125, 4.770111, 3.0253296)
+shape = SubResource("BoxShape3D_dymge")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
-[node name="EastWall" type="Node3D" parent="Rooms/EastRoom/Curtains" unique_id=632042161]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/NorthWall" unique_id=2075701811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.598722)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/NorthWall/StaticBody3D2" unique_id=1209423980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08203125, 4.770111, 8.058212)
+shape = SubResource("BoxShape3D_dul1n")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="NorthWall2" type="Node3D" parent="Rooms/EastHalls/Curtains" unique_id=266550636]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.0782166, 0, -205.69876)
+
+[node name="NP_CurtainSegment" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=1505706221 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06785202, 0, -0.15932465)
+
+[node name="NP_CurtainSegment2" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=1124489930 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231439, 0, -3.4031484)
+
+[node name="NP_CurtainSegment4" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=576193373 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885432, 0, -9.479919)
+
+[node name="NP_CurtainSegment5" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=1142497222 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3592434, 0, -12.696981)
+
+[node name="NP_CurtainSegment6" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=1412677929 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37891448, 0, -6.503647)
+
+[node name="NP_CurtainSegment7" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=858668514 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28247797, 0, 9.149277)
+
+[node name="NP_CurtainSegment8" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=271611507 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49583054, 0, 6.498953)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=1639937680]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/NorthWall2/StaticBody3D" unique_id=1123999260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13179779, 4.8047156, -6.3298645)
+shape = SubResource("BoxShape3D_oywxc")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/NorthWall2" unique_id=907698775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38243866, 0, 9.889273)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/NorthWall2/StaticBody3D2" unique_id=100783171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, -1.6086731)
+shape = SubResource("BoxShape3D_fdwkx")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="EastWall" type="Node3D" parent="Rooms/EastHalls/Curtains" unique_id=632042161]
 transform = Transform3D(0.026703067, 0, 9.999964, 0, 10, 0, -9.999964, 0, 0.026703067, 32.30963, 0, -333.31357)
 
-[node name="NP_CurtainSegment" parent="Rooms/EastRoom/Curtains/EastWall" unique_id=1991823287 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment" parent="Rooms/EastHalls/Curtains/EastWall" unique_id=1991823287 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07035446, 0, 0.8655338)
 
-[node name="NP_CurtainSegment2" parent="Rooms/EastRoom/Curtains/EastWall" unique_id=1884781162 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment2" parent="Rooms/EastHalls/Curtains/EastWall" unique_id=1884781162 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23394394, 0, -2.4649487)
 
-[node name="NP_CurtainSegment6" parent="Rooms/EastRoom/Curtains/EastWall" unique_id=1750385024 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment6" parent="Rooms/EastHalls/Curtains/EastWall" unique_id=1750385024 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38142014, 0, -5.5654488)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastRoom/Curtains/EastWall" unique_id=657091450]
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/EastHalls/Curtains/EastWall" unique_id=657091450]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastRoom/Curtains/EastWall/StaticBody3D" unique_id=877044457]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12517166, 4.770111, -2.2175007)
-shape = SubResource("BoxShape3D_d14ur")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/EastHalls/Curtains/EastWall/StaticBody3D" unique_id=877044457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.303051, 4.770111, -2.2174988)
+shape = SubResource("BoxShape3D_0a07k")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="CenterNorthHall" type="Node3D" parent="Rooms" unique_id=906373909]
@@ -3315,23 +3711,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460653, 0, 5.818793)
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall" unique_id=435119402]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall/StaticBody3D" unique_id=1510241432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 2.5626297)
-shape = SubResource("BoxShape3D_6mtm5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09343338, 4.2467685, 2.4990044)
+shape = SubResource("BoxShape3D_g5bk6")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall" unique_id=866987481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.767251, 0, 5.4641366)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall/StaticBody3D2" unique_id=785886429]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 1.3354301)
-shape = SubResource("BoxShape3D_5bfv3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0501709, 4.770111, 1.42486)
+shape = SubResource("BoxShape3D_84yj1")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall" unique_id=2019928754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.253432, 0, -0.2004776)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall/StaticBody3D5" unique_id=1805595348]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 1.3354301)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054473877, 4.770111, 1.3354301)
 shape = SubResource("BoxShape3D_5bfv3")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
@@ -3339,15 +3735,15 @@ debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.767251, 0, -12.062193)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall/StaticBody3D3" unique_id=181752236]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 7.1703377)
-shape = SubResource("BoxShape3D_yjixy")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06738281, 4.770111, 7.1252747)
+shape = SubResource("BoxShape3D_67yq1")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall" unique_id=1399194087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.515383, 0, 5.721157)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CenterNorthHall/Curtains/NorthWall/StaticBody3D4" unique_id=829553089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 7.1703377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 7.237998)
 shape = SubResource("BoxShape3D_yjixy")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
@@ -3368,8 +3764,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460653, 0, 5.818793)
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/CenterNorthHall/Curtains/EastWall" unique_id=1611145333]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CenterNorthHall/Curtains/EastWall/StaticBody3D" unique_id=1280303588]
-transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 4.770111, 4.428711)
-shape = SubResource("BoxShape3D_tpcj0")
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.27017212, 4.770111, 4.428711)
+shape = SubResource("BoxShape3D_c4jj5")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="NorthEastLoop" type="Node3D" parent="Rooms" unique_id=1380788625]
@@ -3400,6 +3796,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.51
 [node name="SaturnLamp" parent="Rooms/NorthEastLoop/Static/Chair/PlainTable/Table" index="0"]
 transform = Transform3D(0.53315306, 0, -1.6194988, 0, 1.705, 0, 1.6194988, 0, 0.53315306, 17.253502, 14.8137, -6.6704865)
 
+[node name="OmniLight3D" parent="Rooms/NorthEastLoop/Static/Chair/PlainTable/Table/SaturnLamp" index="0"]
+light_energy = 1.0
+
 [node name="TableMesh" parent="Rooms/NorthEastLoop/Static/Chair/PlainTable/Table" index="1"]
 transform = Transform3D(-0.0032111958, 0, -3.9999988, 0, 4, 0, 3.9999988, 0, -0.0032111958, 17.043846, 5.27574, -5.1632843)
 
@@ -3418,6 +3817,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.51
 
 [node name="SaturnLamp" parent="Rooms/NorthEastLoop/Static/Chair2/PlainTable2/Table" index="0"]
 transform = Transform3D(1.61907, 0, 0.534453, 0, 1.705, 0, -0.534453, 0, 1.61907, -1.50737, 14.8137, -0.345863)
+
+[node name="OmniLight3D" parent="Rooms/NorthEastLoop/Static/Chair2/PlainTable2/Table/SaturnLamp" index="0"]
+light_energy = 1.0
 
 [node name="CollisionShape3D" parent="Rooms/NorthEastLoop/Static/Chair2/PlainTable2/Table/StaticBody3D" index="0"]
 visible = false
@@ -3453,8 +3855,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460653, 0, 5.818793)
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/NorthEastLoop/Curtains/NorthWestWall" unique_id=705246902]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/NorthEastLoop/Curtains/NorthWestWall/StaticBody3D" unique_id=532609470]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, -0.1940918)
-shape = SubResource("BoxShape3D_213qb")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28292847, 4.770111, -0.1940918)
+shape = SubResource("BoxShape3D_sxkkf")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="PhysicsCurtain" parent="Rooms/NorthEastLoop/Curtains" unique_id=69098041 instance=ExtResource("8_x33c5")]
@@ -3463,10 +3865,13 @@ transform = Transform3D(10.040134, 0, 0, 0, 10, 0, 1.8626451e-08, 0, 6.618497, -
 [node name="PhysicsCurtain2" parent="Rooms/NorthEastLoop/Curtains" unique_id=1998856947 instance=ExtResource("8_x33c5")]
 transform = Transform3D(10.040134, 0, 0, 0, 10, 0, 1.8626451e-08, 0, 6.618497, -320.19983, 0, 71.57641)
 
-[node name="Flap4" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(1998856947, 1793449515) index="2" unique_id=1688621387]
+[node name="NP_CurtainSegment" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2" index="0" unique_id=1793449515]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0.06785202, 0, -0.9026489)
+
+[node name="Flap4" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2/NP_CurtainSegment" index="2" unique_id=1688621387]
 transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086311, 5.0550976, 0.9917431)
 
-[node name="Flap7" type="SoftBody3D" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(1998856947, 1793449515) index="3" unique_id=1013983117]
+[node name="Flap7" type="SoftBody3D" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2/NP_CurtainSegment" index="3" unique_id=1013983117]
 transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.0396204, 5.0550976, -2.381959)
 mesh = SubResource("BoxMesh_px6ps")
 surface_material_override/0 = ExtResource("17_tpcj0")
@@ -3483,7 +3888,7 @@ attachments/1/point_index = 1
 attachments/1/spatial_attachment_path = NodePath("")
 attachments/1/offset = Vector3(0, 0, 0)
 
-[node name="Flap8" type="SoftBody3D" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2/NP_CurtainSegment" parent_id_path=PackedInt32Array(1998856947, 1793449515) index="4" unique_id=1464021747]
+[node name="Flap8" type="SoftBody3D" parent="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2/NP_CurtainSegment" index="4" unique_id=1464021747]
 transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.20081711, 5.0550976, -3.4458966)
 mesh = SubResource("BoxMesh_px6ps")
 surface_material_override/0 = ExtResource("17_tpcj0")
@@ -3508,6 +3913,9 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -322.78046, 0, 160.98874)
 [node name="NP_CurtainSegment2" parent="Rooms/NorthEastLoop/Curtains/NorthEastWall" unique_id=1934237431 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.6638037, 0.23143959, 0, -4.780468)
 
+[node name="Flap3" parent="Rooms/NorthEastLoop/Curtains/NorthEastWall/NP_CurtainSegment2" index="0"]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.06484985, 5.0550976, -1.0154724)
+
 [node name="Flap5" parent="Rooms/NorthEastLoop/Curtains/NorthEastWall/NP_CurtainSegment2" index="1"]
 transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.06484985, 5.0550976, 1.2353015)
 
@@ -3523,8 +3931,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460653, 0, 5.818793)
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/NorthEastLoop/Curtains/NorthEastWall" unique_id=1545122354]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/NorthEastLoop/Curtains/NorthEastWall/StaticBody3D" unique_id=1937761220]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.770111, 1.823761)
-shape = SubResource("BoxShape3D_oywxc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27025127, 5.0749893, 1.881424)
+shape = SubResource("BoxShape3D_hb5ut")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="EastWall" type="Node3D" parent="Rooms/NorthEastLoop/Curtains" unique_id=1421102487]
@@ -3536,14 +3944,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07035446, 0, 0.8655338)
 [node name="NP_CurtainSegment2" parent="Rooms/NorthEastLoop/Curtains/EastWall" unique_id=789084461 instance=ExtResource("7_oywxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23394394, 0, -2.4649487)
 
-[node name="NP_CurtainSegment6" parent="Rooms/NorthEastLoop/Curtains/EastWall" unique_id=22859279 instance=ExtResource("7_oywxc")]
+[node name="NP_CurtainSegment6" type="Node3D" parent="Rooms/NorthEastLoop/Curtains/EastWall" unique_id=22859279]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38142014, 0, -5.5654488)
+
+[node name="Flap5" type="MeshInstance3D" parent="Rooms/NorthEastLoop/Curtains/EastWall/NP_CurtainSegment6" unique_id=576324285]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174705e-07, -1.2773014, -0.002132637, -0.06513333, 5.0550976, 1.0939684)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("10_px6ps")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/NorthEastLoop/Curtains/EastWall" unique_id=306978556]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/NorthEastLoop/Curtains/EastWall/StaticBody3D" unique_id=1340109846]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12517166, 4.770111, -2.2175007)
-shape = SubResource("BoxShape3D_d14ur")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1040988, 4.770111, -1.2272043)
+shape = SubResource("BoxShape3D_5vo1r")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="WestWall" type="Node3D" parent="Rooms/NorthEastLoop/Curtains" unique_id=645876686]
@@ -3561,8 +3974,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38142014, 0, -5.5654488)
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/NorthEastLoop/Curtains/WestWall" unique_id=1215080830]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/NorthEastLoop/Curtains/WestWall/StaticBody3D" unique_id=428838111]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12517166, 4.770111, -2.2175007)
-shape = SubResource("BoxShape3D_d14ur")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18743324, 4.770111, -2.2175007)
+shape = SubResource("BoxShape3D_ynrrx")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
+
+[node name="WestWall2" type="Node3D" parent="Rooms/NorthEastLoop/Curtains" unique_id=749302847]
+transform = Transform3D(0.026703067, 0, 9.999964, 0, 10, 0, -9.999964, 0, 0.026703067, -249.57692, 0, 476.89935)
+
+[node name="NP_CurtainSegment" parent="Rooms/NorthEastLoop/Curtains/WestWall2" unique_id=50053845 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07035446, 0, 0.8655338)
+
+[node name="NP_CurtainSegment2" parent="Rooms/NorthEastLoop/Curtains/WestWall2" unique_id=667561899 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23394394, 0, -2.4649487)
+
+[node name="NP_CurtainSegment6" parent="Rooms/NorthEastLoop/Curtains/WestWall2" unique_id=617503400 instance=ExtResource("7_oywxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38142014, 0, -5.5654488)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/NorthEastLoop/Curtains/WestWall2" unique_id=1257984590]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/NorthEastLoop/Curtains/WestWall2/StaticBody3D" unique_id=427461281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18743324, 4.770111, -2.2175007)
+shape = SubResource("BoxShape3D_ynrrx")
 debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [node name="Timers" type="Node" parent="." unique_id=408220644]
@@ -3786,6 +4218,7 @@ metadata/_edit_use_anchors_ = true
 
 [editable path="Rooms/StartingRoom/Static/STARTCoffee"]
 [editable path="Rooms/StartingRoom/Static/STARTCoffee/Table"]
+[editable path="Rooms/StartingRoom/Curtain/NorthWall/PhysicsCurtain"]
 [editable path="Rooms/StartingRoom/Laura"]
 [editable path="Rooms/StartingRoom/Laura/LauraSkin"]
 [editable path="Rooms/WestHall/Static/Static/WestHallCoffee"]
@@ -3796,6 +4229,10 @@ metadata/_edit_use_anchors_ = true
 [editable path="Rooms/YorkRoom/Static/YORKCoffee/Table"]
 [editable path="Rooms/YorkRoom/Curtains/NorthWall/PhysicsCurtain"]
 [editable path="Rooms/YorkRoom/Curtains/NorthWall/PhysicsCurtain2"]
+[editable path="Rooms/EastMiddle/Curtains/PhysicsCurtain"]
+[editable path="Rooms/EastHalls/Curtains/SouthWall/PhysicsCurtain"]
+[editable path="Rooms/EastHalls/Curtains/NorthWall/NP_CurtainSegment2"]
+[editable path="Rooms/EastHalls/Curtains/NorthWall/NP_CurtainSegment4"]
 [editable path="Rooms/NorthEastLoop/Static/Chair/PlainTable/Table"]
 [editable path="Rooms/NorthEastLoop/Static/Chair2/PlainTable2/Table"]
 [editable path="Rooms/NorthEastLoop/Curtains/PhysicsCurtain2"]
