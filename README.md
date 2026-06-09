@@ -9,5 +9,3 @@ Screenshots from the project :
 <img width="1919" height="1150" alt="Screenshot 2026-03-30 202604" src="https://github.com/user-attachments/assets/6e00fdcb-55bf-4501-a114-98ad253d515c" />
 
 <img width="1919" height="1151" alt="Screenshot 2026-03-30 141219" src="https://github.com/user-attachments/assets/570d0d9b-bb57-45b5-bce3-cf0eb697fcd6" />
-
-<img width="1919" height="1199" alt="Screenshot 2026-03-27 142158" src="https://github.com/user-attachments/assets/4292bd35-7ed9-427a-b14e-bdd38d01a20c" />
