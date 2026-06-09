@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://be38l7kdfocr"]
+
+[ext_resource type="Texture2D" uid="uid://kwt6a362ljco" path="res://InstanceScenes/Environment/New Curtains/curtain_single.tres" id="1_2sm81"]
+[ext_resource type="Material" uid="uid://coyohqc5co4vt" path="res://InstanceScenes/Environment/New Curtains/curtainDark.tres" id="2_juu3h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4k52"]
+cull_mode = 2
+albedo_color = Color(0.907272, 0.0848965, 0.0797467, 1)
+albedo_texture = ExtResource("1_2sm81")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2sm81"]
+material = SubResource("StandardMaterial3D_s4k52")
+
+[node name="NP_CurtainSegment" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06785166, 0, -0.072666645)
+
+[node name="Flap3" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.06485054, 5.0550976, -0.9682555)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_juu3h")
+
+[node name="Flap5" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.06485054, 5.0550976, 1.1998115)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_juu3h")
+
+[node name="Flap4" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.22496292, 5.0550976, 0.098193645)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_juu3h")
+
+[node name="Flap6" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, 0.08109453, 5.0550976, 0.098193645)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_juu3h")

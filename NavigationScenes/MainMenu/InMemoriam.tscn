@@ -276,7 +276,7 @@ spot_angle_attenuation = 0.143587
 transform = Transform3D(-2.99158, 0, 0.224676, 0, 3, 0, -0.224676, 0, -2.99158, -2.26728, 0.665981, 80.8441)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.857275, 0, -0.514859, 0, 1, 0, 0.514859, 0, -0.857275, -18.4455, 13.0525, 58.2068)
+transform = Transform3D(-0.85727525, 0, -0.51485866, 0, 1, 0, 0.51485866, 0, -0.85727525, -18.4455, 13.0525, 58.2068)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
 libraries = {
@@ -332,5 +332,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.921071, 0.894579, 0.870903, 1)
+light_energy = 0.3
+shadow_enabled = true
 
 [connection signal="animation_finished" from="Camera3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

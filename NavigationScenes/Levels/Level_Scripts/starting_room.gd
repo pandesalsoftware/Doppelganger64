@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var Cooper = $Characters/Cooper
+@onready var Cooper = get_tree().get_first_node_in_group("Cooper")
 
 
 

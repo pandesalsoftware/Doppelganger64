@@ -1,13 +1,120 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdsugdhhhqeog"]
+[gd_scene format=3 uid="uid://bdsugdhhhqeog"]
 
 [ext_resource type="PackedScene" uid="uid://40s4yrlc0p76" path="res://InstanceScenes/Cooper/cooper.tscn" id="1_15slr"]
-[ext_resource type="Environment" uid="uid://de65onlwhs0ka" path="res://NavigationScenes/Levels/Environments/BlackLodge.tres" id="1_p0yiw"]
 [ext_resource type="PackedScene" uid="uid://bwpv0pnb7hgys" path="res://InstanceScenes/MulhollandDr/MainTable.glb" id="2_c5tcf"]
 [ext_resource type="PackedScene" uid="uid://dgnvu0xe3lvuc" path="res://InstanceScenes/MulhollandDr/EmptyTable.glb" id="3_bxujr"]
 [ext_resource type="PackedScene" uid="uid://bhnpjf16v40xb" path="res://InstanceScenes/MulhollandDr/EmptyCounter.glb" id="4_g4qae"]
 [ext_resource type="PackedScene" uid="uid://byescbnjs5iyj" path="res://InstanceScenes/MulhollandDr/MainCounter.glb" id="5_gkfwo"]
 [ext_resource type="PackedScene" uid="uid://b7a2p0cgg8qj8" path="res://InstanceScenes/MulhollandDr/WoodenStool.glb" id="6_tbisx"]
 [ext_resource type="PackedScene" uid="uid://bmvcy43cug0k5" path="res://InstanceScenes/MulhollandDr/Diner/window.tscn" id="8_vra32"]
+
+[sub_resource type="Shader" id="Shader_v460x"]
+code = "shader_type sky;
+
+group_uniforms Sky;
+/**
+ * Use directional light for sun color
+*/
+uniform bool use_directional_light = false;
+uniform vec4 sun_color : source_color = vec4(1.0);
+uniform float sun_energy = 15.0;
+uniform vec4 cloud_color : source_color = vec4(0.296, 0.402, 0.521, 1.0);
+/**
+ * Determines how much light the clouds absorb
+*/
+uniform float cloud_density = 5.0;
+/**
+ * Depth of the parallax effect
+*/
+uniform float cloud_depth = 2.0;
+/**
+ * Higher values give the clouds a heavier appearance
+*/
+uniform float cloud_sag = 2.0;
+uniform sampler2D noise_texture;
+uniform vec2 noise_tiling = vec2(1.0);
+uniform vec2 wind_speed = vec2(0.5);
+group_uniforms;
+
+group_uniforms Ground;
+uniform vec4 ground_bottom_color : source_color = vec4(0.2, 0.169, 0.133, 1.0);
+uniform float ground_curve : hint_range(0, 1) = 0.04;
+group_uniforms;
+
+uniform float exposure : hint_range(0, 128) = 1.0;
+
+// https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-plane-and-ray-disk-intersection.html
+float ray_plane_intersection(vec3 origin, vec3 normal, vec3 ray_start, vec3 ray_dir) {
+	return dot(origin - ray_start, normal) / dot(ray_dir, normal);
+}
+
+float sample_height(vec2 uv) {
+	float height = texture(noise_texture, uv).r;
+	return pow(height, cloud_sag);
+}
+
+float beers_law(float absorption, float dist) {
+	return exp(-absorption * dist);
+}
+
+void sky() {
+	vec3 light_color = vec3(0.0);
+	if (use_directional_light)
+		light_color = LIGHT0_COLOR * LIGHT0_ENERGY * dot(LIGHT0_DIRECTION, vec3(0.0, 1.0, 0.0));
+	else
+		light_color = sun_color.rgb * sun_energy;
+	
+	vec3 sky = cloud_color.rgb;
+	
+	// Find view ray intersection with cloud layer
+	float t = ray_plane_intersection(vec3(0.0, 1.0, 0.0), vec3(0.0, -1.0, 0.0), vec3(0.0), EYEDIR);
+	if (t >= 0.0) {
+		vec3 wind = vec3(wind_speed.x, 0.0, wind_speed.y) * TIME * 0.1;
+		vec3 tiling = vec3(noise_tiling.x, 1.0, noise_tiling.y) * 0.2;
+		vec3 cloud_pos = EYEDIR * t * tiling + wind;
+
+		// Parallax mapping
+		float height = sample_height(cloud_pos.xz);
+		cloud_pos += EYEDIR * height * cloud_depth * 0.1;
+		height = sample_height(cloud_pos.xz);
+		
+		// Attenuate light by view angle to simulate occlusion
+		float n_dot_v = dot(vec3(0.0, 1.0, 0.0), EYEDIR);
+		sky += light_color * beers_law(cloud_density, 1.0 - height * n_dot_v);
+	}
+	vec3 horizon = cloud_color.rgb + light_color * beers_law(cloud_density, 1.0);
+	vec3 ground = mix(horizon, ground_bottom_color.rgb, clamp(1.0 - pow(1.0 + EYEDIR.y, 1.0 / ground_curve), 0.0, 1.0));
+	COLOR = mix(ground, sky, step(0.0, EYEDIR.y)) * exposure;
+}
+"
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v460x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0yiw"]
+shader = SubResource("Shader_v460x")
+shader_parameter/use_directional_light = false
+shader_parameter/sun_color = Color(1, 1, 1, 1)
+shader_parameter/sun_energy = 15.0
+shader_parameter/cloud_color = Color(0.42014512, 0.7348559, 0.9313475, 1)
+shader_parameter/cloud_density = 7.78
+shader_parameter/cloud_depth = 0.72
+shader_parameter/cloud_sag = 0.325
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_v460x")
+shader_parameter/noise_tiling = Vector2(1, 1)
+shader_parameter/wind_speed = Vector2(0, 0)
+shader_parameter/ground_bottom_color = Color(0.2, 0.169, 0.133, 1)
+shader_parameter/ground_curve = 0.04
+shader_parameter/exposure = 1.0
+
+[sub_resource type="Sky" id="Sky_myrjp"]
+sky_material = SubResource("ShaderMaterial_p0yiw")
+radiance_size = 0
+
+[sub_resource type="Environment" id="Environment_4isjw"]
+background_mode = 2
+background_energy_multiplier = 0.77
+sky = SubResource("Sky_myrjp")
+sky_custom_fov = 127.7
 
 [sub_resource type="Gradient" id="Gradient_pg3ve"]
 offsets = PackedFloat32Array(0.0943396, 0.402516, 0.761006)
@@ -16,8 +123,8 @@ colors = PackedColorArray(0.815122, 0.957117, 0.882543, 1, 0.778442, 0.9055, 0.7
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_x3epg"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_htomu"]
-color_ramp = SubResource("Gradient_pg3ve")
 noise = SubResource("FastNoiseLite_x3epg")
+color_ramp = SubResource("Gradient_pg3ve")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxrfm"]
 albedo_color = Color(0.317261, 0.484365, 0.422029, 1)
@@ -28,28 +135,46 @@ metallic_specular = 1.0
 material = SubResource("StandardMaterial3D_nxrfm")
 size = Vector2(60, 50)
 
-[node name="WinkiesDiner" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v460x"]
+albedo_color = Color(0.21583056, 0.13703364, 0.018232277, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_p0yiw")
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v460x"]
+data = PackedVector3Array(30, 0, 25, -30, 0, 25, 30, 0, -25, -30, 0, 25, -30, 0, -25, 30, 0, -25)
 
-[node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.0399, 0, 0, 0, 1, 0, 0, 0, 3.28469, 0, 0, 43.0905)
+[node name="WinkiesDiner" type="Node3D" unique_id=1294974280]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1873572862]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(1, 1, 0.5372549, 1)
+light_energy = 1.232
+light_specular = 0.0
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=402162094]
+environment = SubResource("Environment_4isjw")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1871971263]
+transform = Transform3D(5.1639132, 0, 0, 0, 1, 0, 0, 0, 2.6640706, 0, 0, 24.469795)
 mesh = SubResource("PlaneMesh_m6ulk")
+surface_material_override/0 = SubResource("StandardMaterial3D_v460x")
 
-[node name="Cooper" parent="." instance=ExtResource("1_15slr")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.371698, 4.33506, 8.25253)
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1321491515]
 
-[node name="MainTable" parent="." instance=ExtResource("2_c5tcf")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=499534843]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_v460x")
+
+[node name="MainTable" parent="." unique_id=407349899 instance=ExtResource("2_c5tcf")]
 transform = Transform3D(3, 0, 0, 0, 2.3567, 0, 0, 0, 3, -37.8839, 0.694593, -24.9697)
 
-[node name="EmptyTable" parent="." instance=ExtResource("3_bxujr")]
+[node name="EmptyTable" parent="." unique_id=1561147896 instance=ExtResource("3_bxujr")]
 transform = Transform3D(3, 0, 0, 0, 2.3567, 0, 0, 0, 3, 17.5664, 0.0579295, -24.6125)
 
-[node name="EmptyTable2" parent="." instance=ExtResource("3_bxujr")]
+[node name="EmptyTable2" parent="." unique_id=1336872123 instance=ExtResource("3_bxujr")]
 transform = Transform3D(3, 0, 0, 0, 2.3567, 0, 0, 0, 3, -92.7799, 0.0579295, -25.2148)
 
-[node name="MainCounter" parent="." instance=ExtResource("5_gkfwo")]
+[node name="MainCounter" parent="." unique_id=1399368300 instance=ExtResource("5_gkfwo")]
 transform = Transform3D(2, 0, 0, 0, 2.25491, 0, 0, 0, 2, 55.7587, -3.19819, 40.8281)
 
 [node name="CoffeeMug_003" parent="MainCounter" index="0"]
@@ -61,70 +186,63 @@ transform = Transform3D(-4.55902, 0, 0.979267, 0, 3.5554, 0, -2.02513, 0, -2.204
 [node name="CashRegister" parent="MainCounter" index="2"]
 transform = Transform3D(-1.18995, 0, 0.348965, 0, 1.10653, 0, -0.443107, 0, -0.937136, 8.56997, 5.7773, 1.04549)
 
-[node name="EmptyCounter" parent="." instance=ExtResource("4_g4qae")]
+[node name="EmptyCounter" parent="." unique_id=713315707 instance=ExtResource("4_g4qae")]
 transform = Transform3D(-13.5328, 0, 1.74846e-07, 0, 1.44793, 0, -1.18307e-06, 0, -2, 136.113, -0.114134, 38.1212)
 
-[node name="WoodenStool" parent="." instance=ExtResource("6_tbisx")]
+[node name="WoodenStool" parent="." unique_id=100898382 instance=ExtResource("6_tbisx")]
 transform = Transform3D(2.32861, 0, 0, 0, 1.4468, 0, 0, 0, 2.72109, 29.1957, 0.169174, 28.2602)
 
-[node name="WoodenStool2" parent="." instance=ExtResource("6_tbisx")]
+[node name="WoodenStool2" parent="." unique_id=451996614 instance=ExtResource("6_tbisx")]
 transform = Transform3D(2.19672, 0, 0.902765, 0, 1.4468, 0, -0.772554, 0, 2.56697, 16.1115, 0.169174, 36.6756)
 
-[node name="WoodenStool3" parent="." instance=ExtResource("6_tbisx")]
+[node name="WoodenStool3" parent="." unique_id=1572460952 instance=ExtResource("6_tbisx")]
 transform = Transform3D(2.31293, 0, -0.315255, 0, 1.4468, 0, 0.269783, 0, 2.70277, -21.337, 0.169174, 25.349)
 
-[node name="WoodenStool4" parent="." instance=ExtResource("6_tbisx")]
+[node name="WoodenStool4" parent="." unique_id=1234765303 instance=ExtResource("6_tbisx")]
 transform = Transform3D(2.32861, 0, 0, 0, 1.4468, 0, 0, 0, 2.72109, -51.399, 0.169174, 27.7907)
 
-[node name="WoodenStool7" parent="." instance=ExtResource("6_tbisx")]
+[node name="WoodenStool7" parent="." unique_id=357108497 instance=ExtResource("6_tbisx")]
 transform = Transform3D(2.32861, 0, 0, 0, 1.4468, 0, 0, 0, 2.72109, -33.3079, 0.169174, 28.2602)
 
-[node name="WoodenStool5" parent="." instance=ExtResource("6_tbisx")]
+[node name="WoodenStool5" parent="." unique_id=1468090584 instance=ExtResource("6_tbisx")]
 transform = Transform3D(2.31618, 0, -0.280747, 0, 1.4468, 0, 0.240253, 0, 2.70657, -72.2196, 0.169174, 28.133)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.5853, 12.6932)
-omni_range = 4096.0
-omni_attenuation = 0.381
+[node name="DinerSideWindows" type="Node3D" parent="." unique_id=1790281391]
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5861, 25.5853, 12.6932)
-omni_range = 4096.0
-omni_attenuation = 0.381
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5326, 25.5853, 12.6932)
-omni_range = 4096.0
-omni_attenuation = 0.381
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.5853, 81.6404)
-omni_range = 4096.0
-omni_attenuation = 0.381
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5861, 25.5853, 81.6404)
-omni_range = 4096.0
-omni_attenuation = 0.381
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5326, 25.5853, 81.6404)
-omni_range = 4096.0
-omni_attenuation = 0.381
-
-[node name="Window" parent="." instance=ExtResource("8_vra32")]
+[node name="Window" parent="DinerSideWindows" unique_id=577203730 instance=ExtResource("8_vra32")]
 transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -57.4015, -0.0764036, -35.3248)
 
-[node name="Window4" parent="." instance=ExtResource("8_vra32")]
+[node name="Window4" parent="DinerSideWindows" unique_id=1611076519 instance=ExtResource("8_vra32")]
 transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -170.206, -0.0764036, -35.3248)
 
-[node name="Window2" parent="." instance=ExtResource("8_vra32")]
+[node name="Window2" parent="DinerSideWindows" unique_id=1684382481 instance=ExtResource("8_vra32")]
 transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -113.56, -0.0764036, -35.3248)
 
-[node name="Window3" parent="." instance=ExtResource("8_vra32")]
+[node name="Window3" parent="DinerSideWindows" unique_id=777455403 instance=ExtResource("8_vra32")]
 transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -1.28691, -0.0764036, -35.3248)
 
-[node name="Window5" parent="." instance=ExtResource("8_vra32")]
+[node name="Window5" parent="DinerSideWindows" unique_id=1484449964 instance=ExtResource("8_vra32")]
 transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, 54.7035, -0.0764036, -35.3248)
+
+[node name="DinerSideWindows2" type="Node3D" parent="." unique_id=1638028087]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -20.070465, 0, 55.25882)
+
+[node name="Window" parent="DinerSideWindows2" unique_id=82107357 instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -57.4015, -0.0764036, -35.3248)
+
+[node name="Window4" parent="DinerSideWindows2" unique_id=299453903 instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -170.206, -0.0764036, -35.3248)
+
+[node name="Window2" parent="DinerSideWindows2" unique_id=807594780 instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -113.56, -0.0764036, -35.3248)
+
+[node name="Window3" parent="DinerSideWindows2" unique_id=1867204301 instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, -1.28691, -0.0764036, -35.3248)
+
+[node name="Window5" parent="DinerSideWindows2" unique_id=886680422 instance=ExtResource("8_vra32")]
+transform = Transform3D(4.71674, 0, 0, 0, 3, 0, 0, 0, 3, 54.7035, -0.0764036, -35.3248)
+
+[node name="Cooper" parent="." unique_id=1264529572 instance=ExtResource("1_15slr")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.652896, 4.2325363, 0)
 
 [editable path="MainCounter"]

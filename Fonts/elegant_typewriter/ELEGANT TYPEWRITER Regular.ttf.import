@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://y0v085osmikq"
-path="res://.godot/imported/Bank Gothic Light Regular.otf-ef86cb0558abab5b2e1ac1f3e2c2adfa.fontdata"
+uid="uid://iwim8ubxhagq"
+path="res://.godot/imported/ELEGANT TYPEWRITER Regular.ttf-583aaf466a6132b776ae89d4bc801fc9.fontdata"
 
 [deps]
 
-source_file="res://Fonts/bankgothic-md-bt/Bank Gothic Light Regular.otf"
-dest_files=["res://.godot/imported/Bank Gothic Light Regular.otf-ef86cb0558abab5b2e1ac1f3e2c2adfa.fontdata"]
+source_file="res://Fonts/elegant_typewriter/ELEGANT TYPEWRITER Regular.ttf"
+dest_files=["res://.godot/imported/ELEGANT TYPEWRITER Regular.ttf-583aaf466a6132b776ae89d4bc801fc9.fontdata"]
 
 [params]
 
@@ -21,6 +21,7 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
+modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=4
 keep_rounding_remainders=true

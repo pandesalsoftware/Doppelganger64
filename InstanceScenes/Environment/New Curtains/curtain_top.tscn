@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1t5v6icxoi6r"]
+
+[ext_resource type="PackedScene" uid="uid://be38l7kdfocr" path="res://InstanceScenes/Environment/New Curtains/NoPhysics/np_curtain_segment.tscn" id="1_tfonx"]
+
+[node name="CurtainTop" type="Node3D" unique_id=30154631]
+
+[node name="NP_CurtainSegment3" parent="." unique_id=1718363124 instance=ExtResource("1_tfonx")]
+transform = Transform3D(1.0000013, 1.9463722e-09, 2.1407587e-10, -5.221939e-09, 0.36920577, 0.08160022, 3.5999292e-10, -0.051139522, 0.589118, 0.06785011, 6.2201686, 7.379957)
+
+[node name="NP_CurtainSegment10" parent="." unique_id=1624647046 instance=ExtResource("1_tfonx")]
+transform = Transform3D(1.0000017, -2.9684505e-10, 4.9613647e-12, 7.9639234e-10, 0.3726492, -0.012444909, 8.419931e-12, 0.0077994443, 0.5946124, 0.06785011, 6.2201715, 5.6319065)
+
+[node name="NP_CurtainSegment11" parent="." unique_id=1864059903 instance=ExtResource("1_tfonx")]
+transform = Transform3D(1.0000019, -2.9684508e-10, 4.957812e-12, 7.963926e-10, 0.3726493, -0.012444912, 8.4305896e-12, 0.0077994457, 0.59461254, 0.30800724, 6.2201734, 3.6422424)
+
+[node name="NP_CurtainSegment8" parent="." unique_id=398366918 instance=ExtResource("1_tfonx")]
+transform = Transform3D(-1.0000018, 9.768554e-09, -4.979662e-08, 1.3525955e-08, 0.36861578, 0.08802476, 8.6691756e-08, 0.055168882, -0.58814424, -0.14862823, 6.2201695, 2.2208881)

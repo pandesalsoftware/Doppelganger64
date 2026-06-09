@@ -3,5 +3,8 @@
 [resource]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.906517, 0.613592, 0.624146, 1)
-ambient_light_energy = 1.14
+ambient_light_color = Color(0.6401905, 0.28873044, 0.31935033, 1)
+ambient_light_energy = 2.87
+tonemap_mode = 3
+tonemap_exposure = 0.94
+tonemap_white = 16.0

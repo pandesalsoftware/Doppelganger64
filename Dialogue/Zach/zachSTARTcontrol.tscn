@@ -1,15 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnrymuupu1vud"]
+[gd_scene load_steps=7 format=3 uid="uid://dnrymuupu1vud"]
 
 [ext_resource type="Script" uid="uid://74jcwc84hpa5" path="res://Dialogue/Zach/zach_start_control.gd" id="1_0uqyk"]
+[ext_resource type="Theme" uid="uid://chkeiakxgmfsr" path="res://Themes/Typewriter.tres" id="2_j3hri"]
+[ext_resource type="Texture2D" uid="uid://dbynwu8d6ypxj" path="res://2DAssets/doppelganger_icon.png" id="3_1dt2x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt8ja"]
-bg_color = Color(0, 0, 0, 0.337255)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+[sub_resource type="Animation" id="Animation_1dt2x"]
+resource_name = "Blink"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
-[node name="Control" type="Control"]
+[sub_resource type="Animation" id="Animation_tf76c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y32n2"]
+_data = {
+&"Blink": SubResource("Animation_1dt2x"),
+&"RESET": SubResource("Animation_tf76c")
+}
+
+[node name="ZachControl" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,36 +57,53 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0625
-anchor_top = 0.666667
+anchor_top = 0.7500003
 anchor_right = 0.942383
-anchor_bottom = 0.93099
+anchor_bottom = 0.8997403
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tt8ja")
+theme = ExtResource("2_j3hri")
 metadata/_edit_use_anchors_ = true
 
 [node name="Speech" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0799112
-anchor_top = 0.275862
-anchor_right = 0.932297
-anchor_bottom = 0.788177
-text = "I'm talkin here!"
+anchor_left = 0.071032174
+anchor_top = 0.06956294
+anchor_right = 0.9145392
+anchor_bottom = 0.94782144
+theme = ExtResource("2_j3hri")
+theme_override_font_sizes/font_size = 43
+text = "I'm talkin here! This is a whole two sentences! That's a lot! Wow!"
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Speaker" type="Label" parent="."]
-layout_mode = 0
-anchor_left = 0.101563
-anchor_top = 0.677083
-anchor_right = 0.147461
-anchor_bottom = 0.707031
-text = "Name"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1015625
+anchor_top = 0.6875
+anchor_right = 0.18945313
+anchor_bottom = 0.7473958
+theme = ExtResource("2_j3hri")
+theme_override_font_sizes/font_size = 40
+text = "Zach"
 metadata/_edit_use_anchors_ = true
 
-[node name="next_char" type="Timer" parent="."]
+[node name="Icon" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.859375
+anchor_top = 0.8333333
+anchor_right = 0.9140625
+anchor_bottom = 0.90625
+texture = ExtResource("3_1dt2x")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="next_message" type="Timer" parent="."]
-
-[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
-[connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Icon"]
+libraries = {
+&"": SubResource("AnimationLibrary_y32n2")
+}
+autoplay = "Blink"

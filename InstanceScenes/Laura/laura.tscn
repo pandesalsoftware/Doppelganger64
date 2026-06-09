@@ -41,10 +41,10 @@ bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(0.0195788, -0.0289247, -0.311835)
 
 [node name="Hair" parent="LauraSkin/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.614155, -1.01281e-07, 4.84288e-08, 9.22009e-08, 0.702505, -1.86265e-08, -4.47035e-08, 2.23517e-08, 0.614155, -0.00715612, 2.36162, -0.291803)
+transform = Transform3D(0.6141548, -1.0128133e-07, 4.8428774e-08, 9.2200935e-08, 0.70250463, -1.8626451e-08, -4.4703484e-08, 2.2351742e-08, 0.6141547, -0.0071561206, 2.3616233, -0.29180282)
 
 [node name="Icosphere" parent="LauraSkin/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.094434, -9.66907e-11, 1.90994e-11, -6.80274e-11, -0.094434, 0, -1.81899e-11, 0, -0.094434, 0.013734, 0.985821, 0.040512)
+transform = Transform3D(-0.09443398, -9.6690655e-11, 1.9099389e-11, -6.802736e-11, -0.09443397, 0, -1.8189894e-11, 0, -0.09443398, 0.0137340445, 0.98582095, 0.040511966)
 
 [node name="AnimationPlayer" parent="LauraSkin" index="1"]
 autoplay = "Meanwhile"

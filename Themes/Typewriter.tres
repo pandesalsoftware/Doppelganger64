@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://chkeiakxgmfsr"]
+
+[ext_resource type="FontFile" uid="uid://iwim8ubxhagq" path="res://Fonts/elegant_typewriter/ELEGANT TYPEWRITER Regular.ttf" id="1_li8q7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li8q7"]
+bg_color = Color(0.12503761, 0.03539066, 2.8273807e-05, 0.8980392)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+default_font = ExtResource("1_li8q7")
+Label/colors/font_color = Color(0.7956328, 0.79790205, 0.83091426, 1)
+Label/colors/font_outline_color = Color(0.17239752, 0.10879827, 2.4065375e-08, 1)
+Label/constants/outline_size = 16
+Panel/styles/panel = SubResource("StyleBoxFlat_li8q7")

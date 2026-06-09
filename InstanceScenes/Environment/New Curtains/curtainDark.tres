@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://coyohqc5co4vt"]
+
+[ext_resource type="Texture2D" uid="uid://kwt6a362ljco" path="res://InstanceScenes/Environment/New Curtains/curtain_single.tres" id="1_utxl0"]
+
+[resource]
+cull_mode = 2
+albedo_color = Color(0.3101968, 0.008262218, 0.0075947796, 1)
+albedo_texture = ExtResource("1_utxl0")

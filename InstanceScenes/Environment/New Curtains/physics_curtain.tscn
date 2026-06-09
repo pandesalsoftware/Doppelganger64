@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cmpn3sl8ajaip"]
+
+[ext_resource type="Texture2D" uid="uid://kwt6a362ljco" path="res://InstanceScenes/Environment/New Curtains/curtain_single.tres" id="1_iwcxi"]
+[ext_resource type="Material" uid="uid://hhlcgcxkwo2g" path="res://InstanceScenes/Environment/New Curtains/curtainLight.tres" id="2_h8tkm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4k52"]
+cull_mode = 2
+albedo_color = Color(0.907272, 0.0848965, 0.0797467, 1)
+albedo_texture = ExtResource("1_iwcxi")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2sm81"]
+material = SubResource("StandardMaterial3D_s4k52")
+
+[node name="PhysicsCurtain" type="Node3D" unique_id=132007923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.058914185)
+
+[node name="NP_CurtainSegment" type="Node3D" parent="." unique_id=1793449515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06785166, 0, -0.71277)
+
+[node name="Flap3" type="SoftBody3D" parent="NP_CurtainSegment" unique_id=1374896521]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.04966709, 5.0550976, -0.21856558)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_h8tkm")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap6" type="SoftBody3D" parent="NP_CurtainSegment" unique_id=1501733450]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.04966709, 5.0550976, 2.3345356)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_h8tkm")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap4" type="SoftBody3D" parent="NP_CurtainSegment" unique_id=1688621387]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086308, 5.0550976, 1.1068538)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_h8tkm")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+
+[node name="Flap5" type="SoftBody3D" parent="NP_CurtainSegment" unique_id=363130384]
+transform = Transform3D(6.1719017e-09, 0.018259233, -0.14918591, 9.878206, -5.583834e-08, -4.364871e-17, -4.3174703e-07, -1.2773014, -0.002132637, -0.21086308, 5.0550976, -1.4257697)
+mesh = SubResource("BoxMesh_2sm81")
+surface_material_override/0 = ExtResource("2_h8tkm")
+collision_mask = 7
+simulation_precision = 9
+linear_stiffness = 0.23
+damping_coefficient = 0.15
+drag_coefficient = 0.56
+pinned_points = [5, 1]
+attachments/0/point_index = 5
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 1
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)

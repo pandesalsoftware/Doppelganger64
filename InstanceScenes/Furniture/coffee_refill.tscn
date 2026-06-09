@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c76wn0eb6q5ta"]
+[gd_scene load_steps=7 format=3 uid="uid://c76wn0eb6q5ta"]
 
 [ext_resource type="Script" uid="uid://ckqx772ogcfee" path="res://Coffee/coffee_pickup_area_3d.gd" id="1_ov77c"]
+[ext_resource type="Theme" uid="uid://chkeiakxgmfsr" path="res://Themes/Typewriter.tres" id="2_j7bpk"]
 [ext_resource type="PackedScene" uid="uid://cgyqn8rlglb8n" path="res://InstanceScenes/Furniture/table.tscn" id="2_sq8l7"]
 [ext_resource type="PackedScene" uid="uid://bjfy8rpkpre46" path="res://InstanceScenes/Furniture/coffee_mug.tscn" id="3_j7bpk"]
 
@@ -36,6 +37,7 @@ anchor_top = 0.854167
 anchor_right = 0.539063
 anchor_bottom = 0.936198
 offset_bottom = 0.00018310547
+theme = ExtResource("2_j7bpk")
 theme_override_font_sizes/font_size = 45
 text = "\"E\""
 metadata/_edit_use_anchors_ = true

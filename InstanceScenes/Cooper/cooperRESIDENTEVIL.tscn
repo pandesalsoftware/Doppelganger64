@@ -33,7 +33,6 @@ bones/3/rotation = Quaternion(0.0269099, -0.038183, 0.0149017, 0.998797)
 bones/3/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(-0.238056, -1.1975, -0.344886)
 bones/5/rotation = Quaternion(0.995225, 0.0057081, -0.075876, -0.0611321)
-bones/5/scale = Vector3(1, 1, 1)
 bones/6/position = Vector3(-0.23475, -2.77124, -0.539207)
 bones/6/rotation = Quaternion(0.678485, 9.63321e-07, 8.89716e-07, 0.734614)
 bones/7/position = Vector3(-0.997169, 0.686603, -0.380835)
@@ -55,6 +54,12 @@ bones/14/position = Vector3(1.03932, 0.730374, -0.437128)
 bones/14/rotation = Quaternion(0.917086, 0.396084, -0.0448928, -0.00738562)
 bones/15/rotation = Quaternion(0.00763685, 0.0130862, -0.0117743, 0.999816)
 bones/15/scale = Vector3(1, 1, 1)
+
+[node name="Cube" parent="CooperSkin/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.2874219, 0.0046688383, -0.0017572232, -0.004371346, 0.30226916, 0.012212458, 0.0017674267, -0.011657044, 0.31596732, -0.0025197733, 2.4866476, -0.29187447)
+
+[node name="CoffeeMug" parent="CooperSkin/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.9748176, 0.14551665, -0.16898401, 0.17865366, -0.96311325, 0.20123659, -0.13346744, -0.22635858, -0.9648566, -0.60893726, 0.48923898, -0.84998715)
 
 [node name="InteractRay" type="RayCast3D" parent="CooperSkin"]
 unique_name_in_owner = true

@@ -5,7 +5,7 @@ extends Camera3D
 @onready var York_AP = $"../York/AnimationPlayer"
 @onready var York_Camera = $"."
 
-@onready var Cooper = $"../../Cooper"
+@onready var Cooper = get_tree().get_first_node_in_group("Cooper")
 
 
 

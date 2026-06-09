@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://buhwwwm54ptim"]
+
+[ext_resource type="PackedScene" uid="uid://be38l7kdfocr" path="res://InstanceScenes/Environment/New Curtains/NoPhysics/np_curtain_segment.tscn" id="1_1r7qt"]
+
+[node name="NP_CurtainSegment" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06785166, 0, -0.072666645)
+
+[node name="NP_CurtainSegment" parent="." instance=ExtResource("1_1r7qt")]
+
+[node name="NP_CurtainSegment2" parent="." instance=ExtResource("1_1r7qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231439, 0, -3.4031484)
+
+[node name="NP_CurtainSegment3" parent="." instance=ExtResource("1_1r7qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23791182, 0, 2.9036071)
+
+[node name="NP_CurtainSegment4" parent="." instance=ExtResource("1_1r7qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885432, 0, -9.479919)
+
+[node name="NP_CurtainSegment6" parent="." instance=ExtResource("1_1r7qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37891448, 0, -6.503647)
+
+[node name="NP_CurtainSegment7" parent="." instance=ExtResource("1_1r7qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28247797, 0, 9.149277)
+
+[node name="NP_CurtainSegment8" parent="." instance=ExtResource("1_1r7qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4460653, 0, 5.818793)
